@@ -56,9 +56,9 @@ function Navbar() {
           <button className="flex items-center gap-1 text-sm text-gray-500 hover:text-primary-600 transition-colors">
             <Globe size={16} /> EN
           </button>
-          <Link to="/contact" className="text-sm font-medium text-primary-600 hover:text-primary-700 px-4 py-2 transition-colors">
+          <a href="https://saas.nexbusiness.id/login" className="text-sm font-medium text-primary-600 hover:text-primary-700 px-4 py-2 transition-colors">
             Sign In
-          </Link>
+          </a>
           <Link to="/contact" className="text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 px-4 py-2 rounded-lg transition-colors">
             Get Started
           </Link>
@@ -80,9 +80,9 @@ function Navbar() {
               </Link>
             ))}
             <div className="pt-3 border-t border-gray-100 mt-3 space-y-2">
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="block text-center text-sm font-medium text-primary-600 px-4 py-2.5 border border-primary-600 rounded-lg">
+              <a href="https://saas.nexbusiness.id/login" className="block text-center text-sm font-medium text-primary-600 px-4 py-2.5 border border-primary-600 rounded-lg">
                 Sign In
-              </Link>
+              </a>
               <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="block text-center text-sm font-medium text-white bg-primary-600 px-4 py-2.5 rounded-lg">
                 Get Started
               </Link>
