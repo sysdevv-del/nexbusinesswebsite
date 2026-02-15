@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DynamicIcon, ArrowRight, Check, Star, Sparkles } from "@/lib/icons";
+import { appLogos } from "@/lib/appAssets";
 
 export default function Home() {
   const [featuredApps, setFeaturedApps] = useState([]);
@@ -77,9 +78,13 @@ export default function Home() {
             {featuredApps.slice(0, 8).map(app => (
               <Link key={app.slug} to={`/apps/${app.slug}`} className="group bg-white rounded-2xl p-5 shadow-sm hover:shadow-lg transition-all border border-gray-100 hover:border-primary-200">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ backgroundColor: app.color + "15", color: app.color }}>
-                    <DynamicIcon name={app.icon} size={22} />
-                  </div>
+                  {appLogos[app.slug] ? (
+                    <img src={appLogos[app.slug]} alt={app.name} className="w-11 h-11 rounded-xl object-cover" />
+                  ) : (
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ backgroundColor: app.color + "15", color: app.color }}>
+                      <DynamicIcon name={app.icon} size={22} />
+                    </div>
+                  )}
                   <div>
                     <h3 className="font-semibold text-gray-800 group-hover:text-primary-600 transition-colors">{app.name}</h3>
                     <span className="text-xs text-gray-400">{app.category_name}</span>

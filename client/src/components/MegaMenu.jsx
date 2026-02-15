@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { DynamicIcon, ChevronRight, X } from "@/lib/icons";
+import { appLogos } from "@/lib/appAssets";
 
 export default function MegaMenu({ isOpen, onClose }) {
   const [categories, setCategories] = useState([]);
@@ -88,12 +89,16 @@ export default function MegaMenu({ isOpen, onClose }) {
                     onClick={onClose}
                     className="group flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors"
                   >
-                    <div
-                      className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                      style={{ backgroundColor: app.color + "15", color: app.color }}
-                    >
-                      <DynamicIcon name={app.icon} size={20} />
-                    </div>
+                    {appLogos[app.slug] ? (
+                      <img src={appLogos[app.slug]} alt={app.name} className="w-10 h-10 rounded-lg object-cover shrink-0" />
+                    ) : (
+                      <div
+                        className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                        style={{ backgroundColor: app.color + "15", color: app.color }}
+                      >
+                        <DynamicIcon name={app.icon} size={20} />
+                      </div>
+                    )}
                     <div className="min-w-0">
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold text-sm text-gray-800 group-hover:text-primary-600 transition-colors">

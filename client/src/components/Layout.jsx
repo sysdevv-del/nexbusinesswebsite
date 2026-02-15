@@ -5,6 +5,7 @@ import MegaMenu from "./MegaMenu";
 import { fetchApps } from "@/lib/api";
 import logoImg from "@assets/2_1771161242519.png";
 import logoWhiteImg from "@assets/1_1771161809585.png";
+import { appLogos } from "@/lib/appAssets";
 
 function Navbar() {
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
@@ -169,9 +170,13 @@ function Navbar() {
                       i === selectedIndex ? "bg-primary-50 text-primary-700" : "hover:bg-gray-50 text-gray-700"
                     }`}
                   >
-                    <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 shrink-0 text-sm font-bold">
-                      {app.name.charAt(0)}
-                    </div>
+                    {appLogos[app.slug] ? (
+                      <img src={appLogos[app.slug]} alt={app.name} className="w-8 h-8 rounded-lg object-cover shrink-0" />
+                    ) : (
+                      <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 shrink-0 text-sm font-bold">
+                        {app.name.charAt(0)}
+                      </div>
+                    )}
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium truncate">{app.name}</p>
                       <p className="text-xs text-gray-400 truncate">{app.tagline}</p>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { DynamicIcon, Search, ArrowRight, ChevronRight } from "@/lib/icons";
+import { appLogos } from "@/lib/appAssets";
 
 export default function AppCenter() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -121,9 +122,13 @@ export default function AppCenter() {
                   className="group bg-white rounded-xl p-5 border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: app.color + "15", color: app.color }}>
-                      <DynamicIcon name={app.icon} size={24} />
-                    </div>
+                    {appLogos[app.slug] ? (
+                      <img src={appLogos[app.slug]} alt={app.name} className="w-12 h-12 rounded-xl object-cover shrink-0" />
+                    ) : (
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: app.color + "15", color: app.color }}>
+                        <DynamicIcon name={app.icon} size={24} />
+                      </div>
+                    )}
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <h3 className="font-semibold text-gray-800 group-hover:text-primary-600 transition-colors">{app.name}</h3>

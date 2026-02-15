@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { DynamicIcon, Check, ArrowRight, ExternalLink, Star } from "@/lib/icons";
-
-const appAssets = {
-  nexflow: {
-    preview: "/images/nexflow-preview.png",
-    logo: "/images/nexflow-logo.png",
-  },
-};
+import { appLogos, appPreviews } from "@/lib/appAssets";
 
 export default function AppDetail() {
   const { slug } = useParams();
@@ -41,7 +35,7 @@ export default function AppDetail() {
   }
 
   const { app, related } = data;
-  const assets = appAssets[app.slug];
+  const assets = { logo: appLogos[app.slug], preview: appPreviews[app.slug] };
 
   return (
     <div>
