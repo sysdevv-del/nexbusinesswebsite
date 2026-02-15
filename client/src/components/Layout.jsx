@@ -285,9 +285,9 @@ function Footer() {
         <div className="border-t border-primary-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">&copy; 2026 NexBusiness. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link to="/about" className="text-sm text-gray-500 hover:text-gray-300">Privacy Policy</Link>
-            <Link to="/about" className="text-sm text-gray-500 hover:text-gray-300">Terms of Service</Link>
-            <Link to="/about" className="text-sm text-gray-500 hover:text-gray-300">Cookie Policy</Link>
+            <Link to="/privacy" className="text-sm text-gray-500 hover:text-gray-300">Privacy Policy</Link>
+            <Link to="/terms" className="text-sm text-gray-500 hover:text-gray-300">Terms of Service</Link>
+            <Link to="/cookies" className="text-sm text-gray-500 hover:text-gray-300">Cookie Policy</Link>
           </div>
         </div>
       </div>
