@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Search, Globe } from "@/lib/icons";
 import MegaMenu from "./MegaMenu";
+import logoImg from "@assets/2_1771161242519.png";
 
 function Navbar() {
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center" onClick={() => { setMegaMenuOpen(false); setMobileMenuOpen(false); }}>
-            <img src="/logo.png" alt="NexBusiness" className="h-9" />
+            <img src={logoImg} alt="NexBusiness" className="h-9" />
           </Link>
           <nav className="hidden lg:flex items-center gap-1">
             <button
@@ -127,7 +128,7 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="inline-block mb-3">
-              <img src="/logo.png" alt="NexBusiness" className="h-9 brightness-0 invert" />
+              <img src={logoImg} alt="NexBusiness" className="h-9 brightness-0 invert" />
             </Link>
             <p className="text-xs text-gray-400 italic mb-3">Scaling Business to the Nex Level.</p>
             <p className="text-sm text-gray-400 mb-4">
