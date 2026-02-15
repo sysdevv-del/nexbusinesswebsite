@@ -18,11 +18,8 @@ function Navbar() {
     <header className="bg-white border-b border-gray-200 sticky top-0 z-40" style={{ height: "64px" }}>
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <Link to="/" className="flex items-center gap-2" onClick={() => { setMegaMenuOpen(false); setMobileMenuOpen(false); }}>
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-accent-400 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">N</span>
-            </div>
-            <span className="text-xl font-bold text-primary-800">NexBusiness</span>
+          <Link to="/" className="flex items-center" onClick={() => { setMegaMenuOpen(false); setMobileMenuOpen(false); }}>
+            <img src="/logo.png" alt="NexBusiness" className="h-9" />
           </Link>
           <nav className="hidden lg:flex items-center gap-1">
             <button
@@ -129,12 +126,10 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-400 to-accent-400 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">N</span>
-              </div>
-              <span className="text-lg font-bold text-white">NexBusiness</span>
+            <Link to="/" className="inline-block mb-3">
+              <img src="/logo.png" alt="NexBusiness" className="h-9 brightness-0 invert" />
             </Link>
+            <p className="text-xs text-gray-400 italic mb-3">Scaling Business to the Nex Level.</p>
             <p className="text-sm text-gray-400 mb-4">
               The operating system for your business. 30+ integrated apps to run your entire company.
             </p>
