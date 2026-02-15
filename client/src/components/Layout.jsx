@@ -3,6 +3,7 @@ import { Outlet, Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Search, Globe } from "@/lib/icons";
 import MegaMenu from "./MegaMenu";
 import logoImg from "@assets/2_1771161242519.png";
+import logoWhiteImg from "@assets/1_1771161809585.png";
 
 function Navbar() {
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
@@ -128,7 +129,7 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="inline-block mb-3">
-              <img src={logoImg} alt="NexBusiness" className="h-9 brightness-0 invert" />
+              <img src={logoWhiteImg} alt="NexBusiness" className="h-9" />
             </Link>
             <p className="text-xs text-gray-400 italic mb-3">Scaling Business to the Nex Level.</p>
             <p className="text-sm text-gray-400 mb-4">
