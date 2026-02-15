@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown, Search, Globe } from "@/lib/icons";
 import MegaMenu from "./MegaMenu";
 import logoImg from "@assets/2_1771161242519.png";
@@ -8,7 +8,31 @@ import logoWhiteImg from "@assets/1_1771161809585.png";
 function Navbar() {
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const searchInputRef = useRef(null);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchOpen]);
+
+  useEffect(() => {
+    setSearchOpen(false);
+    setSearchQuery("");
+  }, [location]);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/apps?search=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchOpen(false);
+      setSearchQuery("");
+    }
+  };
 
   const navLinks = [
     { to: "/pricing", label: "Pricing" },
@@ -17,7 +41,7 @@ function Navbar() {
   ];
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-40" style={{ height: "64px" }}>
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-40 relative" style={{ height: "64px" }}>
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center" onClick={() => { setMegaMenuOpen(false); setMobileMenuOpen(false); }}>
@@ -49,7 +73,7 @@ function Navbar() {
           </nav>
         </div>
         <div className="hidden lg:flex items-center gap-3">
-          <button className="p-2 text-gray-500 hover:text-primary-600 transition-colors">
+          <button onClick={() => { setSearchOpen(!searchOpen); setMegaMenuOpen(false); }} className="p-2 text-gray-500 hover:text-primary-600 transition-colors">
             <Search size={18} />
           </button>
           <button className="flex items-center gap-1 text-sm text-gray-500 hover:text-primary-600 transition-colors">
@@ -67,6 +91,26 @@ function Navbar() {
         </button>
       </div>
       <MegaMenu isOpen={megaMenuOpen} onClose={() => setMegaMenuOpen(false)} />
+      {searchOpen && (
+        <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-50">
+          <div className="max-w-3xl mx-auto px-4 py-4">
+            <form onSubmit={handleSearch} className="flex items-center gap-3">
+              <Search size={20} className="text-gray-400 shrink-0" />
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search apps... (e.g. CRM, invoicing, project management)"
+                className="flex-1 text-lg outline-none placeholder-gray-400"
+              />
+              <button type="button" onClick={() => { setSearchOpen(false); setSearchQuery(""); }} className="p-1 text-gray-400 hover:text-gray-600">
+                <X size={20} />
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           <div className="p-4 space-y-1">
