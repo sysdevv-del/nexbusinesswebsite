@@ -41,6 +41,10 @@ NexBusiness is a marketing/showcase website for a business application center (s
 - `/pricing` - Pricing plans (Starter, Professional, Enterprise)
 - `/about` - About page (story, values, milestones)
 - `/contact` - Contact page (form, contact info)
+- `/blog` - Blog page (6 sample articles with category filters)
+- `/privacy` - Privacy Policy
+- `/terms` - Terms of Service
+- `/cookies` - Cookie Policy
 
 ## API Endpoints
 - `GET /api/categories` - List app categories
@@ -64,6 +68,8 @@ NexBusiness is a marketing/showcase website for a business application center (s
 - Run `npm run seed` to re-seed the database
 
 ## Recent Changes
+- 2026-02-15: Added Blog page with 6 sample articles, category filter pills, and card layout
+- 2026-02-15: Added dedicated Privacy Policy, Terms of Service, and Cookie Policy pages with proper footer links
 - 2026-02-15: Added stock photography across all pages (hero, about, contact, pricing) for professional look
 - 2026-02-15: Added live search with auto-suggestions dropdown and direct app navigation
 - 2026-02-15: Updated logo - custom dark logo in header, white version in footer with tagline

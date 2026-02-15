@@ -242,7 +242,7 @@ function Footer() {
     ],
     "Resources": [
       { label: "Documentation", to: "/contact" },
-      { label: "Blog", to: "/about" },
+      { label: "Blog", to: "/blog" },
       { label: "Community", to: "/contact" },
       { label: "Partners", to: "/about" },
     ],
