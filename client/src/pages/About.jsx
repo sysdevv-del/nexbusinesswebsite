@@ -18,6 +18,13 @@ export default function About() {
     { year: "2026", title: "AI Integration", desc: "Launched AI-powered features across all apps for intelligent automation." },
   ];
 
+  const stats = [
+    { value: "50K+", label: "Companies" },
+    { value: "500+", label: "Team Members" },
+    { value: "150+", label: "Countries" },
+    { value: "30+", label: "Products" },
+  ];
+
   return (
     <div>
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-20">
@@ -42,19 +49,22 @@ export default function About() {
                 <p>Today, over 50,000 companies across 150+ countries trust NexBusiness to run their operations. And we're just getting started.</p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8">
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { value: "50K+", label: "Companies" },
-                  { value: "500+", label: "Team Members" },
-                  { value: "150+", label: "Countries" },
-                  { value: "30+", label: "Products" },
-                ].map(stat => (
-                  <div key={stat.label} className="text-center p-4">
-                    <div className="text-3xl font-bold text-primary-700">{stat.value}</div>
-                    <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
-                  </div>
-                ))}
+            <div>
+              <div className="relative">
+                <img
+                  src="/images/about-team.jpg"
+                  alt="NexBusiness team brainstorming and collaborating"
+                  loading="lazy"
+                  className="w-full h-80 object-cover rounded-2xl shadow-lg"
+                />
+                <div className="grid grid-cols-4 gap-3 mt-4">
+                  {stats.map(stat => (
+                    <div key={stat.label} className="bg-primary-50 rounded-xl p-3 text-center">
+                      <div className="text-lg font-bold text-primary-700">{stat.value}</div>
+                      <div className="text-xs text-gray-500">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -104,9 +114,18 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-16 bg-primary-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Join Our Team</h2>
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/about-office.jpg"
+            alt=""
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary-900/85" />
+        </div>
+        <div className="max-w-4xl mx-auto px-4 text-center relative">
+          <h2 className="text-3xl font-bold text-white mb-4">Join Our Team</h2>
           <p className="text-primary-200 mb-8 max-w-xl mx-auto">We're always looking for talented people who share our passion for building great software.</p>
           <Link to="/contact" className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
             View Open Positions <ArrowRight size={16} />

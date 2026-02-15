@@ -10,10 +10,10 @@ export default function Home() {
   }, []);
 
   const benefits = [
-    { icon: "Layers", title: "All-in-One Platform", desc: "30+ integrated business apps working seamlessly together. No more juggling between disconnected tools." },
-    { icon: "Zap", title: "Lightning Fast Setup", desc: "Get started in minutes, not months. Pre-configured integrations mean your team is productive from day one." },
-    { icon: "Shield", title: "Enterprise Security", desc: "Bank-grade encryption, SOC 2 compliance, and advanced access controls protect your data at every level." },
-    { icon: "Sparkles", title: "AI-Powered Intelligence", desc: "Built-in AI assists your team across every app — from sales predictions to automated customer support." },
+    { icon: "Layers", title: "All-in-One Platform", desc: "30+ integrated business apps working seamlessly together. No more juggling between disconnected tools.", image: "/images/feature-analytics.jpg", imageAlt: "Business analytics dashboard showing real-time metrics" },
+    { icon: "Zap", title: "Lightning Fast Setup", desc: "Get started in minutes, not months. Pre-configured integrations mean your team is productive from day one.", image: "/images/feature-collaboration.jpg", imageAlt: "Team collaborating during a presentation meeting" },
+    { icon: "Shield", title: "Enterprise Security", desc: "Bank-grade encryption, SOC 2 compliance, and advanced access controls protect your data at every level.", image: "/images/feature-mobile.jpg", imageAlt: "Mobile productivity on the go" },
+    { icon: "Sparkles", title: "AI-Powered Intelligence", desc: "Built-in AI assists your team across every app — from sales predictions to automated customer support.", image: "/images/testimonial-bg.jpg", imageAlt: "Professional business environment" },
   ];
 
   const stats = [
@@ -37,27 +37,36 @@ export default function Home() {
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary-400 rounded-full blur-3xl" />
         </div>
         <div className="max-w-7xl mx-auto px-4 py-24 md:py-32 relative">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm mb-6">
-              <Sparkles size={14} className="text-accent-400" />
-              <span>Now with AI-powered features across all apps</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm mb-6">
+                <Sparkles size={14} className="text-accent-400" />
+                <span>Now with AI-powered features across all apps</span>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                The Operating System for{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 to-accent-500">
+                  Your Business
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-primary-200 mb-8 max-w-2xl">
+                Run your entire company with one unified platform. 30+ integrated business applications for sales, marketing, finance, HR, and more.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/apps" className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-3 rounded-xl transition-all shadow-lg shadow-accent-500/25">
+                  Explore All Apps <ArrowRight size={18} />
+                </Link>
+                <Link to="/pricing" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold px-6 py-3 rounded-xl transition-all border border-white/20">
+                  View Pricing
+                </Link>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-              The Operating System for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 to-accent-500">
-                Your Business
-              </span>
-            </h1>
-            <p className="text-lg md:text-xl text-primary-200 mb-8 max-w-2xl">
-              Run your entire company with one unified platform. 30+ integrated business applications for sales, marketing, finance, HR, and more.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/apps" className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-3 rounded-xl transition-all shadow-lg shadow-accent-500/25">
-                Explore All Apps <ArrowRight size={18} />
-              </Link>
-              <Link to="/pricing" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold px-6 py-3 rounded-xl transition-all border border-white/20">
-                View Pricing
-              </Link>
+            <div className="hidden lg:block">
+              <img
+                src="/images/hero-team.jpg"
+                alt="Team collaborating together in a modern workspace"
+                className="w-full h-auto rounded-2xl shadow-2xl shadow-black/30 object-cover"
+              />
             </div>
           </div>
         </div>
@@ -115,15 +124,25 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4">Why Choose NexBusiness?</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">We're not just another suite of tools — we're a unified business platform built from the ground up to work together.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {benefits.map(b => (
-              <div key={b.title} className="flex gap-5 p-6 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-gray-100">
-                <div className="w-12 h-12 bg-accent-50 text-accent-600 rounded-xl flex items-center justify-center shrink-0">
-                  <DynamicIcon name={b.icon} size={24} />
+          <div className="space-y-12">
+            {benefits.map((b, i) => (
+              <div key={b.title} className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}>
+                <div className="w-full md:w-1/2">
+                  <img
+                    src={b.image}
+                    alt={b.imageAlt}
+                    loading="lazy"
+                    className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-md"
+                  />
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-primary-800 mb-1">{b.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">{b.desc}</p>
+                <div className="w-full md:w-1/2 flex gap-5 p-6">
+                  <div className="w-12 h-12 bg-accent-50 text-accent-600 rounded-xl flex items-center justify-center shrink-0">
+                    <DynamicIcon name={b.icon} size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-primary-800 mb-2">{b.title}</h3>
+                    <p className="text-gray-500 leading-relaxed">{b.desc}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -131,8 +150,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/testimonial-bg.jpg"
+            alt=""
+            loading="lazy"
+            className="w-full h-full object-cover opacity-[0.04]"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 relative">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4">Trusted by Growing Businesses</h2>
           </div>

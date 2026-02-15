@@ -138,6 +138,16 @@ export default function Contact() {
                   Visit Help Center <ArrowRight size={14} />
                 </a>
               </div>
+
+              <div className="mt-6">
+                <img
+                  src="/images/contact-office.jpg"
+                  alt="NexBusiness office reception in San Francisco"
+                  loading="lazy"
+                  className="w-full h-48 object-cover rounded-xl shadow-sm"
+                />
+                <p className="text-xs text-gray-400 mt-2 text-center">Our San Francisco Office</p>
+              </div>
             </div>
           </div>
         </div>

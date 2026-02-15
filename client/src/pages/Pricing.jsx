@@ -145,11 +145,20 @@ export default function Pricing() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-primary-800 mb-3">Need a Custom Plan?</h2>
-          <p className="text-gray-600 mb-6">For organizations with 100+ users or specific requirements, we offer custom enterprise plans.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+      <section className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/pricing-bg.jpg"
+            alt=""
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary-900/80" />
+        </div>
+        <div className="max-w-3xl mx-auto px-4 text-center relative">
+          <h2 className="text-2xl font-bold text-white mb-3">Need a Custom Plan?</h2>
+          <p className="text-primary-200 mb-6">For organizations with 100+ users or specific requirements, we offer custom enterprise plans.</p>
+          <Link to="/contact" className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
             Contact Sales <ArrowRight size={16} />
           </Link>
         </div>
