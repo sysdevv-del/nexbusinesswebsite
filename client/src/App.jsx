@@ -10,6 +10,10 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import CookiePolicy from "./pages/CookiePolicy";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminPostEditor from "./pages/AdminPostEditor";
 
 function App() {
   return (
@@ -26,7 +30,12 @@ function App() {
           <Route path="terms" element={<TermsOfService />} />
           <Route path="cookies" element={<CookiePolicy />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
         </Route>
+        <Route path="admin/login" element={<AdminLogin />} />
+        <Route path="admin" element={<AdminDashboard />} />
+        <Route path="admin/new" element={<AdminPostEditor />} />
+        <Route path="admin/edit/:id" element={<AdminPostEditor />} />
       </Routes>
     </BrowserRouter>
   );

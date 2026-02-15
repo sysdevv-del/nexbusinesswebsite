@@ -4,6 +4,7 @@ const path = require("path");
 require("dotenv").config();
 
 const appsRouter = require("./routes/apps");
+const blogRouter = require("./routes/blog");
 
 const app = express();
 const PORT = process.env.NODE_ENV === "production" ? 5000 : 3000;
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api", appsRouter);
+app.use("/api", blogRouter);
 
 if (process.env.NODE_ENV === "production") {
   const publicPath = path.join(__dirname, "..", "dist", "public");
