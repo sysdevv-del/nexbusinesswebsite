@@ -1,17 +1,23 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { DynamicIcon, Search, ArrowRight, ChevronRight } from "@/lib/icons";
 
 export default function AppCenter() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [categories, setCategories] = useState([]);
   const [apps, setApps] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState(searchParams.get("category") || "all");
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch("/api/categories").then(r => r.json()).then(setCategories);
-    fetch("/api/apps").then(r => r.json()).then(setApps);
+    fetch("/api/categories").then(r => r.json()).then(setCategories).catch(() => {});
+    fetch("/api/apps").then(r => r.json()).then(setApps).catch(() => {});
   }, []);
+
+  useEffect(() => {
+    const cat = searchParams.get("category");
+    if (cat) setActiveCategory(cat);
+  }, [searchParams]);
 
   const filteredApps = apps.filter(app => {
     const matchesCategory = activeCategory === "all" || app.category_slug === activeCategory;

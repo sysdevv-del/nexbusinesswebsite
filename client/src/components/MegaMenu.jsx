@@ -12,8 +12,8 @@ export default function MegaMenu({ isOpen, onClose }) {
     fetch("/api/categories").then(r => r.json()).then(data => {
       setCategories(data);
       if (data.length > 0) setActiveCategory(data[0].slug);
-    });
-    fetch("/api/apps").then(r => r.json()).then(setApps);
+    }).catch(() => {});
+    fetch("/api/apps").then(r => r.json()).then(setApps).catch(() => {});
   }, []);
 
   useEffect(() => {

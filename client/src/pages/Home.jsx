@@ -6,7 +6,7 @@ export default function Home() {
   const [featuredApps, setFeaturedApps] = useState([]);
 
   useEffect(() => {
-    fetch("/api/apps?featured=true").then(r => r.json()).then(setFeaturedApps);
+    fetch("/api/apps?featured=true").then(r => r.json()).then(setFeaturedApps).catch(() => {});
   }, []);
 
   const benefits = [
