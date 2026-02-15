@@ -16,12 +16,6 @@ export default function Home() {
     { icon: "Sparkles", title: "AI-Powered Intelligence", desc: "Built-in AI assists your team across every app — from sales predictions to automated customer support.", image: "/images/testimonial-bg.jpg", imageAlt: "Professional business environment" },
   ];
 
-  const stats = [
-    { value: "50K+", label: "Active Companies" },
-    { value: "150+", label: "Countries" },
-    { value: "99.9%", label: "Uptime SLA" },
-    { value: "30+", label: "Business Apps" },
-  ];
 
   const testimonials = [
     { name: "Sarah Chen", role: "CTO, TechForward", quote: "NexBusiness replaced 12 different tools we were using. Our team's productivity increased by 40% in the first quarter.", rating: 5 },
@@ -72,18 +66,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-primary-800 border-t border-primary-700">
-        <div className="max-w-7xl mx-auto px-4 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map(stat => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-primary-300">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
