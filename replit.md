@@ -51,8 +51,11 @@ NexBusiness is a marketing/showcase website for a business application center (s
 - Zoho-style mega menu with category sidebar and app cards
 - Responsive design with mobile hamburger menu
 - 30 business apps across 13 categories
+- Live search with auto-suggestions and direct app navigation
 - Search and filter on App Center page
 - Breadcrumb navigation on app detail pages
+- Stock photography integrated across all pages (hero, about, contact, pricing)
+- Custom logo (dark for header, white for footer)
 
 ## Development
 - Frontend (Vite dev server): port 5000
@@ -61,4 +64,7 @@ NexBusiness is a marketing/showcase website for a business application center (s
 - Run `npm run seed` to re-seed the database
 
 ## Recent Changes
+- 2026-02-15: Added stock photography across all pages (hero, about, contact, pricing) for professional look
+- 2026-02-15: Added live search with auto-suggestions dropdown and direct app navigation
+- 2026-02-15: Updated logo - custom dark logo in header, white version in footer with tagline
 - 2026-02-15: Full build of NexBusiness website with all pages, mega menu, database, and API
