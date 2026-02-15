@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { DynamicIcon, Check, ArrowRight, ExternalLink, Star } from "@/lib/icons";
 
+const appAssets = {
+  nexflow: {
+    preview: "/images/nexflow-preview.png",
+    logo: "/images/nexflow-logo.png",
+  },
+};
+
 export default function AppDetail() {
   const { slug } = useParams();
   const [data, setData] = useState(null);
@@ -34,6 +41,7 @@ export default function AppDetail() {
   }
 
   const { app, related } = data;
+  const assets = appAssets[app.slug];
 
   return (
     <div>
@@ -47,9 +55,13 @@ export default function AppDetail() {
             <span className="text-white">{app.name}</span>
           </div>
           <div className="flex flex-col md:flex-row items-start gap-6">
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ backgroundColor: app.color + "20", color: "white" }}>
-              <DynamicIcon name={app.icon} size={32} />
-            </div>
+            {assets?.logo ? (
+              <img src={assets.logo} alt={app.name} className="w-16 h-16 rounded-2xl object-cover" />
+            ) : (
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ backgroundColor: app.color + "20", color: "white" }}>
+                <DynamicIcon name={app.icon} size={32} />
+              </div>
+            )}
             <div className="flex-1">
               <h1 className="text-3xl md:text-4xl font-bold mb-3">{app.name}</h1>
               <p className="text-lg text-primary-200 mb-6 max-w-2xl">{app.tagline}</p>
@@ -75,14 +87,20 @@ export default function AppDetail() {
 
               <div className="bg-gray-50 rounded-2xl p-8 mb-8">
                 <h3 className="text-lg font-semibold text-primary-800 mb-4">Application Preview</h3>
-                <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-3" style={{ backgroundColor: app.color + "15", color: app.color }}>
-                      <DynamicIcon name={app.icon} size={32} />
-                    </div>
-                    <p className="text-sm text-gray-500">{app.name} Dashboard Preview</p>
+                {assets?.preview ? (
+                  <div className="rounded-xl overflow-hidden shadow-md">
+                    <img src={assets.preview} alt={`${app.name} Dashboard Preview`} className="w-full h-auto" />
                   </div>
-                </div>
+                ) : (
+                  <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-3" style={{ backgroundColor: app.color + "15", color: app.color }}>
+                        <DynamicIcon name={app.icon} size={32} />
+                      </div>
+                      <p className="text-sm text-gray-500">{app.name} Dashboard Preview</p>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <h3 className="text-lg font-semibold text-primary-800 mb-4">Why choose {app.name}?</h3>
