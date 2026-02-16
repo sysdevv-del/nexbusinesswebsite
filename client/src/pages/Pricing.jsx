@@ -9,10 +9,12 @@ export default function Pricing() {
   const plans = useMemo(() => [
     {
       name: t("planStarter"),
-      price: "14",
+      price: t("priceStarter"),
+      currency: t("currency"),
       period: t("perUserMonth"),
       desc: t("starterDesc"),
       highlight: false,
+      discountBadge: lang === "ID" ? t("discountLabel") : null,
       features: [
         { text: lang === "EN" ? "Up to 5 users" : "Hingga 5 pengguna", included: true },
         { text: lang === "EN" ? "5 core apps included" : "Termasuk 5 aplikasi inti", included: true },
@@ -27,11 +29,13 @@ export default function Pricing() {
     },
     {
       name: t("planProfessional"),
-      price: "29",
+      price: t("priceProfessional"),
+      currency: t("currency"),
       period: t("perUserMonth"),
       desc: t("professionalDesc"),
       highlight: true,
       badge: t("mostPopular"),
+      discountBadge: lang === "ID" ? t("discountLabel") : null,
       features: [
         { text: lang === "EN" ? "Up to 50 users" : "Hingga 50 pengguna", included: true },
         { text: lang === "EN" ? "15 apps included" : "Termasuk 15 aplikasi", included: true },
@@ -46,10 +50,12 @@ export default function Pricing() {
     },
     {
       name: t("planEnterprise"),
-      price: "49",
+      price: t("priceEnterprise"),
+      currency: t("currency"),
       period: t("perUserMonth"),
       desc: t("enterpriseDesc"),
       highlight: false,
+      discountBadge: lang === "ID" ? t("discountLabel") : null,
       features: [
         { text: lang === "EN" ? "Unlimited users" : "Pengguna tak terbatas", included: true },
         { text: lang === "EN" ? "All 30+ apps included" : "Termasuk semua 30+ aplikasi", included: true },
@@ -139,12 +145,19 @@ export default function Pricing() {
                     </span>
                   </div>
                 )}
+                {plan.discountBadge && (
+                  <div className="absolute top-2 right-2">
+                    <span className="bg-red-100 text-red-600 text-[10px] font-bold px-2 py-0.5 rounded-full border border-red-200 uppercase tracking-wide">
+                      {plan.discountBadge}
+                    </span>
+                  </div>
+                )}
                 <div className="mb-6">
                   <h3 className="text-lg font-bold text-primary-800">{plan.name}</h3>
                   <p className="text-sm text-gray-500 mt-1">{plan.desc}</p>
                 </div>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold text-primary-800">${plan.price}</span>
+                  <span className="text-4xl font-bold text-primary-800">{plan.currency}{plan.price}</span>
                   <span className="text-gray-500 text-sm">{plan.period}</span>
                 </div>
                 <Link
