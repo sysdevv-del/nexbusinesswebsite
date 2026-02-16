@@ -63,8 +63,8 @@ export default function AppDetail() {
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-2.5 rounded-xl transition-colors">
                   Start Free Trial <ArrowRight size={16} />
                 </Link>
-                <Link to="/pricing" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-2.5 rounded-xl transition-colors border border-white/20">
-                  View Pricing
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-2.5 rounded-xl transition-colors border border-white/20">
+                  Request Demo
                 </Link>
               </div>
             </div>
