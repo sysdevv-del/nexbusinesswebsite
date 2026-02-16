@@ -13,6 +13,9 @@ function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const [lang, setLang] = useState("EN");
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const searchInputRef = useRef(null);
   const debounceRef = useRef(null);
@@ -29,7 +32,18 @@ function Navbar() {
     setSearchOpen(false);
     setSearchQuery("");
     setSuggestions([]);
+    setLangOpen(false);
   }, [location]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (langRef.current && !langRef.current.contains(e.target)) {
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const searchApps = useCallback((query) => {
     if (debounceRef.current) clearTimeout(debounceRef.current);
@@ -110,8 +124,8 @@ function Navbar() {
                 to={link.to}
                 onClick={() => setMegaMenuOpen(false)}
                 className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${location.pathname === link.to
-                    ? "text-primary-600 bg-primary-50"
-                    : "text-gray-600 hover:text-primary-600 hover:bg-gray-50"
+                  ? "text-primary-600 bg-primary-50"
+                  : "text-gray-600 hover:text-primary-600 hover:bg-gray-50"
                   }`}
               >
                 {link.label}
@@ -123,9 +137,32 @@ function Navbar() {
           <button onClick={() => { setSearchOpen(!searchOpen); setMegaMenuOpen(false); }} className="p-2 text-gray-500 hover:text-primary-600 transition-colors">
             <Search size={18} />
           </button>
-          <button className="flex items-center gap-1 text-sm text-gray-500 hover:text-primary-600 transition-colors">
-            <Globe size={16} /> EN
-          </button>
+          <div className="relative" ref={langRef}>
+            <button
+              onClick={() => { setLangOpen(!langOpen); setMegaMenuOpen(false); }}
+              className="flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors px-2 py-1 rounded-lg hover:bg-gray-50"
+            >
+              <span className="text-base leading-none">{lang === "EN" ? "🇺🇸" : "🇮🇩"}</span>
+              <span>{lang}</span>
+              <ChevronDown size={14} className={`transition-transform duration-200 ${langOpen ? "rotate-180" : ""}`} />
+            </button>
+            {langOpen && (
+              <div className="absolute top-full right-0 mt-1 w-32 bg-white border border-gray-100 rounded-xl shadow-xl z-50 py-1 overflow-hidden">
+                <button
+                  onClick={() => { setLang("EN"); setLangOpen(false); }}
+                  className={`w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors ${lang === "EN" ? "bg-primary-50 text-primary-600 font-medium" : "text-gray-600 hover:bg-gray-50"}`}
+                >
+                  <span className="text-base">🇺🇸</span> English
+                </button>
+                <button
+                  onClick={() => { setLang("ID"); setLangOpen(false); }}
+                  className={`w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors ${lang === "ID" ? "bg-primary-50 text-primary-600 font-medium" : "text-gray-600 hover:bg-gray-50"}`}
+                >
+                  <span className="text-base">🇮🇩</span> Bahasa
+                </button>
+              </div>
+            )}
+          </div>
           <a href="https://saas.nexbusiness.id/login" className="text-sm font-medium text-primary-600 hover:text-primary-700 px-4 py-2 transition-colors">
             Sign In
           </a>
