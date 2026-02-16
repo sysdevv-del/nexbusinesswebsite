@@ -96,11 +96,34 @@ export default function Pricing() {
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">{t("pricingHeroTitle")}</h1>
-          <p className="text-primary-200 max-w-xl mx-auto text-lg">{t("pricingHeroDesc")}</p>
+          <p className="text-primary-200 max-w-2xl mx-auto text-lg leading-relaxed">{t("pricingHeroDesc")}</p>
         </div>
       </section>
 
-      <section className="py-16 -mt-6">
+      <section className="py-12 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center text-primary-800 mb-8">{t("howPricingWorks")}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center p-4">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-primary-600 font-bold text-lg border border-gray-100">1</div>
+              <h3 className="font-semibold text-gray-800 mb-2">{t("pricingStep1Title")}</h3>
+              <p className="text-sm text-gray-500">{t("pricingStep1Desc")}</p>
+            </div>
+            <div className="text-center p-4">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-primary-600 font-bold text-lg border border-gray-100">2</div>
+              <h3 className="font-semibold text-gray-800 mb-2">{t("pricingStep2Title")}</h3>
+              <p className="text-sm text-gray-500">{t("pricingStep2Desc")}</p>
+            </div>
+            <div className="text-center p-4">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-primary-600 font-bold text-lg border border-gray-100">3</div>
+              <h3 className="font-semibold text-gray-800 mb-2">{t("pricingStep3Title")}</h3>
+              <p className="text-sm text-gray-500">{t("pricingStep3Desc")}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {plans.map(plan => (
@@ -148,6 +171,9 @@ export default function Pricing() {
               </div>
             ))}
           </div>
+          <p className="text-center text-sm text-gray-500 mt-8 italic max-w-2xl mx-auto">
+            {t("pricingDisclaimer")}
+          </p>
         </div>
       </section>
 
