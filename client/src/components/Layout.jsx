@@ -99,9 +99,8 @@ function Navbar() {
           <nav className="hidden lg:flex items-center gap-1">
             <button
               onClick={() => setMegaMenuOpen(!megaMenuOpen)}
-              className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                megaMenuOpen ? "text-primary-600 bg-primary-50" : "text-gray-600 hover:text-primary-600 hover:bg-gray-50"
-              }`}
+              className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${megaMenuOpen ? "text-primary-600 bg-primary-50" : "text-gray-600 hover:text-primary-600 hover:bg-gray-50"
+                }`}
             >
               Products <ChevronDown size={16} className={`transition-transform ${megaMenuOpen ? "rotate-180" : ""}`} />
             </button>
@@ -110,11 +109,10 @@ function Navbar() {
                 key={link.to}
                 to={link.to}
                 onClick={() => setMegaMenuOpen(false)}
-                className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                  location.pathname === link.to
+                className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors ${location.pathname === link.to
                     ? "text-primary-600 bg-primary-50"
                     : "text-gray-600 hover:text-primary-600 hover:bg-gray-50"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
@@ -166,9 +164,8 @@ function Navbar() {
                     key={app.slug}
                     to={`/apps/${app.slug}`}
                     onClick={closeSearch}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
-                      i === selectedIndex ? "bg-primary-50 text-primary-700" : "hover:bg-gray-50 text-gray-700"
-                    }`}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${i === selectedIndex ? "bg-primary-50 text-primary-700" : "hover:bg-gray-50 text-gray-700"
+                      }`}
                   >
                     {appLogos[app.slug] ? (
                       <img src={appLogos[app.slug]} alt={app.name} className="w-8 h-8 rounded-lg object-cover shrink-0" />
@@ -231,14 +228,6 @@ function Navbar() {
 
 function Footer() {
   const footerLinks = {
-    "Products": [
-      { label: "NexCRM", to: "/apps/nexcrm" },
-      { label: "NexFlow", to: "/apps/nexflow" },
-      { label: "NexBooks", to: "/apps/nexbooks" },
-      { label: "NexHR", to: "/apps/nexhr" },
-      { label: "NexDesk", to: "/apps/nexdesk" },
-      { label: "All Products", to: "/apps" },
-    ],
     "Company": [
       { label: "About Us", to: "/about" },
       { label: "Contact", to: "/contact" },
