@@ -2,26 +2,59 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DynamicIcon, ArrowRight, Check, Star, Sparkles } from "@/lib/icons";
 import { appLogos } from "@/lib/appAssets";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Home() {
+  const { lang, t } = useLanguage();
   const [featuredApps, setFeaturedApps] = useState([]);
 
   useEffect(() => {
-    fetch("/api/apps?featured=true").then(r => r.json()).then(setFeaturedApps).catch(() => {});
+    fetch("/api/apps?featured=true").then(r => r.json()).then(setFeaturedApps).catch(() => { });
   }, []);
 
   const benefits = [
-    { icon: "Layers", title: "All-in-One Platform", desc: "30+ integrated business apps working seamlessly together. No more juggling between disconnected tools.", image: "/images/feature-analytics.jpg", imageAlt: "Business analytics dashboard showing real-time metrics" },
-    { icon: "Zap", title: "Lightning Fast Setup", desc: "Get started in minutes, not months. Pre-configured integrations mean your team is productive from day one.", image: "/images/feature-collaboration.jpg", imageAlt: "Team collaborating during a presentation meeting" },
-    { icon: "Shield", title: "Enterprise Security", desc: "Bank-grade encryption, SOC 2 compliance, and advanced access controls protect your data at every level.", image: "/images/feature-mobile.jpg", imageAlt: "Mobile productivity on the go" },
-    { icon: "Sparkles", title: "AI-Powered Intelligence", desc: "Built-in AI assists your team across every app — from sales predictions to automated customer support.", image: "/images/testimonial-bg.jpg", imageAlt: "Professional business environment" },
+    {
+      icon: "Layers",
+      title: lang === "EN" ? "All-in-One Platform" : "Platform Terpadu",
+      desc: lang === "EN" ? "30+ integrated business apps working seamlessly together. No more juggling between disconnected tools." : "30+ aplikasi bisnis terintegrasi yang bekerja bersama dengan mulus. Tidak perlu lagi berpindah-pindah di antara alat yang terputus.",
+      image: "/images/feature-analytics.jpg"
+    },
+    {
+      icon: "Zap",
+      title: lang === "EN" ? "Lightning Fast Setup" : "Pengaturan Sangat Cepat",
+      desc: lang === "EN" ? "Get started in minutes, not months. Pre-configured integrations mean your team is productive from day one." : "Mulai dalam hitungan menit, bukan bulan. Integrasi yang telah dikonfigurasi sebelumnya berarti tim Anda produktif sejak hari pertama.",
+      image: "/images/feature-collaboration.jpg"
+    },
+    {
+      icon: "Shield",
+      title: lang === "EN" ? "Enterprise Security" : "Keamanan Perusahaan",
+      desc: lang === "EN" ? "Bank-grade encryption, SOC 2 compliance, and advanced access controls protect your data at every level." : "Enskripsi setingkat bank, kepatuhan SOC 2, dan kontrol akses tingkat lanjut melindungi data Anda di setiap level.",
+      image: "/images/feature-mobile.jpg"
+    },
+    {
+      icon: "Sparkles",
+      title: lang === "EN" ? "AI-Powered Intelligence" : "Kecerdasan Berbasis AI",
+      desc: lang === "EN" ? "Built-in AI assists your team across every app — from sales predictions to automated customer support." : "AI bawaan membantu tim Anda di setiap aplikasi — mulai dari prediksi penjualan hingga dukungan pelanggan otomatis.",
+      image: "/images/testimonial-bg.jpg"
+    },
   ];
 
-
   const testimonials = [
-    { name: "Sarah Chen", role: "CTO, TechForward", quote: "NexBusiness replaced 12 different tools we were using. Our team's productivity increased by 40% in the first quarter.", rating: 5 },
-    { name: "Marcus Rivera", role: "COO, GrowthScale", quote: "The integration between apps is seamless. Data flows naturally from our CRM to accounting to project management.", rating: 5 },
-    { name: "Aisha Patel", role: "VP Engineering, CloudNine", quote: "We evaluated Zoho, Salesforce, and HubSpot before choosing NexBusiness. The value proposition is unmatched.", rating: 5 },
+    {
+      name: "Sarah Chen", role: "CTO, TechForward",
+      quote: lang === "EN" ? "NexBusiness replaced 12 different tools we were using. Our team's productivity increased by 40% in the first quarter." : "NexBusiness menggantikan 12 alat berbeda yang kami gunakan. Produktivitas tim kami meningkat sebesar 40% di kuartal pertama.",
+      rating: 5
+    },
+    {
+      name: "Marcus Rivera", role: "COO, GrowthScale",
+      quote: lang === "EN" ? "The integration between apps is seamless. Data flows naturally from our CRM to accounting to project management." : "Integrasi antar aplikasi sangat mulus. Data mengalir secara alami dari CRM kami ke akuntansi hingga manajemen proyek.",
+      rating: 5
+    },
+    {
+      name: "Aisha Patel", role: "VP Engineering, CloudNine",
+      quote: lang === "EN" ? "We evaluated Zoho, Salesforce, and HubSpot before choosing NexBusiness. The value proposition is unmatched." : "Kami mengevaluasi Zoho, Salesforce, dan HubSpot sebelum memilih NexBusiness. Proposisi nilainya tidak tertandingi.",
+      rating: 5
+    },
   ];
 
   return (
@@ -36,30 +69,30 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm mb-6">
                 <Sparkles size={14} className="text-accent-400" />
-                <span>Now with AI-powered features across all apps</span>
+                <span>{lang === "EN" ? "Now with AI-powered features across all apps" : "Kini dengan fitur berbasis AI di semua aplikasi"}</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                The Operating System for{" "}
+                {t("heroTitle")}{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 to-accent-500">
-                  Your Business
+                  {t("heroHighlight")}
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-primary-200 mb-8 max-w-2xl">
-                Run your entire company with one unified platform. 30+ integrated business applications for sales, marketing, finance, HR, and more.
+                {t("heroDesc")}
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/apps" className="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-3 rounded-xl transition-all shadow-lg shadow-accent-500/25">
-                  Explore All Apps <ArrowRight size={18} />
+                  {t("exploreApps")} <ArrowRight size={18} />
                 </Link>
                 <Link to="/pricing" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold px-6 py-3 rounded-xl transition-all border border-white/20">
-                  View Pricing
+                  {t("viewPricing")}
                 </Link>
               </div>
             </div>
             <div className="hidden lg:block">
               <img
                 src="/images/hero-team.jpg"
-                alt="Team collaborating together in a modern workspace"
+                alt="Team collaborating together"
                 className="w-full h-auto rounded-2xl shadow-2xl shadow-black/30 object-cover"
               />
             </div>
@@ -67,12 +100,11 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4">Featured Applications</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Discover our most popular tools, each designed to streamline a critical part of your business.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4">{t("featuredApps")}</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">{t("featuredDesc")}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {featuredApps.slice(0, 8).map(app => (
@@ -92,14 +124,14 @@ export default function Home() {
                 </div>
                 <p className="text-sm text-gray-500">{app.tagline}</p>
                 <div className="mt-3 flex items-center gap-1 text-xs font-medium text-primary-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn more <ArrowRight size={12} />
+                  {lang === "EN" ? "Learn more" : "Pelajari lebih lanjut"} <ArrowRight size={12} />
                 </div>
               </Link>
             ))}
           </div>
           <div className="text-center mt-10">
             <Link to="/apps" className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm">
-              View all 30+ applications <ArrowRight size={16} />
+              {t("viewAllApps")} <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -108,19 +140,14 @@ export default function Home() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4">Why Choose NexBusiness?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">We're not just another suite of tools — we're a unified business platform built from the ground up to work together.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4">{t("whyChoose")}</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">{t("whyDesc")}</p>
           </div>
           <div className="space-y-12">
             {benefits.map((b, i) => (
               <div key={b.title} className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}>
                 <div className="w-full md:w-1/2">
-                  <img
-                    src={b.image}
-                    alt={b.imageAlt}
-                    loading="lazy"
-                    className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-md"
-                  />
+                  <img src={b.image} alt={b.title} loading="lazy" className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-md" />
                 </div>
                 <div className="w-full md:w-1/2 flex gap-5 p-6">
                   <div className="w-12 h-12 bg-accent-50 text-accent-600 rounded-xl flex items-center justify-center shrink-0">
@@ -139,16 +166,11 @@ export default function Home() {
 
       <section className="py-20 bg-gray-50 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="/images/testimonial-bg.jpg"
-            alt=""
-            loading="lazy"
-            className="w-full h-full object-cover opacity-[0.04]"
-          />
+          <img src="/images/testimonial-bg.jpg" alt="" loading="lazy" className="w-full h-full object-cover opacity-[0.04]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 relative">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4">Trusted by Growing Businesses</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4">{t("trustedBy")}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map(t => (
@@ -171,23 +193,24 @@ export default function Home() {
 
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4">Ready to Transform Your Business?</h2>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto">Join thousands of companies using NexBusiness to streamline their operations and accelerate growth.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4">{t("readyToTransform")}</h2>
+          <p className="text-gray-600 mb-8 max-w-xl mx-auto">{t("joinThousands")}</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-primary-600/25">
-              Start Free Trial <ArrowRight size={18} />
+              {t("startTrial")} <ArrowRight size={18} />
             </Link>
             <Link to="/pricing" className="inline-flex items-center gap-2 border-2 border-primary-200 hover:border-primary-600 text-primary-600 font-semibold px-8 py-3.5 rounded-xl transition-colors">
-              Compare Plans
+              {t("comparePlans")}
             </Link>
           </div>
           <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-gray-500">
-            <span className="flex items-center gap-1"><Check size={14} className="text-accent-500" /> 14-day free trial</span>
-            <span className="flex items-center gap-1"><Check size={14} className="text-accent-500" /> No credit card required</span>
-            <span className="flex items-center gap-1"><Check size={14} className="text-accent-500" /> Cancel anytime</span>
+            <span className="flex items-center gap-1"><Check size={14} className="text-accent-500" /> {t("trialFeature1")}</span>
+            <span className="flex items-center gap-1"><Check size={14} className="text-accent-500" /> {t("trialFeature2")}</span>
+            <span className="flex items-center gap-1"><Check size={14} className="text-accent-500" /> {t("trialFeature3")}</span>
           </div>
         </div>
       </section>
     </div>
   );
 }
+

@@ -6,14 +6,15 @@ import { fetchApps } from "@/lib/api";
 import logoImg from "@assets/2_1771161242519.png";
 import logoWhiteImg from "@assets/1_1771161809585.png";
 import { appLogos } from "@/lib/appAssets";
+import { useLanguage } from "@/lib/LanguageContext";
 
 function Navbar() {
+  const { lang, setLang, t } = useLanguage();
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-  const [lang, setLang] = useState("EN");
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -98,9 +99,9 @@ function Navbar() {
   };
 
   const navLinks = [
-    { to: "/pricing", label: "Pricing" },
-    { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
+    { to: "/pricing", label: t("pricing") },
+    { to: "/about", label: t("about") },
+    { to: "/contact", label: t("contact") },
   ];
 
   return (
@@ -116,7 +117,7 @@ function Navbar() {
               className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors ${megaMenuOpen ? "text-primary-600 bg-primary-50" : "text-gray-600 hover:text-primary-600 hover:bg-gray-50"
                 }`}
             >
-              Products <ChevronDown size={16} className={`transition-transform ${megaMenuOpen ? "rotate-180" : ""}`} />
+              {t("products")} <ChevronDown size={16} className={`transition-transform ${megaMenuOpen ? "rotate-180" : ""}`} />
             </button>
             {navLinks.map(link => (
               <Link
@@ -164,10 +165,10 @@ function Navbar() {
             )}
           </div>
           <a href="https://saas.nexbusiness.id/login" className="text-sm font-medium text-primary-600 hover:text-primary-700 px-4 py-2 transition-colors">
-            Sign In
+            {t("signIn")}
           </a>
           <Link to="/contact" className="text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 px-4 py-2 rounded-lg transition-colors">
-            Get Started
+            {t("getStarted")}
           </Link>
         </div>
         <button className="lg:hidden p-2 text-gray-600" onClick={() => { setMobileMenuOpen(!mobileMenuOpen); setMegaMenuOpen(false); }}>
@@ -186,7 +187,7 @@ function Navbar() {
                 value={searchQuery}
                 onChange={handleQueryChange}
                 onKeyDown={handleKeyDown}
-                placeholder="Search apps... (e.g. CRM, invoicing, project management)"
+                placeholder={t("searchPlaceholder")}
                 className="flex-1 text-lg outline-none placeholder-gray-400"
               />
               <button type="button" onClick={closeSearch} className="p-1 text-gray-400 hover:text-gray-600">
@@ -264,24 +265,25 @@ function Navbar() {
 }
 
 function Footer() {
+  const { t } = useLanguage();
   const footerLinks = {
-    "Company": [
-      { label: "About Us", to: "/about" },
-      { label: "Contact", to: "/contact" },
-      { label: "Careers", to: "/about" },
-      { label: "Press", to: "/about" },
+    [t("company")]: [
+      { label: t("aboutUs"), to: "/about" },
+      { label: t("contact"), to: "/contact" },
+      { label: t("careers"), to: "/about" },
+      { label: t("press"), to: "/about" },
     ],
-    "Resources": [
-      { label: "Documentation", to: "/contact" },
-      { label: "Blog", to: "/blog" },
-      { label: "Community", to: "/contact" },
-      { label: "Partners", to: "/about" },
+    [t("resources")]: [
+      { label: t("documentation"), to: "/contact" },
+      { label: t("blog"), to: "/blog" },
+      { label: t("community"), to: "/contact" },
+      { label: t("partners"), to: "/about" },
     ],
-    "Support": [
-      { label: "Help Center", to: "/contact" },
-      { label: "Status", to: "/contact" },
-      { label: "API Docs", to: "/contact" },
-      { label: "Security", to: "/about" },
+    [t("support")]: [
+      { label: t("helpCenter"), to: "/contact" },
+      { label: t("status"), to: "/contact" },
+      { label: t("apiDocs"), to: "/contact" },
+      { label: t("security"), to: "/about" },
     ],
   };
 
@@ -293,9 +295,9 @@ function Footer() {
             <Link to="/" className="inline-block mb-3">
               <img src={logoWhiteImg} alt="NexBusiness" className="h-9" />
             </Link>
-            <p className="text-xs text-gray-400 italic mb-3">Scaling Business to the Nex Level.</p>
+            <p className="text-xs text-gray-400 italic mb-3">{t("tagline")}</p>
             <p className="text-sm text-gray-400 mb-4">
-              The operating system for your business. 30+ integrated apps to run your entire company.
+              {t("footerDesc")}
             </p>
           </div>
           {Object.entries(footerLinks).map(([title, links]) => (
@@ -314,11 +316,11 @@ function Footer() {
           ))}
         </div>
         <div className="border-t border-primary-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-500">&copy; 2026 NexBusiness. All rights reserved.</p>
+          <p className="text-sm text-gray-500">&copy; 2026 NexBusiness. {t("allRightsReserved")}</p>
           <div className="flex gap-6">
-            <Link to="/privacy" className="text-sm text-gray-500 hover:text-gray-300">Privacy Policy</Link>
-            <Link to="/terms" className="text-sm text-gray-500 hover:text-gray-300">Terms of Service</Link>
-            <Link to="/cookies" className="text-sm text-gray-500 hover:text-gray-300">Cookie Policy</Link>
+            <Link to="/privacy" className="text-sm text-gray-500 hover:text-gray-300">{t("privacyPolicy")}</Link>
+            <Link to="/terms" className="text-sm text-gray-500 hover:text-gray-300">{t("termsOfService")}</Link>
+            <Link to="/cookies" className="text-sm text-gray-500 hover:text-gray-300">{t("cookiePolicy")}</Link>
           </div>
         </div>
       </div>
