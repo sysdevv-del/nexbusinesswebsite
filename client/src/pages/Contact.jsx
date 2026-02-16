@@ -12,9 +12,9 @@ export default function Contact() {
 
   const contactInfo = [
     { icon: Mail, label: "Email", value: "hello@nexbusiness.com", desc: "We'll respond within 24 hours" },
-    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", desc: "Mon-Fri, 9am-6pm EST" },
+    { icon: Phone, label: "Phone", value: "+62 853-8504-5549", desc: "Mon-Fri, 9am-6pm WIB" },
     { icon: MapPin, label: "Office", value: "San Francisco, CA", desc: "100 Market Street, Suite 400" },
-    { icon: Clock, label: "Business Hours", value: "Mon-Fri, 9-6 EST", desc: "Weekend support for Enterprise" },
+    { icon: Clock, label: "Business Hours", value: "Mon-Fri, 9-6 WIB", desc: "Weekend support for Enterprise" },
   ];
 
   return (
@@ -52,7 +52,7 @@ export default function Contact() {
                           type="text"
                           required
                           value={formData.name}
-                          onChange={e => setFormData({...formData, name: e.target.value})}
+                          onChange={e => setFormData({ ...formData, name: e.target.value })}
                           className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                           placeholder="John Doe"
                         />
@@ -63,7 +63,7 @@ export default function Contact() {
                           type="email"
                           required
                           value={formData.email}
-                          onChange={e => setFormData({...formData, email: e.target.value})}
+                          onChange={e => setFormData({ ...formData, email: e.target.value })}
                           className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                           placeholder="john@company.com"
                         />
@@ -75,7 +75,7 @@ export default function Contact() {
                         <input
                           type="text"
                           value={formData.company}
-                          onChange={e => setFormData({...formData, company: e.target.value})}
+                          onChange={e => setFormData({ ...formData, company: e.target.value })}
                           className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                           placeholder="Acme Inc."
                         />
@@ -84,7 +84,7 @@ export default function Contact() {
                         <label className="block text-sm font-medium text-gray-700 mb-1.5">Subject</label>
                         <select
                           value={formData.subject}
-                          onChange={e => setFormData({...formData, subject: e.target.value})}
+                          onChange={e => setFormData({ ...formData, subject: e.target.value })}
                           className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white"
                         >
                           <option value="">Select a topic</option>
@@ -102,7 +102,7 @@ export default function Contact() {
                         rows={5}
                         required
                         value={formData.message}
-                        onChange={e => setFormData({...formData, message: e.target.value})}
+                        onChange={e => setFormData({ ...formData, message: e.target.value })}
                         className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
                         placeholder="Tell us how we can help..."
                       />
