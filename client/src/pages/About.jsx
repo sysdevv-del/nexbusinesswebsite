@@ -29,38 +29,6 @@ export default function About() {
     },
   ], [lang]);
 
-  const milestones = useMemo(() => [
-    {
-      year: "2018",
-      title: lang === "EN" ? "Founded" : "Didirikan",
-      desc: lang === "EN" ? "NexBusiness was founded with a mission to unify business software." : "NexBusiness didirikan dengan misi untuk menyatukan perangkat lunak bisnis."
-    },
-    {
-      year: "2019",
-      title: lang === "EN" ? "First 5 Apps" : "5 Aplikasi Pertama",
-      desc: lang === "EN" ? "Launched NexCRM, NexBooks, NexHR, NexMail, and NexDesk." : "Meluncurkan NexCRM, NexBooks, NexHR, NexMail, dan NexDesk."
-    },
-    {
-      year: "2020",
-      title: lang === "EN" ? "10K Customers" : "10 Ribu Pelanggan",
-      desc: lang === "EN" ? "Reached 10,000 active companies using the platform." : "Mencapai 10.000 perusahaan aktif yang menggunakan platform ini."
-    },
-    {
-      year: "2022",
-      title: lang === "EN" ? "Series B Funding" : "Pendanaan Seri B",
-      desc: lang === "EN" ? "Raised $50M to accelerate product development and global expansion." : "Mengumpulkan $50 juta untuk mempercepat pengembangan produk dan ekspansi global."
-    },
-    {
-      year: "2024",
-      title: lang === "EN" ? "30+ Apps" : "30+ Aplikasi",
-      desc: lang === "EN" ? "Expanded the platform to over 30 integrated business applications." : "Memperluas platform ke lebih dari 30 aplikasi bisnis terintegrasi."
-    },
-    {
-      year: "2026",
-      title: lang === "EN" ? "AI Integration" : "Integrasi AI",
-      desc: lang === "EN" ? "Launched AI-powered features across all apps for intelligent automation." : "Meluncurkan fitur berbasis AI di semua aplikasi untuk otomatisasi cerdas."
-    },
-  ], [lang]);
 
   const stats = useMemo(() => [
     { value: "50K+", label: t("companies") },
@@ -132,31 +100,6 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary-800 text-center mb-12">{t("ourJourneyTitle")}</h2>
-          <div className="relative">
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-primary-100 hidden md:block" />
-            <div className="space-y-8">
-              {milestones.map((m, i) => (
-                <div key={m.year} className="flex gap-6 items-start">
-                  <div className="hidden md:flex w-12 h-12 bg-primary-600 text-white rounded-full items-center justify-center shrink-0 text-sm font-bold z-10">
-                    {m.year.slice(2)}
-                  </div>
-                  <div className="flex-1 bg-gray-50 rounded-xl p-5">
-                    <div className="flex items-center gap-3 mb-1">
-                      <span className="text-sm font-bold text-primary-600 md:hidden">{m.year}</span>
-                      <span className="text-sm font-bold text-primary-600 hidden md:inline">{m.year}</span>
-                      <h3 className="font-semibold text-gray-800">{m.title}</h3>
-                    </div>
-                    <p className="text-sm text-gray-500">{m.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0">
