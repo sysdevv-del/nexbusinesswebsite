@@ -242,7 +242,7 @@ function Navbar() {
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           <div className="p-4 space-y-1">
             <Link to="/apps" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg">
-              Products
+              {t("products")}
             </Link>
             {navLinks.map(link => (
               <Link key={link.to} to={link.to} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg">
@@ -251,10 +251,10 @@ function Navbar() {
             ))}
             <div className="pt-3 border-t border-gray-100 mt-3 space-y-2">
               <a href="https://saas.nexbusiness.id/login" className="block text-center text-sm font-medium text-primary-600 px-4 py-2.5 border border-primary-600 rounded-lg">
-                Sign In
+                {t("signIn")}
               </a>
               <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="block text-center text-sm font-medium text-white bg-primary-600 px-4 py-2.5 rounded-lg">
-                Get Started
+                {t("getStarted")}
               </Link>
             </div>
           </div>

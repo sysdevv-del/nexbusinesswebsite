@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LanguageProvider } from "./lib/LanguageContext";
+import { LanguageProvider } from "@/lib/LanguageContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import AppCenter from "./pages/AppCenter";

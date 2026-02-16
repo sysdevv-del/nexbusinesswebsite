@@ -2,8 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { DynamicIcon, ChevronRight, X } from "@/lib/icons";
 import { appLogos } from "@/lib/appAssets";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function MegaMenu({ isOpen, onClose }) {
+  const { t } = useLanguage();
   const [categories, setCategories] = useState([]);
   const [apps, setApps] = useState([]);
   const [activeCategory, setActiveCategory] = useState(null);
@@ -13,8 +15,8 @@ export default function MegaMenu({ isOpen, onClose }) {
     fetch("/api/categories").then(r => r.json()).then(data => {
       setCategories(data);
       if (data.length > 0) setActiveCategory(data[0].slug);
-    }).catch(() => {});
-    fetch("/api/apps").then(r => r.json()).then(setApps).catch(() => {});
+    }).catch(() => { });
+    fetch("/api/apps").then(r => r.json()).then(setApps).catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -37,13 +39,13 @@ export default function MegaMenu({ isOpen, onClose }) {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between px-6 py-3 border-b border-gray-100">
             <div className="flex gap-6 text-sm font-medium">
-              <Link to="/apps" onClick={onClose} className="text-primary-600 border-b-2 border-primary-600 pb-1">Apps</Link>
-              <Link to="/pricing" onClick={onClose} className="text-gray-500 hover:text-primary-600 pb-1">Suite</Link>
+              <Link to="/apps" onClick={onClose} className="text-primary-600 border-b-2 border-primary-600 pb-1">{t("products")}</Link>
+              <Link to="/pricing" onClick={onClose} className="text-gray-500 hover:text-primary-600 pb-1">{t("pricing")}</Link>
               <Link to="/apps" onClick={onClose} className="text-gray-500 hover:text-primary-600 pb-1">Marketplace</Link>
             </div>
             <div className="flex items-center gap-4">
-              <Link to="/apps" onClick={onClose} className="text-sm text-accent-500 hover:text-accent-600 font-medium flex items-center gap-1">
-                BROWSE ALL PRODUCTS <ChevronRight size={14} />
+              <Link to="/apps" onClick={onClose} className="text-sm text-accent-500 hover:text-accent-600 font-medium flex items-center gap-1 uppercase">
+                {t("exploreApps")} <ChevronRight size={14} />
               </Link>
               <button onClick={onClose} className="text-gray-400 hover:text-gray-600 p-1">
                 <X size={20} />
@@ -57,11 +59,10 @@ export default function MegaMenu({ isOpen, onClose }) {
                   key={cat.slug}
                   onMouseEnter={() => setActiveCategory(cat.slug)}
                   onClick={() => setActiveCategory(cat.slug)}
-                  className={`w-full flex items-center justify-between px-5 py-2.5 text-sm transition-colors ${
-                    activeCategory === cat.slug
-                      ? "text-primary-600 bg-primary-50 font-medium border-r-2 border-primary-600"
-                      : "text-gray-600 hover:text-primary-600 hover:bg-gray-50"
-                  }`}
+                  className={`w-full flex items-center justify-between px-5 py-2.5 text-sm transition-colors ${activeCategory === cat.slug
+                    ? "text-primary-600 bg-primary-50 font-medium border-r-2 border-primary-600"
+                    : "text-gray-600 hover:text-primary-600 hover:bg-gray-50"
+                    }`}
                 >
                   <span>{cat.name}</span>
                   <ChevronRight size={14} className={activeCategory === cat.slug ? "text-primary-600" : "text-gray-300"} />
@@ -71,9 +72,9 @@ export default function MegaMenu({ isOpen, onClose }) {
                 <Link
                   to="/apps"
                   onClick={onClose}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-accent-500 hover:bg-accent-600 px-4 py-2 rounded-lg transition-colors w-full justify-center"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-white bg-accent-500 hover:bg-accent-600 px-4 py-2 rounded-lg transition-colors w-full justify-center uppercase"
                 >
-                  BROWSE ALL PRODUCTS <ChevronRight size={14} />
+                  {t("exploreApps")} <ChevronRight size={14} />
                 </Link>
               </div>
             </div>

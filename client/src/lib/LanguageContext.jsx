@@ -152,10 +152,16 @@ export const translations = {
 };
 
 export const LanguageProvider = ({ children }) => {
-    const [lang, setLang] = useState("EN");
+    const [lang, setLang] = useState(() => localStorage.getItem("nex_lang") || "EN");
+
+    useEffect(() => {
+        localStorage.setItem("nex_lang", lang);
+        document.documentElement.lang = lang === "EN" ? "en" : "id";
+    }, [lang]);
 
     const t = (key) => {
-        return translations[lang][key] || key;
+        if (!translations[lang]) return key;
+        return translations[lang][key] || translations["EN"][key] || key;
     };
 
     return (
