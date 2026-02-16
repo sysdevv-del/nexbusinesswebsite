@@ -175,7 +175,9 @@ function Navbar() {
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
       <MegaMenu isOpen={megaMenuOpen} onClose={() => setMegaMenuOpen(false)} />
+
       {searchOpen && (
         <div className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg z-50">
           <div className="max-w-3xl mx-auto px-4 py-4">
@@ -194,52 +196,56 @@ function Navbar() {
                 <X size={20} />
               </button>
             </form>
-            {suggestions.length > 0 && (
+
+            {(suggestions.length > 0 || (searchQuery.trim().length > 0 && suggestions.length === 0)) && (
               <div className="mt-3 border-t border-gray-100 pt-3">
-                <p className="text-xs text-gray-400 uppercase tracking-wide mb-2 px-1">Apps</p>
-                {suggestions.map((app, i) => (
-                  <Link
-                    key={app.slug}
-                    to={`/apps/${app.slug}`}
-                    onClick={closeSearch}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${i === selectedIndex ? "bg-primary-50 text-primary-700" : "hover:bg-gray-50 text-gray-700"
-                      }`}
-                  >
-                    {appLogos[app.slug] ? (
-                      <img src={appLogos[app.slug]} alt={app.name} className="w-8 h-8 rounded-lg object-cover shrink-0" />
-                    ) : (
-                      <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 shrink-0 text-sm font-bold">
-                        {app.name.charAt(0)}
-                      </div>
+                {suggestions.length > 0 ? (
+                  <>
+                    <p className="text-xs text-gray-400 uppercase tracking-wide mb-2 px-1">{t("products")}</p>
+                    {suggestions.map((app, i) => (
+                      <Link
+                        key={app.slug}
+                        to={`/apps/${app.slug}`}
+                        onClick={closeSearch}
+                        className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${i === selectedIndex ? "bg-primary-50 text-primary-700" : "hover:bg-gray-50 text-gray-700"}`}
+                      >
+                        {appLogos[app.slug] ? (
+                          <img src={appLogos[app.slug]} alt={app.name} className="w-8 h-8 rounded-lg object-cover shrink-0" />
+                        ) : (
+                          <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 shrink-0 text-sm font-bold">
+                            {app.name.charAt(0)}
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium truncate">{app.name}</p>
+                          <p className="text-xs text-gray-400 truncate">{app.tagline}</p>
+                        </div>
+                        <ArrowRight size={14} className="text-gray-300 shrink-0" />
+                      </Link>
+                    ))}
+                    {searchQuery.trim() && (
+                      <button
+                        type="button"
+                        onClick={() => { navigate(`/apps?search=${encodeURIComponent(searchQuery.trim())}`); closeSearch(); }}
+                        className="w-full mt-2 pt-2 border-t border-gray-100 text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center justify-center gap-1 py-2"
+                      >
+                        {t("viewAllResults")} "{searchQuery}" <ArrowRight size={14} />
+                      </button>
                     )}
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium truncate">{app.name}</p>
-                      <p className="text-xs text-gray-400 truncate">{app.tagline}</p>
-                    </div>
-                    <ArrowRight size={14} className="text-gray-300 shrink-0" />
-                  </Link>
-                ))}
-                {searchQuery.trim() && (
-                  <button
-                    type="button"
-                    onClick={() => { navigate(`/apps?search=${encodeURIComponent(searchQuery.trim())}`); closeSearch(); }}
-                    className="w-full mt-2 pt-2 border-t border-gray-100 text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center justify-center gap-1 py-2"
-                  >
-                    View all results for "{searchQuery}" <ArrowRight size={14} />
-                  </button>
+                  </>
+                ) : (
+                  <div className="py-4 text-center">
+                    <p className="text-sm text-gray-400">{t("noAppsFoundFor")} "{searchQuery}"</p>
+                  </div>
                 )}
-              </div>
-            )}
-            {searchQuery.trim().length > 0 && suggestions.length === 0 && (
-              <div className="mt-3 border-t border-gray-100 pt-4 pb-2 text-center">
-                <p className="text-sm text-gray-400">No apps found for "{searchQuery}"</p>
               </div>
             )}
           </div>
         </div>
       )}
+
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
+        <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg absolute top-full left-0 right-0 z-40">
           <div className="p-4 space-y-1">
             <Link to="/apps" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg">
               {t("products")}

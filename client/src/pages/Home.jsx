@@ -173,17 +173,17 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-primary-800 mb-4">{t("trustedBy")}</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map(t => (
-              <div key={t.name} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+            {testimonials.map(item => (
+              <div key={item.name} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
                 <div className="flex gap-1 mb-4">
-                  {[...Array(t.rating)].map((_, i) => (
+                  {[...Array(item.rating)].map((_, i) => (
                     <Star key={i} size={16} className="fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-gray-600 text-sm mb-5 leading-relaxed">"{t.quote}"</p>
+                <p className="text-gray-600 text-sm mb-5 leading-relaxed">"{item.quote}"</p>
                 <div>
-                  <div className="font-semibold text-sm text-gray-800">{t.name}</div>
-                  <div className="text-xs text-gray-400">{t.role}</div>
+                  <div className="font-semibold text-sm text-gray-800">{item.name}</div>
+                  <div className="text-xs text-gray-400">{item.role}</div>
                 </div>
               </div>
             ))}

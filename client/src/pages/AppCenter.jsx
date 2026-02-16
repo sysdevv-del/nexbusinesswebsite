@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { DynamicIcon, Search, ArrowRight, ChevronRight } from "@/lib/icons";
 import { appLogos } from "@/lib/appAssets";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function AppCenter() {
+  const { lang, t } = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
   const [categories, setCategories] = useState([]);
   const [apps, setApps] = useState([]);
@@ -11,8 +13,8 @@ export default function AppCenter() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch("/api/categories").then(r => r.json()).then(setCategories).catch(() => {});
-    fetch("/api/apps").then(r => r.json()).then(setApps).catch(() => {});
+    fetch("/api/categories").then(r => r.json()).then(setCategories).catch(() => { });
+    fetch("/api/apps").then(r => r.json()).then(setApps).catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -26,19 +28,19 @@ export default function AppCenter() {
     return matchesCategory && matchesSearch;
   });
 
-  const activeCategoryName = activeCategory === "all" ? "All Products" : categories.find(c => c.slug === activeCategory)?.name || "";
+  const activeCategoryName = activeCategory === "all" ? t("allProducts") : t(activeCategory) || categories.find(c => c.slug === activeCategory)?.name || "";
 
   return (
     <div>
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-14">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">App Center</h1>
-          <p className="text-primary-200 max-w-xl">Browse our complete suite of 30+ business applications. Find the perfect tools to power every part of your organization.</p>
+          <h1 className="text-3xl md:text-4xl font-bold mb-3">{t("appCenterTitle")}</h1>
+          <p className="text-primary-200 max-w-xl">{t("appCenterDesc")}</p>
           <div className="mt-6 relative max-w-lg">
             <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
               type="text"
-              placeholder="Search apps..."
+              placeholder={t("searchPlaceholder")}
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               className="w-full pl-11 pr-4 py-3 rounded-xl bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-400 text-sm"
@@ -51,15 +53,14 @@ export default function AppCenter() {
         <div className="flex gap-8">
           <aside className="hidden lg:block w-56 shrink-0">
             <div className="sticky top-20">
-              <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Categories</h3>
+              <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">{t("categories")}</h3>
               <nav className="space-y-0.5">
                 <button
                   onClick={() => setActiveCategory("all")}
-                  className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors ${
-                    activeCategory === "all" ? "bg-primary-50 text-primary-700 font-medium" : "text-gray-600 hover:bg-gray-50"
-                  }`}
+                  className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors ${activeCategory === "all" ? "bg-primary-50 text-primary-700 font-medium" : "text-gray-600 hover:bg-gray-50"
+                    }`}
                 >
-                  All Products
+                  {t("allProducts")}
                   <span className="text-xs text-gray-400">{apps.length}</span>
                 </button>
                 {categories.map(cat => {
@@ -68,13 +69,12 @@ export default function AppCenter() {
                     <button
                       key={cat.slug}
                       onClick={() => setActiveCategory(cat.slug)}
-                      className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors ${
-                        activeCategory === cat.slug ? "bg-primary-50 text-primary-700 font-medium" : "text-gray-600 hover:bg-gray-50"
-                      }`}
+                      className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors ${activeCategory === cat.slug ? "bg-primary-50 text-primary-700 font-medium" : "text-gray-600 hover:bg-gray-50"
+                        }`}
                     >
                       <span className="flex items-center gap-2">
                         <DynamicIcon name={cat.icon} size={14} />
-                        {cat.name}
+                        {t(cat.slug)}
                       </span>
                       <span className="text-xs text-gray-400">{count}</span>
                     </button>
@@ -89,21 +89,19 @@ export default function AppCenter() {
               <div className="flex gap-2 pb-2">
                 <button
                   onClick={() => setActiveCategory("all")}
-                  className={`whitespace-nowrap px-3 py-1.5 text-sm rounded-full transition-colors ${
-                    activeCategory === "all" ? "bg-primary-600 text-white" : "bg-gray-100 text-gray-600"
-                  }`}
+                  className={`whitespace-nowrap px-3 py-1.5 text-sm rounded-full transition-colors ${activeCategory === "all" ? "bg-primary-600 text-white" : "bg-gray-100 text-gray-600"
+                    }`}
                 >
-                  All
+                  {t("all")}
                 </button>
                 {categories.map(cat => (
                   <button
                     key={cat.slug}
                     onClick={() => setActiveCategory(cat.slug)}
-                    className={`whitespace-nowrap px-3 py-1.5 text-sm rounded-full transition-colors ${
-                      activeCategory === cat.slug ? "bg-primary-600 text-white" : "bg-gray-100 text-gray-600"
-                    }`}
+                    className={`whitespace-nowrap px-3 py-1.5 text-sm rounded-full transition-colors ${activeCategory === cat.slug ? "bg-primary-600 text-white" : "bg-gray-100 text-gray-600"
+                      }`}
                   >
-                    {cat.name}
+                    {t(cat.slug)}
                   </button>
                 ))}
               </div>
@@ -111,7 +109,7 @@ export default function AppCenter() {
 
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold text-primary-800">{activeCategoryName}</h2>
-              <span className="text-sm text-gray-500">{filteredApps.length} apps</span>
+              <span className="text-sm text-gray-500">{filteredApps.length} {t("apps_count")}</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -133,12 +131,12 @@ export default function AppCenter() {
                       <div className="flex items-center gap-2 mb-1">
                         <h3 className="font-semibold text-gray-800 group-hover:text-primary-600 transition-colors">{app.name}</h3>
                         {app.is_featured && (
-                          <span className="text-[10px] font-bold bg-accent-50 text-accent-700 px-1.5 py-0.5 rounded">Popular</span>
+                          <span className="text-[10px] font-bold bg-accent-50 text-accent-700 px-1.5 py-0.5 rounded">{t("popularBadge")}</span>
                         )}
                       </div>
                       <p className="text-sm text-gray-500 mb-3">{app.tagline}</p>
                       <div className="flex items-center gap-1 text-xs font-medium text-primary-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                        Learn more <ArrowRight size={12} />
+                        {t("learnMore")} <ArrowRight size={12} />
                       </div>
                     </div>
                   </div>
@@ -148,7 +146,7 @@ export default function AppCenter() {
 
             {filteredApps.length === 0 && (
               <div className="text-center py-16">
-                <p className="text-gray-500">No apps found matching your search.</p>
+                <p className="text-gray-500">{t("noAppsFound")}</p>
               </div>
             )}
           </div>

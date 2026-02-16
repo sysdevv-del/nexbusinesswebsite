@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Mail, Phone, MapPin, Clock, ArrowRight, Check } from "@/lib/icons";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -12,7 +12,7 @@ export default function Contact() {
     setSubmitted(true);
   };
 
-  const contactInfo = [
+  const contactInfo = useMemo(() => [
     {
       icon: Mail,
       label: "Email",
@@ -37,7 +37,7 @@ export default function Contact() {
       value: lang === "EN" ? "Mon-Fri, 9-6 WIB" : "Sen-Jum, 9-6 WIB",
       desc: lang === "EN" ? "Weekend support for Enterprise" : "Dukungan akhir pekan untuk Enterprise"
     },
-  ];
+  ], [lang, t]);
 
   return (
     <div>

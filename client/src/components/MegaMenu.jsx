@@ -41,7 +41,7 @@ export default function MegaMenu({ isOpen, onClose }) {
             <div className="flex gap-6 text-sm font-medium">
               <Link to="/apps" onClick={onClose} className="text-primary-600 border-b-2 border-primary-600 pb-1">{t("products")}</Link>
               <Link to="/pricing" onClick={onClose} className="text-gray-500 hover:text-primary-600 pb-1">{t("pricing")}</Link>
-              <Link to="/apps" onClick={onClose} className="text-gray-500 hover:text-primary-600 pb-1">Marketplace</Link>
+              <Link to="/apps" onClick={onClose} className="text-gray-500 hover:text-primary-600 pb-1">{t("marketplace")}</Link>
             </div>
             <div className="flex items-center gap-4">
               <Link to="/apps" onClick={onClose} className="text-sm text-accent-500 hover:text-accent-600 font-medium flex items-center gap-1 uppercase">
@@ -64,7 +64,7 @@ export default function MegaMenu({ isOpen, onClose }) {
                     : "text-gray-600 hover:text-primary-600 hover:bg-gray-50"
                     }`}
                 >
-                  <span>{cat.name}</span>
+                  <span>{t(cat.slug)}</span>
                   <ChevronRight size={14} className={activeCategory === cat.slug ? "text-primary-600" : "text-gray-300"} />
                 </button>
               ))}
@@ -80,7 +80,7 @@ export default function MegaMenu({ isOpen, onClose }) {
             </div>
             <div className="flex-1 p-6 overflow-y-auto max-h-[420px]">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                {categories.find(c => c.slug === activeCategory)?.name}
+                {t(activeCategory)}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {filteredApps.map(app => (
@@ -106,7 +106,7 @@ export default function MegaMenu({ isOpen, onClose }) {
                           {app.name}
                         </h4>
                         {app.is_suite && (
-                          <span className="text-[10px] font-bold bg-primary-100 text-primary-700 px-1.5 py-0.5 rounded uppercase">Suite</span>
+                          <span className="text-[10px] font-bold bg-primary-100 text-primary-700 px-1.5 py-0.5 rounded uppercase">{t("suite")}</span>
                         )}
                       </div>
                       <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">{app.tagline}</p>

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, useCallback, useMemo } from "react";
 
 const LanguageContext = createContext();
 
@@ -75,6 +75,101 @@ export const translations = {
         supportDesc: "Our help center has answers to the most common questions.",
         visitHelp: "Visit Help Center",
         bogorOffice: "Our Bogor Office",
+
+        // Pricing
+        pricingHeroTitle: "Simple, Transparent Pricing",
+        pricingHeroDesc: "Choose the plan that fits your business. Start free, scale as you grow.",
+        mostPopular: "Most Popular",
+        perUserMonth: "/user/month",
+        faqTitle: "Frequently Asked Questions",
+        customPlanTitle: "Need a Custom Plan?",
+        customPlanDesc: "For organizations with 100+ users or specific requirements, we offer custom enterprise plans.",
+        contactSales: "Contact Sales",
+        planStarter: "Starter",
+        planProfessional: "Professional",
+        planEnterprise: "Enterprise",
+        starterDesc: "Perfect for small teams getting started",
+        professionalDesc: "Ideal for growing businesses",
+        enterpriseDesc: "For large organizations with complex needs",
+
+        // About
+        aboutHeroTitle: "Building the Future of Business Software",
+        aboutHeroDesc: "We believe every business deserves access to powerful, integrated tools. NexBusiness is on a mission to create the operating system that helps companies of all sizes work smarter, not harder.",
+        ourStoryTitle: "Our Story",
+        ourStoryP1: "NexBusiness was born from a simple frustration: running a business shouldn't require stitching together dozens of disconnected software tools. Our founders experienced this firsthand while scaling their previous companies.",
+        ourStoryP2: "We set out to build a unified platform where every business application — from CRM and accounting to HR and project management — works seamlessly together. No more data silos, no more integration headaches, no more context switching.",
+        ourStoryP3: "Today, over 50,000 companies across 150+ countries trust NexBusiness to run their operations. And we're just getting started.",
+        ourValuesTitle: "Our Values",
+        ourJourneyTitle: "Our Journey",
+        joinTeamTitle: "Join Our Team",
+        joinTeamDesc: "We're always looking for talented people who share our passion for building great software.",
+        openPositions: "View Open Positions",
+        companies: "Companies",
+        teamMembers: "Team Members",
+        countries: "Countries",
+        products: "Products",
+
+        // App Center
+        appCenterTitle: "App Center",
+        appCenterDesc: "Browse our complete suite of 30+ business applications. Find the perfect tools to power every part of your organization.",
+        categories: "Categories",
+        allProducts: "All Products",
+        noAppsFound: "No apps found matching your search.",
+        popularBadge: "Popular",
+        all: "All",
+        apps_count: "apps",
+        learnMore: "Learn more",
+
+        // App Detail
+        appNotFound: "App Not Found",
+        appNotFoundDesc: "The app you're looking for doesn't exist.",
+        browseAllApps: "Browse all apps",
+        requestDemo: "Request Demo",
+        aboutApp: "About",
+        appPreview: "Application Preview",
+        whyChooseApp: "Why choose",
+        keyFeatures: "Key Features",
+        getStartedToday: "Get Started Today",
+        tryFree: "Try free for 14 days. No credit card required.",
+        details: "Details",
+        category: "Category",
+        platform: "Platform",
+        rating: "Rating",
+        relatedApps: "Related Apps in",
+        marketplace: "Marketplace",
+        suite: "Suite",
+
+        // Categories
+        all: "All",
+        sales: "Sales",
+        marketing: "Marketing",
+        commerce: "Commerce",
+        "customer-support": "Customer Support",
+        finance: "Finance",
+        "email-collaboration": "Email & Collaboration",
+        "human-resources": "Human Resources",
+        legal: "Legal",
+        "security-it": "Security & IT",
+        "bi-analytics": "BI & Analytics",
+        "project-management": "Project Management",
+        "developer-platform": "Developer Platform",
+        iot: "IoT",
+        productivity: "Productivity",
+        crm: "CRM",
+        operations: "Operations",
+        analytics: "Analytics",
+        hr: "HR",
+
+        // Blog
+        blogHeroTitle: "Blog",
+        blogHeroDesc: "Insights, tips, and best practices for running a smarter business with integrated apps.",
+        loadingArticles: "Loading articles...",
+        noArticlesFound: "No articles found in this category.",
+        moreSoon: "More articles coming soon. Stay tuned!",
+        backToBlog: "Back to Blog",
+        articleNotFound: "Article not found",
+        viewAllResults: "View all results for",
+        noAppsFoundFor: "No apps found for",
     },
     ID: {
         // Navbar
@@ -148,24 +243,130 @@ export const translations = {
         supportDesc: "Pusat bantuan kami memiliki jawaban untuk pertanyaan yang paling umum.",
         visitHelp: "Kunjungi Pusat Bantuan",
         bogorOffice: "Kantor Bogor Kami",
+
+        // Pricing
+        pricingHeroTitle: "Harga yang Sederhana dan Transparan",
+        pricingHeroDesc: "Pilih paket yang sesuai dengan bisnis Anda. Mulai gratis, skalakan seiring berkembangnya bisnis.",
+        mostPopular: "Paling Populer",
+        perUserMonth: "/pengguna/bulan",
+        faqTitle: "Pertanyaan yang Sering Diajukan",
+        customPlanTitle: "Butuh Paket Khusus?",
+        customPlanDesc: "Untuk organisasi dengan 100+ pengguna atau persyaratan khusus, kami menawarkan paket enterprise khusus.",
+        contactSales: "Hubungi Penjualan",
+        planStarter: "Starter",
+        planProfessional: "Professional",
+        planEnterprise: "Enterprise",
+        starterDesc: "Sempurna untuk tim kecil yang baru memulai",
+        professionalDesc: "Ideal untuk bisnis yang sedang berkembang",
+        enterpriseDesc: "Untuk organisasi besar dengan kebutuhan kompleks",
+
+        // About
+        aboutHeroTitle: "Membangun Masa Depan Perangkat Lunak Bisnis",
+        aboutHeroDesc: "Kami percaya setiap bisnis layak mendapatkan akses ke alat yang kuat dan terintegrasi. NexBusiness memiliki misi untuk menciptakan sistem operasi yang membantu perusahaan dari segala ukuran bekerja lebih cerdas, bukan lebih keras.",
+        ourStoryTitle: "Cerita Kami",
+        ourStoryP1: "NexBusiness lahir dari rasa frustrasi yang sederhana: menjalankan bisnis seharusnya tidak memerlukan penggabungan lusinan perangkat lunak yang tidak terhubung. Pendiri kami mengalami hal ini secara langsung saat mengembangkan perusahaan mereka sebelumnya.",
+        ourStoryP2: "Kami berangkat untuk membangun platform terpadu di mana setiap aplikasi bisnis — mulai dari CRM dan akuntansi hingga HR dan manajemen proyek — bekerja bersama dengan mulus. Tidak ada lagi silo data, tidak ada lagi masalah integrasi, tidak ada lagi perpindahan konteks.",
+        ourStoryP3: "Hari ini, lebih dari 50.000 perusahaan di 150+ negara mempercayai NexBusiness untuk menjalankan operasi mereka. Dan kami baru saja memulai.",
+        ourValuesTitle: "Nilai-Nilai Kami",
+        ourJourneyTitle: "Perjalanan Kami",
+        joinTeamTitle: "Bergabung dengan Tim Kami",
+        joinTeamDesc: "Kami selalu mencari orang-orang berbakat yang berbagi hasrat kami dalam membangun perangkat lunak hebat.",
+        openPositions: "Lihat Posisi Terbuka",
+        companies: "Perusahaan",
+        teamMembers: "Anggota Team",
+        countries: "Negara",
+        products: "Produk",
+
+        // App Center
+        appCenterTitle: "Pusat Aplikasi",
+        appCenterDesc: "Telusuri rangkaian lengkap 30+ aplikasi bisnis kami. Temukan alat yang sempurna untuk memberdayakan setiap bagian dari organisasi Anda.",
+        categories: "Kategori",
+        allProducts: "Semua Produk",
+        noAppsFound: "Tidak ada aplikasi yang ditemukan sesuai dengan pencarian Anda.",
+        popularBadge: "Populer",
+        all: "Semua",
+        apps_count: "aplikasi",
+        learnMore: "Pelajari lebih lanjut",
+
+        // App Detail
+        appNotFound: "Aplikasi Tidak Ditemukan",
+        appNotFoundDesc: "Aplikasi yang Anda cari tidak ada.",
+        browseAllApps: "Telusuri semua aplikasi",
+        requestDemo: "Minta Demo",
+        aboutApp: "Tentang",
+        appPreview: "Pratinjau Aplikasi",
+        whyChooseApp: "Mengapa memilih",
+        keyFeatures: "Fitur Utama",
+        getStartedToday: "Mulai Hari Ini",
+        tryFree: "Coba gratis selama 14 hari. Tidak perlu kartu kredit.",
+        details: "Detail",
+        category: "Kategori",
+        platform: "Platform",
+        rating: "Peringkat",
+        relatedApps: "Aplikasi Terkait di",
+        marketplace: "Marketplace",
+        suite: "Suite",
+
+        // Categories
+        all: "Semua",
+        sales: "Penjualan",
+        marketing: "Pemasaran",
+        commerce: "Perdagangan",
+        "customer-support": "Dukungan Pelanggan",
+        finance: "Keuangan",
+        "email-collaboration": "Email & Kolaborasi",
+        "human-resources": "Sumber Daya Manusia",
+        legal: "Hukum",
+        "security-it": "Keamanan & IT",
+        "bi-analytics": "BI & Analitik",
+        "project-management": "Manajemen Proyek",
+        "developer-platform": "Platform Pengembang",
+        iot: "IoT",
+        productivity: "Produktivitas",
+        crm: "CRM",
+        operations: "Operasi",
+        analytics: "Analitik",
+        hr: "HR",
+
+        // Blog
+        blogHeroTitle: "Blog",
+        blogHeroDesc: "Wawasan, tips, dan praktik terbaik untuk menjalankan bisnis yang lebih cerdas dengan aplikasi terintegrasi.",
+        loadingArticles: "Memuat artikel...",
+        noArticlesFound: "Tidak ada artikel ditemukan dalam kategori ini.",
+        moreSoon: "Lebih banyak artikel segera hadir. Tetaplah disini!",
+        backToBlog: "Kembali ke Blog",
+        articleNotFound: "Artikel tidak ditemukan",
+        viewAllResults: "Lihat semua hasil untuk",
+        noAppsFoundFor: "Tidak ada aplikasi ditemukan untuk",
     }
 };
 
 export const LanguageProvider = ({ children }) => {
-    const [lang, setLang] = useState(() => localStorage.getItem("nex_lang") || "EN");
+    const [lang, setLang] = useState(() => {
+        const stored = localStorage.getItem("nex_lang");
+        if (stored === "ID" || stored === "id") return "ID";
+        return "EN";
+    });
 
     useEffect(() => {
         localStorage.setItem("nex_lang", lang);
         document.documentElement.lang = lang === "EN" ? "en" : "id";
     }, [lang]);
 
-    const t = (key) => {
-        if (!translations[lang]) return key;
-        return translations[lang][key] || translations["EN"][key] || key;
-    };
+    const t = useCallback((key) => {
+        const langTranslations = translations[lang];
+        if (!langTranslations) return translations["EN"][key] || key;
+        return langTranslations[key] || translations["EN"][key] || key;
+    }, [lang]);
+
+    const contextValue = useMemo(() => ({
+        lang,
+        setLang,
+        t
+    }), [lang, t]);
 
     return (
-        <LanguageContext.Provider value={{ lang, setLang, t }}>
+        <LanguageContext.Provider value={contextValue}>
             {children}
         </LanguageContext.Provider>
     );

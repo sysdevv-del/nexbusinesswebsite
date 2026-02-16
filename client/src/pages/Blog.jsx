@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, User } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const categoryOptions = ["All", "Productivity", "CRM", "Operations", "Analytics", "HR", "Finance"];
 
 export default function Blog() {
+  const { lang, t } = useLanguage();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("All");
@@ -29,7 +31,7 @@ export default function Blog() {
   }
 
   function formatDate(dateStr) {
-    return new Date(dateStr).toLocaleDateString("en-US", {
+    return new Date(dateStr).toLocaleDateString(lang === "EN" ? "en-US" : "id-ID", {
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -40,9 +42,9 @@ export default function Blog() {
     <div>
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Blog</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">{t("blogHeroTitle")}</h1>
           <p className="text-primary-200 text-lg max-w-2xl">
-            Insights, tips, and best practices for running a smarter business with integrated apps.
+            {t("blogHeroDesc")}
           </p>
         </div>
       </section>
@@ -54,13 +56,12 @@ export default function Blog() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  cat === activeCategory
-                    ? "bg-primary-700 text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${cat === activeCategory
+                  ? "bg-primary-700 text-white"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  }`}
               >
-                {cat}
+                {t(cat.toLowerCase())}
               </button>
             ))}
           </div>
@@ -68,11 +69,11 @@ export default function Blog() {
           {loading ? (
             <div className="text-center py-12">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-700 mx-auto"></div>
-              <p className="text-gray-500 mt-4">Loading articles...</p>
+              <p className="text-gray-500 mt-4">{t("loadingArticles")}</p>
             </div>
           ) : posts.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-500">No articles found in this category.</p>
+              <p className="text-gray-500">{t("noArticlesFound")}</p>
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -120,7 +121,7 @@ export default function Blog() {
           )}
 
           <div className="text-center mt-12">
-            <p className="text-gray-500 text-sm">More articles coming soon. Stay tuned!</p>
+            <p className="text-gray-500 text-sm">{t("moreSoon")}</p>
           </div>
         </div>
       </section>

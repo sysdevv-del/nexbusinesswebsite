@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 function renderContent(content) {
   if (!content) return null;
@@ -37,6 +38,7 @@ function renderContent(content) {
 }
 
 export default function BlogPost() {
+  const { lang, t } = useLanguage();
   const { slug } = useParams();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -49,25 +51,25 @@ export default function BlogPost() {
         const res = await fetch(`/api/blog/${slug}`);
         if (!res.ok) {
           if (res.status === 404) {
-            setError("Article not found");
+            setError(t("articleNotFound"));
           } else {
-            setError("Failed to load article");
+            setError(lang === "EN" ? "Failed to load article" : "Gagal memuat artikel");
           }
           return;
         }
         const data = await res.json();
         setPost(data);
       } catch (err) {
-        setError("Failed to load article");
+        setError(lang === "EN" ? "Failed to load article" : "Gagal memuat artikel");
       } finally {
         setLoading(false);
       }
     }
     fetchPost();
-  }, [slug]);
+  }, [slug, lang, t]);
 
   function formatDate(dateStr) {
-    return new Date(dateStr).toLocaleDateString("en-US", {
+    return new Date(dateStr).toLocaleDateString(lang === "EN" ? "en-US" : "id-ID", {
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -85,9 +87,9 @@ export default function BlogPost() {
   if (error || !post) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-bold text-gray-800 mb-4">{error || "Article not found"}</h1>
+        <h1 className="text-2xl font-bold text-gray-800 mb-4">{error || t("articleNotFound")}</h1>
         <Link to="/blog" className="text-primary-600 hover:text-primary-700 font-medium">
-          &larr; Back to Blog
+          &larr; {t("backToBlog")}
         </Link>
       </div>
     );
@@ -99,10 +101,10 @@ export default function BlogPost() {
         <div className="max-w-4xl mx-auto px-4">
           <Link to="/blog" className="inline-flex items-center gap-2 text-primary-200 hover:text-white text-sm mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" />
-            Back to Blog
+            {t("backToBlog")}
           </Link>
           <span className="inline-block px-3 py-1 bg-accent-500/20 text-accent-300 text-xs font-semibold rounded-full mb-4">
-            {post.category}
+            {t(post.category.toLowerCase())}
           </span>
           <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">{post.title}</h1>
           <div className="flex flex-wrap items-center gap-4 text-sm text-primary-200">
@@ -146,7 +148,7 @@ export default function BlogPost() {
           </div>
           <div className="mt-12 pt-8 border-t border-gray-200">
             <Link to="/blog" className="text-primary-600 hover:text-primary-700 font-medium text-sm">
-              &larr; Back to Blog
+              &larr; {t("backToBlog")}
             </Link>
           </div>
         </div>
