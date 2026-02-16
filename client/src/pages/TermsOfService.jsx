@@ -83,7 +83,7 @@ export default function TermsOfService() {
           </p>
           <p className="text-gray-600 mt-2">
             <strong>Email:</strong> legal@nexbusiness.com<br />
-            <strong>Address:</strong> 100 Market Street, Suite 400, San Francisco, CA 94105
+            <strong>Address:</strong> Sinbad Green Residence Blok C1 No 64, Sindang Barang, Bogor Barat, Kota Bogor, Indonesia 16117
           </p>
 
           <div className="mt-12 pt-8 border-t border-gray-200">

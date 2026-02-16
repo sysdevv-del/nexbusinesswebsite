@@ -13,7 +13,7 @@ export default function Contact() {
   const contactInfo = [
     { icon: Mail, label: "Email", value: "hello@nexbusiness.com", desc: "We'll respond within 24 hours" },
     { icon: Phone, label: "Phone", value: "+62 853-8504-5549", desc: "Mon-Fri, 9am-6pm WIB" },
-    { icon: MapPin, label: "Office", value: "San Francisco, CA", desc: "100 Market Street, Suite 400" },
+    { icon: MapPin, label: "Office", value: "Bogor, Indonesia", desc: "Sinbad Green Residence Blok C1 No 64, Sindang Barang, Bogor Barat" },
     { icon: Clock, label: "Business Hours", value: "Mon-Fri, 9-6 WIB", desc: "Weekend support for Enterprise" },
   ];
 
@@ -142,11 +142,11 @@ export default function Contact() {
               <div className="mt-6">
                 <img
                   src="/images/contact-office.jpg"
-                  alt="NexBusiness office reception in San Francisco"
+                  alt="NexBusiness office reception in Bogor"
                   loading="lazy"
                   className="w-full h-48 object-cover rounded-xl shadow-sm"
                 />
-                <p className="text-xs text-gray-400 mt-2 text-center">Our San Francisco Office</p>
+                <p className="text-xs text-gray-400 mt-2 text-center">Our Bogor Office</p>
               </div>
             </div>
           </div>
