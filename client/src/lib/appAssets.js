@@ -5,4 +5,5 @@ export const appLogos = {
 
 export const appPreviews = {
   nexflow: "/images/nexflow-preview.png",
+  nexcoach: "/images/nexcoach-preview.png",
 };
