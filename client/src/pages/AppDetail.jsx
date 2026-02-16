@@ -38,6 +38,7 @@ export default function AppDetail() {
 
   const { app, related } = data;
   const assets = { logo: appLogos[app.slug], preview: appPreviews[app.slug] };
+  const isDev = app.slug !== "nexflow" && app.slug !== "nexcoach";
 
   const whyChooseItems = [
     {
@@ -59,7 +60,17 @@ export default function AppDetail() {
   ];
 
   return (
-    <div>
+    <div className="relative">
+      {isDev && (
+        <div className="fixed inset-0 z-50 pointer-events-none flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center opacity-[0.08] select-none">
+            <span className="text-[12vw] font-black text-gray-900 transform -rotate-45 whitespace-nowrap">
+              {t("inDevelopment")}
+            </span>
+          </div>
+          {/* Repeated pattern for better coverage if needed, but single large text is cleaner/classic watermark style */}
+        </div>
+      )}
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white">
         <div className="max-w-7xl mx-auto px-4 py-16">
           <div className="flex items-center gap-2 text-sm text-primary-300 mb-6">

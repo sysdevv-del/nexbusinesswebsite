@@ -151,6 +151,7 @@ export const translations = {
         relatedApps: "Related Apps in",
         marketplace: "Marketplace",
         suite: "Suite",
+        inDevelopment: "In Development",
 
         // Categories
         all: "All",
@@ -332,6 +333,7 @@ export const translations = {
         relatedApps: "Aplikasi Terkait di",
         marketplace: "Marketplace",
         suite: "Suite",
+        inDevelopment: "Dalam Pengembangan",
 
         // Categories
         all: "Semua",
