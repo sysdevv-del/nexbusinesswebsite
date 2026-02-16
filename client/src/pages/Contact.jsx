@@ -161,15 +161,6 @@ export default function Contact() {
                 </a>
               </div>
 
-              <div className="mt-6">
-                <img
-                  src="/images/contact-office.jpg"
-                  alt={lang === "EN" ? "NexBusiness office in Bogor" : "Kantor NexBusiness di Bogor"}
-                  loading="lazy"
-                  className="w-full h-48 object-cover rounded-xl shadow-sm"
-                />
-                <p className="text-xs text-gray-400 mt-2 text-center">{t("bogorOffice")}</p>
-              </div>
             </div>
           </div>
         </div>
