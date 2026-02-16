@@ -14,7 +14,7 @@ export default function Pricing() {
       period: t("perUserMonth"),
       desc: t("starterDesc"),
       highlight: false,
-      discountBadge: lang === "ID" ? t("discountLabel") : null,
+      discountBadge: t("discountLabel"),
       features: [
         { text: lang === "EN" ? "Up to 5 users" : "Hingga 5 pengguna", included: true },
         { text: lang === "EN" ? "5 core apps included" : "Termasuk 5 aplikasi inti", included: true },
@@ -35,7 +35,7 @@ export default function Pricing() {
       desc: t("professionalDesc"),
       highlight: true,
       badge: t("mostPopular"),
-      discountBadge: lang === "ID" ? t("discountLabel") : null,
+      discountBadge: t("discountLabel"),
       features: [
         { text: lang === "EN" ? "Up to 50 users" : "Hingga 50 pengguna", included: true },
         { text: lang === "EN" ? "15 apps included" : "Termasuk 15 aplikasi", included: true },
@@ -55,7 +55,7 @@ export default function Pricing() {
       period: t("perUserMonth"),
       desc: t("enterpriseDesc"),
       highlight: false,
-      discountBadge: lang === "ID" ? t("discountLabel") : null,
+      discountBadge: t("discountLabel"),
       features: [
         { text: lang === "EN" ? "Unlimited users" : "Pengguna tak terbatas", included: true },
         { text: lang === "EN" ? "All 30+ apps included" : "Termasuk semua 30+ aplikasi", included: true },
