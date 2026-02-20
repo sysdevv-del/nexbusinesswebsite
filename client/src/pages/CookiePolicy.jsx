@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/lib/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 
 export default function CookiePolicy() {
   const { lang, t } = useLanguage();
@@ -115,6 +116,10 @@ export default function CookiePolicy() {
 
   return (
     <div>
+      <SEOHead
+        title={lang === "EN" ? "Cookie Policy" : "Kebijakan Cookie"}
+        description={lang === "EN" ? "NexBusiness Cookie Policy - Learn how we use cookies and similar technologies on our platform." : "Kebijakan Cookie NexBusiness - Pelajari bagaimana kami menggunakan cookie dan teknologi serupa di platform kami."}
+      />
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">{current.title}</h1>

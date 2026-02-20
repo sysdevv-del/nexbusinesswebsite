@@ -3,8 +3,166 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NexBusiness - Business App Center</title>
+
+    <!-- SEO: Title Tag (55 characters - within 50-60 range) -->
+    <title>NexBusiness - Integrated Business Apps & SaaS Platform</title>
+
+    <!-- SEO: Meta Description -->
+    <meta name="description" content="NexBusiness is the all-in-one business platform with 30+ integrated apps for sales, CRM, marketing, finance, HR, and more. Start your free 14-day trial today." />
+
+    <!-- SEO: Canonical Tag -->
+    <link rel="canonical" href="https://nexbusiness.id/" />
+
+    <!-- SEO: Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+
+    <!-- SEO: Open Graph Tags (Facebook) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nexbusiness.id/" />
+    <meta property="og:title" content="NexBusiness - Integrated Business Apps & SaaS Platform" />
+    <meta property="og:description" content="Run your entire company with one unified platform. 30+ integrated business applications for sales, marketing, finance, HR, and more." />
+    <meta property="og:image" content="https://nexbusiness.id/images/hero-team.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="NexBusiness" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="id_ID" />
+
+    <!-- SEO: X (Twitter) Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NexBusiness - Integrated Business Apps & SaaS Platform" />
+    <meta name="twitter:description" content="Run your entire company with one unified platform. 30+ integrated business applications for sales, marketing, finance, HR, and more." />
+    <meta name="twitter:image" content="https://nexbusiness.id/images/hero-team.jpg" />
+    <!-- <meta name="twitter:site" content="@NexBusiness" /> -->
+
+    <!-- SEO: Additional Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="NexBusiness" />
+    <meta name="theme-color" content="#1e3a5f" />
+    <meta name="keywords" content="business apps, SaaS platform, CRM, integrated business software, NexBusiness, sales tools, marketing automation, HR management, project management, business operating system" />
+
+    <!-- SEO: Schema.org Organization + Identity Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NexBusiness",
+      "alternateName": "NexBusiness Indonesia",
+      "url": "https://nexbusiness.id",
+      "logo": "https://nexbusiness.id/logo.png",
+      "description": "NexBusiness is the all-in-one business platform with 30+ integrated apps for sales, CRM, marketing, finance, HR, and more.",
+      "foundingDate": "2024",
+      "sameAs": [
+        "https://facebook.com/NexBusiness",
+        "https://twitter.com/NexBusiness",
+        "https://instagram.com/NexBusiness",
+        "https://linkedin.com/company/NexBusiness",
+        "https://youtube.com/@NexBusiness"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contact@nexbusiness.id",
+        "availableLanguage": ["English", "Indonesian"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bogor",
+        "addressCountry": "ID"
+      }
+    }
+    </script>
+
+    <!-- SEO: Local Business Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "NexBusiness",
+      "url": "https://nexbusiness.id",
+      "logo": "https://nexbusiness.id/logo.png",
+      "image": "https://nexbusiness.id/images/about-office.jpg",
+      "description": "NexBusiness provides an integrated suite of 30+ business applications including CRM, sales, marketing, finance, and HR tools for growing businesses.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bogor",
+        "addressRegion": "West Java",
+        "addressCountry": "ID"
+      },
+      "openingHours": "Mo-Fr 09:00-17:00",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <!-- SEO: WebSite Schema for Search (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "NexBusiness",
+      "url": "https://nexbusiness.id",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://nexbusiness.id/apps?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- SEO: SoftwareApplication Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "NexBusiness",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "9000",
+        "highPrice": "15000",
+        "priceCurrency": "IDR",
+        "offerCount": "3"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250"
+      }
+    }
+    </script>
+
+    <!-- Performance: Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Analytics: Google Analytics (replace G-XXXXXXXXXX with your actual tracking ID) -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+
+    <!-- Analytics: Facebook Pixel (replace PIXEL_ID with your actual pixel ID) -->
+    <!--
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    -->
   </head>
   <body>
     <div id="root"></div>

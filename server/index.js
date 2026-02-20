@@ -5,6 +5,7 @@ require("dotenv").config();
 
 const appsRouter = require("./routes/apps");
 const blogRouter = require("./routes/blog");
+const seoRouter = require("./routes/seo");
 
 const app = express();
 const PORT = process.env.PORT || 5002;
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
 
 app.use("/api", appsRouter);
 app.use("/api", blogRouter);
+app.use("/", seoRouter);
 
 if (process.env.NODE_ENV === "production") {
   const publicPath = path.join(__dirname, "..", "dist", "public");

@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { Mail, Phone, MapPin, Clock, ArrowRight, Check } from "@/lib/icons";
 import { useLanguage } from "@/lib/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 
 export default function Contact() {
   const { lang, t } = useLanguage();
@@ -41,6 +42,10 @@ export default function Contact() {
 
   return (
     <div>
+      <SEOHead
+        title={lang === "EN" ? "Contact Us - Get in Touch with NexBusiness" : "Hubungi Kami - Hubungi NexBusiness"}
+        description={lang === "EN" ? "Contact NexBusiness for sales inquiries, demos, or support. Our team is ready to help you find the right business solution. Office in Bogor, Indonesia." : "Hubungi NexBusiness untuk pertanyaan penjualan, demo, atau dukungan. Tim kami siap membantu Anda menemukan solusi bisnis yang tepat."}
+      />
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">{t("contactTitle")}</h1>

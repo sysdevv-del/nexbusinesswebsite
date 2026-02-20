@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Building2, Heart, Award, Users, ArrowRight, Globe } from "@/lib/icons";
 import { useLanguage } from "@/lib/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 
 export default function About() {
   const { lang, t } = useLanguage();
@@ -39,6 +40,10 @@ export default function About() {
 
   return (
     <div>
+      <SEOHead
+        title={lang === "EN" ? "About NexBusiness - Our Mission & Story" : "Tentang NexBusiness - Misi & Cerita Kami"}
+        description={lang === "EN" ? "Learn about NexBusiness, the unified business platform trusted by 50,000+ companies in 150+ countries. Discover our story, values, and mission to transform business software." : "Pelajari tentang NexBusiness, platform bisnis terpadu yang dipercaya oleh 50.000+ perusahaan di 150+ negara. Temukan cerita, nilai, dan misi kami."}
+      />
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-3xl">
@@ -105,7 +110,7 @@ export default function About() {
         <div className="absolute inset-0">
           <img
             src="/images/about-office.jpg"
-            alt=""
+            alt="NexBusiness modern office workspace in Bogor"
             loading="lazy"
             className="w-full h-full object-cover"
           />

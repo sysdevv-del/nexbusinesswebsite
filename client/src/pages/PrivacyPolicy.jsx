@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/lib/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 
 export default function PrivacyPolicy() {
   const { lang, t } = useLanguage();
@@ -151,6 +152,10 @@ export default function PrivacyPolicy() {
 
   return (
     <div>
+      <SEOHead
+        title={lang === "EN" ? "Privacy Policy" : "Kebijakan Privasi"}
+        description={lang === "EN" ? "NexBusiness Privacy Policy - Learn how we collect, use, and protect your personal information across our platform and services." : "Kebijakan Privasi NexBusiness - Pelajari bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda."}
+      />
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">{current.title}</h1>

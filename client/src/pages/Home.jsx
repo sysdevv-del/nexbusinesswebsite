@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { DynamicIcon, ArrowRight, Check, Star, Sparkles } from "@/lib/icons";
 import { appLogos } from "@/lib/appAssets";
 import { useLanguage } from "@/lib/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 
 export default function Home() {
   const { lang, t } = useLanguage();
@@ -59,6 +60,11 @@ export default function Home() {
 
   return (
     <div>
+      <SEOHead
+        title={lang === "EN" ? "NexBusiness - Integrated Business Apps & SaaS Platform" : "NexBusiness - Platform Aplikasi Bisnis Terintegrasi"}
+        description={lang === "EN" ? "NexBusiness is the all-in-one business platform with 30+ integrated apps for sales, CRM, marketing, finance, HR, and more. Start your free 14-day trial today." : "NexBusiness adalah platform bisnis all-in-one dengan 30+ aplikasi terintegrasi untuk penjualan, CRM, pemasaran, keuangan, HR, dan lainnya. Mulai uji coba gratis 14 hari Anda hari ini."}
+        noAppend={true}
+      />
       <section className="relative bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-accent-400 rounded-full blur-3xl" />
@@ -166,7 +172,7 @@ export default function Home() {
 
       <section className="py-20 bg-gray-50 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/testimonial-bg.jpg" alt="" loading="lazy" className="w-full h-full object-cover opacity-[0.04]" />
+          <img src="/images/testimonial-bg.jpg" alt="Business professionals collaborating in modern office" loading="lazy" className="w-full h-full object-cover opacity-[0.04]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 relative">
           <div className="text-center mb-12">
@@ -187,6 +193,80 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-primary-700 mb-2">50K+</div>
+              <p className="text-gray-500 text-sm">{lang === "EN" ? "Companies worldwide trust NexBusiness to manage their daily operations" : "Perusahaan di seluruh dunia mempercayai NexBusiness untuk mengelola operasi harian mereka"}</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-primary-700 mb-2">30+</div>
+              <p className="text-gray-500 text-sm">{lang === "EN" ? "Integrated business applications covering every department" : "Aplikasi bisnis terintegrasi yang mencakup setiap departemen"}</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-primary-700 mb-2">150+</div>
+              <p className="text-gray-500 text-sm">{lang === "EN" ? "Countries served with multi-language and multi-currency support" : "Negara yang dilayani dengan dukungan multi-bahasa dan multi-mata uang"}</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-primary-700 mb-2">99.9%</div>
+              <p className="text-gray-500 text-sm">{lang === "EN" ? "Uptime SLA ensuring your business tools are always available" : "SLA uptime memastikan alat bisnis Anda selalu tersedia"}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-primary-800 mb-4">{lang === "EN" ? "Seamless Integration Across Your Entire Business" : "Integrasi Mulus di Seluruh Bisnis Anda"}</h2>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                {lang === "EN" ? "NexBusiness eliminates the chaos of managing multiple disconnected software tools. Our unified platform ensures data flows automatically between departments — from sales leads captured in your CRM to invoices generated in your accounting module, from employee onboarding in HR to project tracking in your management dashboard." : "NexBusiness menghilangkan kekacauan mengelola berbagai perangkat lunak yang terputus. Platform terpadu kami memastikan data mengalir secara otomatis antar departemen — dari prospek penjualan yang ditangkap di CRM Anda ke faktur yang dihasilkan di modul akuntansi, dari onboarding karyawan di HR ke pelacakan proyek di dasbor manajemen Anda."}
+              </p>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {lang === "EN" ? "Unlike traditional business suites, NexBusiness was built from the ground up as a single, cohesive system. This means no expensive third-party integrations, no data synchronization delays, and no compatibility issues. Every application shares the same database, the same user interface philosophy, and the same security model." : "Berbeda dengan suite bisnis tradisional, NexBusiness dibangun dari awal sebagai sistem tunggal yang kohesif. Ini berarti tidak ada integrasi pihak ketiga yang mahal, tidak ada penundaan sinkronisasi data, dan tidak ada masalah kompatibilitas. Setiap aplikasi berbagi database yang sama, filosofi antarmuka pengguna yang sama, dan model keamanan yang sama."}
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2 text-sm text-gray-600">
+                  <Check size={16} className="text-accent-500 shrink-0 mt-0.5" />
+                  {lang === "EN" ? "Real-time data synchronization across all connected apps" : "Sinkronisasi data real-time di semua aplikasi yang terhubung"}
+                </li>
+                <li className="flex items-start gap-2 text-sm text-gray-600">
+                  <Check size={16} className="text-accent-500 shrink-0 mt-0.5" />
+                  {lang === "EN" ? "Unified reporting and analytics dashboards" : "Dasbor pelaporan dan analitik terpadu"}
+                </li>
+                <li className="flex items-start gap-2 text-sm text-gray-600">
+                  <Check size={16} className="text-accent-500 shrink-0 mt-0.5" />
+                  {lang === "EN" ? "Single sign-on and centralized user management" : "Single sign-on dan manajemen pengguna terpusat"}
+                </li>
+                <li className="flex items-start gap-2 text-sm text-gray-600">
+                  <Check size={16} className="text-accent-500 shrink-0 mt-0.5" />
+                  {lang === "EN" ? "REST API and webhooks for custom integrations" : "REST API dan webhook untuk integrasi kustom"}
+                </li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <h3 className="text-lg font-semibold text-primary-800 mb-4">{lang === "EN" ? "Popular Integration Workflows" : "Alur Kerja Integrasi Populer"}</h3>
+              <div className="space-y-4">
+                <div className="bg-primary-50 rounded-xl p-4">
+                  <h4 className="font-medium text-primary-700 text-sm mb-1">{lang === "EN" ? "Sales → Invoicing" : "Penjualan → Faktur"}</h4>
+                  <p className="text-xs text-gray-500">{lang === "EN" ? "Automatically generate invoices when deals close in CRM" : "Otomatis menghasilkan faktur saat kesepakatan ditutup di CRM"}</p>
+                </div>
+                <div className="bg-accent-50 rounded-xl p-4">
+                  <h4 className="font-medium text-accent-700 text-sm mb-1">{lang === "EN" ? "HR → Payroll" : "HR → Penggajian"}</h4>
+                  <p className="text-xs text-gray-500">{lang === "EN" ? "Sync employee data, attendance, and leave for accurate payroll" : "Sinkronisasi data karyawan, kehadiran, dan cuti untuk penggajian yang akurat"}</p>
+                </div>
+                <div className="bg-green-50 rounded-xl p-4">
+                  <h4 className="font-medium text-green-700 text-sm mb-1">{lang === "EN" ? "Support → Knowledge Base" : "Dukungan → Basis Pengetahuan"}</h4>
+                  <p className="text-xs text-gray-500">{lang === "EN" ? "Turn resolved tickets into help articles automatically" : "Ubah tiket yang diselesaikan menjadi artikel bantuan secara otomatis"}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

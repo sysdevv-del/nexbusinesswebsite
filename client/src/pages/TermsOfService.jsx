@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/lib/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 
 export default function TermsOfService() {
   const { lang, t } = useLanguage();
@@ -147,6 +148,10 @@ export default function TermsOfService() {
 
   return (
     <div>
+      <SEOHead
+        title={lang === "EN" ? "Terms of Service" : "Ketentuan Layanan"}
+        description={lang === "EN" ? "NexBusiness Terms of Service - Read our terms and conditions governing the use of our platform, products, and services." : "Ketentuan Layanan NexBusiness - Baca syarat dan ketentuan yang mengatur penggunaan platform, produk, dan layanan kami."}
+      />
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">{current.title}</h1>

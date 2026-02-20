@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 
 function renderContent(content) {
   if (!content) return null;
@@ -97,6 +98,14 @@ export default function BlogPost() {
 
   return (
     <div>
+      {post && (
+        <SEOHead
+          title={post.title}
+          description={post.excerpt || post.title}
+          image={post.cover_image || "/images/feature-analytics.jpg"}
+          type="article"
+        />
+      )}
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-12">
         <div className="max-w-4xl mx-auto px-4">
           <Link to="/blog" className="inline-flex items-center gap-2 text-primary-200 hover:text-white text-sm mb-6 transition-colors">

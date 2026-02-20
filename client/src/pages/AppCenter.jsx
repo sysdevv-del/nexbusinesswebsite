@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { DynamicIcon, Search, ArrowRight, ChevronRight } from "@/lib/icons";
 import { appLogos } from "@/lib/appAssets";
 import { useLanguage } from "@/lib/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 
 export default function AppCenter() {
   const { lang, t } = useLanguage();
@@ -32,6 +33,10 @@ export default function AppCenter() {
 
   return (
     <div>
+      <SEOHead
+        title={lang === "EN" ? "App Center - Browse 30+ Business Applications" : "Pusat Aplikasi - Telusuri 30+ Aplikasi Bisnis"}
+        description={lang === "EN" ? "Browse NexBusiness App Center with 30+ integrated business applications for CRM, sales, marketing, finance, HR, project management, and more." : "Telusuri Pusat Aplikasi NexBusiness dengan 30+ aplikasi bisnis terintegrasi untuk CRM, penjualan, pemasaran, keuangan, HR, dan manajemen proyek."}
+      />
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-14">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-3">{t("appCenterTitle")}</h1>

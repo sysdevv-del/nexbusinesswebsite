@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useMemo } from "react";
 import { Check, X, ArrowRight, Sparkles } from "@/lib/icons";
 import { useLanguage } from "@/lib/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 
 export default function Pricing() {
   const { lang, t } = useLanguage();
@@ -99,6 +100,10 @@ export default function Pricing() {
 
   return (
     <div>
+      <SEOHead
+        title={lang === "EN" ? "Pricing Plans - Affordable Business Software" : "Paket Harga - Perangkat Lunak Bisnis Terjangkau"}
+        description={lang === "EN" ? "Flexible pricing plans for NexBusiness starting from Rp 9,000/user/month. Choose from Starter, Professional, or Enterprise plans. 14-day free trial included." : "Paket harga fleksibel untuk NexBusiness mulai dari Rp 9.000/pengguna/bulan. Pilih dari paket Starter, Professional, atau Enterprise. Termasuk uji coba gratis 14 hari."}
+      />
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">{t("pricingHeroTitle")}</h1>
@@ -208,7 +213,7 @@ export default function Pricing() {
         <div className="absolute inset-0">
           <img
             src="/images/pricing-bg.jpg"
-            alt=""
+            alt="Professional business team discussing pricing plans"
             loading="lazy"
             className="w-full h-full object-cover"
           />

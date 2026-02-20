@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { DynamicIcon, Check, ArrowRight, ExternalLink, Star } from "@/lib/icons";
 import { appLogos, appPreviews } from "@/lib/appAssets";
 import { useLanguage } from "@/lib/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 
 export default function AppDetail() {
   const { lang, t } = useLanguage();
@@ -61,6 +62,11 @@ export default function AppDetail() {
 
   return (
     <div className="relative">
+      <SEOHead
+        title={`${app.name} - ${app.tagline}`}
+        description={app.description ? app.description.substring(0, 160) : app.tagline}
+        image={assets?.preview || assets?.logo || "/images/hero-team.jpg"}
+      />
       {isDev && (
         <div className="fixed inset-0 z-50 pointer-events-none flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center opacity-[0.08] select-none">

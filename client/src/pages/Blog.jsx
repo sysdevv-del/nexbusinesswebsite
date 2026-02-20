@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, User } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import SEOHead from "@/components/SEOHead";
 
 const categoryOptions = ["All", "Productivity", "CRM", "Operations", "Analytics", "HR", "Finance"];
 
@@ -40,6 +41,10 @@ export default function Blog() {
 
   return (
     <div>
+      <SEOHead
+        title={lang === "EN" ? "Blog - Business Insights & Tips" : "Blog - Wawasan & Tips Bisnis"}
+        description={lang === "EN" ? "Read the latest insights, tips, and best practices for running a smarter business with NexBusiness integrated apps. Productivity, CRM, operations, and more." : "Baca wawasan, tips, dan praktik terbaik terbaru untuk menjalankan bisnis yang lebih cerdas dengan aplikasi terintegrasi NexBusiness."}
+      />
       <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">{t("blogHeroTitle")}</h1>
