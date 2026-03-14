@@ -126,7 +126,7 @@ export default function AppCenter() {
                 >
                   <div className="flex items-start gap-3">
                     {appLogos[app.slug] ? (
-                      <img src={appLogos[app.slug]} alt={app.name} className="w-12 h-12 rounded-xl object-cover shrink-0" />
+                      <img src={appLogos[app.slug]} alt={app.name} className="w-12 h-12 rounded-xl object-cover shrink-0" width="48" height="48" loading="lazy" />
                     ) : (
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: app.color + "15", color: app.color }}>
                         <DynamicIcon name={app.icon} size={24} />

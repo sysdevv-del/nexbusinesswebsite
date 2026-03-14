@@ -117,7 +117,7 @@ export default function Home() {
               <Link key={app.slug} to={`/apps/${app.slug}`} className="group bg-white rounded-2xl p-5 shadow-sm hover:shadow-lg transition-all border border-gray-100 hover:border-primary-200">
                 <div className="flex items-center gap-3 mb-3">
                   {appLogos[app.slug] ? (
-                    <img src={appLogos[app.slug]} alt={app.name} className="w-11 h-11 rounded-xl object-cover" />
+                    <img src={appLogos[app.slug]} alt={app.name} className="w-11 h-11 rounded-xl object-cover" width="44" height="44" loading="lazy" />
                   ) : (
                     <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ backgroundColor: app.color + "15", color: app.color }}>
                       <DynamicIcon name={app.icon} size={22} />
@@ -153,7 +153,7 @@ export default function Home() {
             {benefits.map((b, i) => (
               <div key={b.title} className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}>
                 <div className="w-full md:w-1/2">
-                  <img src={b.image} alt={b.title} loading="lazy" className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-md" />
+                  <img src={b.image} alt={b.title} loading="lazy" width="800" height="450" className="w-full h-64 md:h-80 object-cover rounded-2xl shadow-md" />
                 </div>
                 <div className="w-full md:w-1/2 flex gap-5 p-6">
                   <div className="w-12 h-12 bg-accent-50 text-accent-600 rounded-xl flex items-center justify-center shrink-0">

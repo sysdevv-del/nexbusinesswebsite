@@ -91,7 +91,7 @@ export default function MegaMenu({ isOpen, onClose }) {
                     className="group flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors"
                   >
                     {appLogos[app.slug] ? (
-                      <img src={appLogos[app.slug]} alt={app.name} className="w-10 h-10 rounded-lg object-cover shrink-0" />
+                      <img src={appLogos[app.slug]} alt={app.name} className="w-10 h-10 rounded-lg object-cover shrink-0" width="40" height="40" loading="lazy" />
                     ) : (
                       <div
                         className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"

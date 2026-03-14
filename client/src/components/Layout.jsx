@@ -109,7 +109,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center" onClick={() => { setMegaMenuOpen(false); setMobileMenuOpen(false); }}>
-            <img src={logoImg} alt="NexBusiness" className="h-9" />
+            <img src={logoImg} alt="NexBusiness" className="h-9" width="160" height="36" />
           </Link>
           <nav className="hidden lg:flex items-center gap-1">
             <button
@@ -210,7 +210,7 @@ function Navbar() {
                         className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${i === selectedIndex ? "bg-primary-50 text-primary-700" : "hover:bg-gray-50 text-gray-700"}`}
                       >
                         {appLogos[app.slug] ? (
-                          <img src={appLogos[app.slug]} alt={app.name} className="w-8 h-8 rounded-lg object-cover shrink-0" />
+                          <img src={appLogos[app.slug]} alt={app.name} className="w-8 h-8 rounded-lg object-cover shrink-0" width="32" height="32" loading="lazy" />
                         ) : (
                           <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 shrink-0 text-sm font-bold">
                             {app.name.charAt(0)}
@@ -300,7 +300,7 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="inline-block mb-3">
-              <img src={logoWhiteImg} alt="NexBusiness" className="h-9" />
+              <img src={logoWhiteImg} alt="NexBusiness" className="h-9" width="160" height="36" loading="lazy" />
             </Link>
             <p className="text-xs text-gray-400 italic mb-3">{t("tagline")}</p>
             <p className="text-sm text-gray-400 mb-4">

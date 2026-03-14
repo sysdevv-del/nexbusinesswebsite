@@ -14,8 +14,9 @@
     <link rel="canonical" href="https://nexbusiness.id/" />
 
     <!-- SEO: Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
 
     <!-- SEO: Open Graph Tags (Facebook) -->
     <meta property="og:type" content="website" />
@@ -133,20 +134,21 @@
     }
     </script>
 
-    <!-- Performance: Preconnect -->
+    <!-- Performance: Preconnect & Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" /></noscript>
 
-    <!-- Analytics: Google Analytics (replace G-XXXXXXXXXX with your actual tracking ID) -->
-    <!-- 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Analytics: Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1234567890"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-1234567890');
     </script>
-    -->
 
     <!-- Analytics: Facebook Pixel (replace PIXEL_ID with your actual pixel ID) -->
     <!--

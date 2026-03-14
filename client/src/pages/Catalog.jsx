@@ -69,7 +69,7 @@ export default function Catalog() {
         
         {/* Cover Section */}
         <div className="mb-20 print:break-after-page flex flex-col items-center justify-center text-center py-24 print:py-32 print:h-screen">
-            <img src={logoImg} alt="NexBusiness" className="h-20 mb-10 print:h-28 grayscale contrast-200 opacity-90" />
+            <img src={logoImg} alt="NexBusiness" className="h-20 mb-10 print:h-28 grayscale contrast-200 opacity-90" width="320" height="80" />
             <h1 className="text-5xl print:text-6xl font-extrabold text-primary-900 mb-6 tracking-tight">Product Suite</h1>
             <p className="text-xl text-gray-500 max-w-2xl mb-16 leading-relaxed">
                 {lang === "EN" 
@@ -107,7 +107,7 @@ export default function Catalog() {
                                 <div key={app.slug} className="bg-white border-2 border-gray-100 print:border border-gray-300 rounded-xl p-6 break-inside-avoid w-full">
                                     <div className="flex items-start gap-4 mb-4">
                                         {appLogos[app.slug] ? (
-                                            <img src={appLogos[app.slug]} alt={app.name} className="w-14 h-14 rounded-xl object-cover shrink-0" />
+                                            <img src={appLogos[app.slug]} alt={app.name} className="w-14 h-14 rounded-xl object-cover shrink-0" width="56" height="56" />
                                         ) : (
                                             <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: app.color + "15", color: app.color }}>
                                                 <DynamicIcon name={app.icon} size={28} />
@@ -147,7 +147,7 @@ export default function Catalog() {
 
         {/* Back Cover / Footer */}
         <div className="text-center pt-24 pb-12 text-gray-400 text-sm print:break-before-page print:flex print:flex-col print:justify-center print:min-h-screen">
-            <img src={logoImg} alt="NexBusiness" className="h-10 mx-auto mb-6 grayscale opacity-50" />
+            <img src={logoImg} alt="NexBusiness" className="h-10 mx-auto mb-6 grayscale opacity-50" width="160" height="40" loading="lazy" />
             <p className="font-semibold text-gray-600">The Operating System for Your Business</p>
             <p className="mt-4">© {new Date().getFullYear()} NexBusiness. All rights reserved.</p>
             <p className="mt-1">For inquiries or a custom demo, visit <strong className="text-gray-600">nexbusiness.id</strong> or contact <strong className="text-gray-600">sales@nexbusiness.id</strong></p>

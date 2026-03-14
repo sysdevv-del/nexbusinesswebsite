@@ -88,7 +88,7 @@ export default function AppDetail() {
           </div>
           <div className="flex flex-col md:flex-row items-start gap-6">
             {assets?.logo ? (
-              <img src={assets.logo} alt={app.name} className="w-16 h-16 rounded-2xl object-cover" />
+              <img src={assets.logo} alt={app.name} className="w-16 h-16 rounded-2xl object-cover" width="64" height="64" />
             ) : (
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ backgroundColor: app.color + "20", color: "white" }}>
                 <DynamicIcon name={app.icon} size={32} />
@@ -126,7 +126,7 @@ export default function AppDetail() {
                 <h3 className="text-lg font-semibold text-primary-800 mb-4">{t("appPreview")}</h3>
                 {assets?.preview ? (
                   <div className="rounded-xl overflow-hidden shadow-md">
-                    <img src={assets.preview} alt={`${app.name} Dashboard Preview`} className="w-full h-auto" />
+                    <img src={assets.preview} alt={`${app.name} Dashboard Preview`} className="w-full h-auto" width="1200" height="675" loading="lazy" />
                   </div>
                 ) : (
                   <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
