@@ -3,7 +3,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import SEOHead from "@/components/SEOHead";
 
 export default function TermsOfService() {
-  const { lang, t } = useLanguage();
+  const { lang } = useLanguage();
 
   const content = {
     EN: {

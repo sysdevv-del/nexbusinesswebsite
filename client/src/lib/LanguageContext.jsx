@@ -120,7 +120,7 @@ export const translations = {
         companies: "Companies",
         teamMembers: "Team Members",
         countries: "Countries",
-        products: "Products",
+
 
         // App Center
         appCenterTitle: "App Center",
@@ -155,7 +155,7 @@ export const translations = {
         inDevelopment: "In Development",
 
         // Categories
-        all: "All",
+
         sales: "Sales",
         marketing: "Marketing",
         commerce: "Commerce",
@@ -308,7 +308,7 @@ export const translations = {
         companies: "Perusahaan",
         teamMembers: "Anggota Team",
         countries: "Negara",
-        products: "Produk",
+
 
         // App Center
         appCenterTitle: "Pusat Aplikasi",
@@ -343,7 +343,7 @@ export const translations = {
         inDevelopment: "Dalam Pengembangan",
 
         // Categories
-        all: "Semua",
+
         sales: "Penjualan",
         marketing: "Pemasaran",
         commerce: "Perdagangan",

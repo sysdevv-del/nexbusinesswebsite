@@ -60,7 +60,7 @@ export default function BlogPost() {
         }
         const data = await res.json();
         setPost(data);
-      } catch (err) {
+      } catch (_err) {
         setError(lang === "EN" ? "Failed to load article" : "Gagal memuat artikel");
       } finally {
         setLoading(false);

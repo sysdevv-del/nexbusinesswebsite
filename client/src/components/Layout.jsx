@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, ChevronDown, Search, Globe, ArrowRight } from "@/lib/icons";
+import { Menu, X, ChevronDown, Search, ArrowRight } from "@/lib/icons";
 import MegaMenu from "./MegaMenu";
 import { fetchApps } from "@/lib/api";
 import logoImg from "@assets/2_1771161242519.png";

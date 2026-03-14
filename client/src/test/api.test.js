@@ -1,9 +1,9 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, vi, afterEach } from "vitest";
 import { fetchCategories, fetchApps, fetchApp, fetchBlogPosts, fetchBlogPost } from "@/lib/api";
 
 // Mock global fetch
 const mockFetch = vi.fn();
-global.fetch = mockFetch;
+globalThis.fetch = mockFetch;
 
 describe("API Client", () => {
   afterEach(() => {

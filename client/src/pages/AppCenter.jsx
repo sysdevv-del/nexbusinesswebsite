@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { DynamicIcon, Search, ArrowRight, ChevronRight } from "@/lib/icons";
+import { DynamicIcon, Search, ArrowRight } from "@/lib/icons";
 import { appLogos } from "@/lib/appAssets";
 import { useLanguage } from "@/lib/LanguageContext";
 import SEOHead from "@/components/SEOHead";
 
 export default function AppCenter() {
   const { lang, t } = useLanguage();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [categories, setCategories] = useState([]);
   const [apps, setApps] = useState([]);
   const [activeCategory, setActiveCategory] = useState(searchParams.get("category") || "all");

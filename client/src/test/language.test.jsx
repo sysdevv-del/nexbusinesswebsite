@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { LanguageProvider, useLanguage } from "@/lib/LanguageContext";
 
@@ -64,7 +64,7 @@ describe("LanguageContext", () => {
       return <span data-testid="missing">{t("thisKeyDoesNotExist")}</span>;
     };
 
-    const { rerender } = render(
+    render(
       <LanguageProvider>
         <TestMissing />
       </LanguageProvider>

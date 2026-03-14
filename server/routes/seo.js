@@ -45,7 +45,7 @@ router.get("/sitemap.xml", async (req, res) => {
                     : today,
             });
         });
-    } catch (err) {
+    } catch (_err) {
         // If DB is not available, just use static pages
         console.log("Sitemap: Could not fetch dynamic pages from DB");
     }

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { Building2, Heart, Award, Users, ArrowRight, Globe } from "@/lib/icons";
+import { Heart, Award, Users, ArrowRight, Globe } from "@/lib/icons";
 import { useLanguage } from "@/lib/LanguageContext";
 import SEOHead from "@/components/SEOHead";
 

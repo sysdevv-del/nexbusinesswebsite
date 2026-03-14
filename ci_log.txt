@@ -1,0 +1,268 @@
+deploy	Set up job	﻿2026-03-14T15:56:43.1868244Z Current runner version: '2.332.0'
+deploy	Set up job	2026-03-14T15:56:43.1892758Z ##[group]Runner Image Provisioner
+deploy	Set up job	2026-03-14T15:56:43.1893954Z Hosted Compute Agent
+deploy	Set up job	2026-03-14T15:56:43.1894663Z Version: 20260213.493
+deploy	Set up job	2026-03-14T15:56:43.1895370Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+deploy	Set up job	2026-03-14T15:56:43.1896279Z Build Date: 2026-02-13T00:28:41Z
+deploy	Set up job	2026-03-14T15:56:43.1897049Z Worker ID: {b98a05b6-dd55-4e4f-bf6f-416149fbdfbc}
+deploy	Set up job	2026-03-14T15:56:43.1897878Z Azure Region: westcentralus
+deploy	Set up job	2026-03-14T15:56:43.1898609Z ##[endgroup]
+deploy	Set up job	2026-03-14T15:56:43.1900327Z ##[group]Operating System
+deploy	Set up job	2026-03-14T15:56:43.1901173Z Ubuntu
+deploy	Set up job	2026-03-14T15:56:43.1901794Z 24.04.3
+deploy	Set up job	2026-03-14T15:56:43.1902511Z LTS
+deploy	Set up job	2026-03-14T15:56:43.1903171Z ##[endgroup]
+deploy	Set up job	2026-03-14T15:56:43.1903802Z ##[group]Runner Image
+deploy	Set up job	2026-03-14T15:56:43.1904553Z Image: ubuntu-24.04
+deploy	Set up job	2026-03-14T15:56:43.1905220Z Version: 20260302.42.1
+deploy	Set up job	2026-03-14T15:56:43.1906418Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+deploy	Set up job	2026-03-14T15:56:43.1908615Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+deploy	Set up job	2026-03-14T15:56:43.1909830Z ##[endgroup]
+deploy	Set up job	2026-03-14T15:56:43.1911175Z ##[group]GITHUB_TOKEN Permissions
+deploy	Set up job	2026-03-14T15:56:43.1913332Z Contents: read
+deploy	Set up job	2026-03-14T15:56:43.1913992Z Metadata: read
+deploy	Set up job	2026-03-14T15:56:43.1914724Z Packages: read
+deploy	Set up job	2026-03-14T15:56:43.1915380Z ##[endgroup]
+deploy	Set up job	2026-03-14T15:56:43.1917963Z Secret source: Actions
+deploy	Set up job	2026-03-14T15:56:43.1918826Z Prepare workflow directory
+deploy	Set up job	2026-03-14T15:56:43.2261341Z Prepare all required actions
+deploy	Set up job	2026-03-14T15:56:43.2298519Z Getting action download info
+deploy	Set up job	2026-03-14T15:56:43.6125483Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+deploy	Set up job	2026-03-14T15:56:43.7458331Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+deploy	Set up job	2026-03-14T15:56:43.8853830Z Download action repository 'appleboy/ssh-action@v1.0.3' (SHA:029f5b4aeeeb58fdfe1410a5d17f967dacf36262)
+deploy	Set up job	2026-03-14T15:56:44.5515150Z Complete job name: deploy
+deploy	Build appleboy/ssh-action@v1.0.3	﻿2026-03-14T15:56:44.6042869Z ##[group]Build container for action use: '/home/runner/work/_actions/appleboy/ssh-action/v1.0.3/Dockerfile'.
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:44.6100961Z ##[command]/usr/bin/docker build -t 99dc6f:010be1c4a363418abe239c6c5b8deca4 -f "/home/runner/work/_actions/appleboy/ssh-action/v1.0.3/Dockerfile" "/home/runner/work/_actions/appleboy/ssh-action/v1.0.3"
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:47.6558071Z #0 building with "default" instance using docker driver
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:47.6558609Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:47.6558785Z #1 [internal] load build definition from Dockerfile
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:47.6559185Z #1 transferring dockerfile: 149B done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:47.6559764Z #1 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:47.6559936Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:47.6560156Z #2 [internal] load metadata for ghcr.io/appleboy/drone-ssh:1.7.3
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.3967863Z #2 DONE 0.9s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5173596Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5174028Z #3 [internal] load .dockerignore
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5174532Z #3 transferring context: 2B done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5174966Z #3 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5175240Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5175397Z #4 [internal] load build context
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5175828Z #4 transferring context: 108B done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5176219Z #4 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5176415Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5176930Z #5 [1/2] FROM ghcr.io/appleboy/drone-ssh:1.7.3@sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5178003Z #5 resolve ghcr.io/appleboy/drone-ssh:1.7.3@sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158 done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5178967Z #5 sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca 0B / 3.38MB 0.1s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5180205Z #5 sha256:654aaee5654be60f81172539ecd74485cf8bbe2e9137bab0d429862c31c676f6 0B / 284.83kB 0.1s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5181841Z #5 sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c 0B / 1.20kB 0.1s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5182591Z #5 sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158 2.38kB / 2.38kB done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5183693Z #5 sha256:1a52f94820e830bc9734623deb03bbafa6a248fba19cdc2e5605c70d90d91441 1.24kB / 1.24kB done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.5184457Z #5 sha256:c4781b8d012b16b6c7468dc9104fad0a63f2a8815b2af8b7176bb544253ea8c7 3.86kB / 3.86kB done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.6579903Z #5 extracting sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.7703268Z #5 sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca 3.38MB / 3.38MB 0.2s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.7705381Z #5 sha256:654aaee5654be60f81172539ecd74485cf8bbe2e9137bab0d429862c31c676f6 284.83kB / 284.83kB 0.3s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.7707250Z #5 sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c 1.20kB / 1.20kB 0.2s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.7708231Z #5 extracting sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.7708965Z #5 sha256:066e5b821e26d8313055e0314c056e6c297847bcf963e5df10e7aa03107f2246 0B / 125B 0.3s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.7710094Z #5 sha256:47353a6f9201a145b687290e5ae0278ac269faf4bb61bee3e9246c37a8d74277 0B / 2.44MB 0.3s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.8796648Z #5 extracting sha256:654aaee5654be60f81172539ecd74485cf8bbe2e9137bab0d429862c31c676f6
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.8798879Z #5 sha256:066e5b821e26d8313055e0314c056e6c297847bcf963e5df10e7aa03107f2246 125B / 125B 0.4s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.8800471Z #5 extracting sha256:654aaee5654be60f81172539ecd74485cf8bbe2e9137bab0d429862c31c676f6 0.0s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:48.8802504Z #5 extracting sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0195760Z #5 sha256:47353a6f9201a145b687290e5ae0278ac269faf4bb61bee3e9246c37a8d74277 2.44MB / 2.44MB 0.5s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0197042Z #5 extracting sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0197899Z #5 extracting sha256:066e5b821e26d8313055e0314c056e6c297847bcf963e5df10e7aa03107f2246 done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0198553Z #5 extracting sha256:47353a6f9201a145b687290e5ae0278ac269faf4bb61bee3e9246c37a8d74277 0.0s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0199354Z #5 DONE 0.6s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0200116Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0200292Z #6 [2/2] COPY entrypoint.sh /bin/entrypoint.sh
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0200732Z #6 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0200865Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0200967Z #7 exporting to image
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0201214Z #7 exporting layers 0.0s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0374676Z #7 writing image sha256:c9c5917f6ae7ddb9641e503e7a82bc171a5c9ea0638f127756f9dc57c490087e done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0375709Z #7 naming to docker.io/library/99dc6f:010be1c4a363418abe239c6c5b8deca4 done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0376439Z #7 DONE 0.1s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T15:56:49.0480813Z ##[endgroup]
+deploy	Checkout code	﻿2026-03-14T15:56:49.0749343Z ##[group]Run actions/checkout@v4
+deploy	Checkout code	2026-03-14T15:56:49.0750136Z with:
+deploy	Checkout code	2026-03-14T15:56:49.0750396Z   repository: sysdevv-del/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T15:56:49.0750879Z   token: ***
+deploy	Checkout code	2026-03-14T15:56:49.0751114Z   ssh-strict: true
+deploy	Checkout code	2026-03-14T15:56:49.0751331Z   ssh-user: git
+deploy	Checkout code	2026-03-14T15:56:49.0751569Z   persist-credentials: true
+deploy	Checkout code	2026-03-14T15:56:49.0751823Z   clean: true
+deploy	Checkout code	2026-03-14T15:56:49.0752038Z   sparse-checkout-cone-mode: true
+deploy	Checkout code	2026-03-14T15:56:49.0752300Z   fetch-depth: 1
+deploy	Checkout code	2026-03-14T15:56:49.0752512Z   fetch-tags: false
+deploy	Checkout code	2026-03-14T15:56:49.0752725Z   show-progress: true
+deploy	Checkout code	2026-03-14T15:56:49.0752934Z   lfs: false
+deploy	Checkout code	2026-03-14T15:56:49.0753148Z   submodules: false
+deploy	Checkout code	2026-03-14T15:56:49.0753365Z   set-safe-directory: true
+deploy	Checkout code	2026-03-14T15:56:49.0753787Z ##[endgroup]
+deploy	Checkout code	2026-03-14T15:56:49.1820344Z Syncing repository: sysdevv-del/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T15:56:49.1821701Z ##[group]Getting Git version info
+deploy	Checkout code	2026-03-14T15:56:49.1822191Z Working directory is '/home/runner/work/nexbusinesswebsite/nexbusinesswebsite'
+deploy	Checkout code	2026-03-14T15:56:49.1822891Z [command]/usr/bin/git version
+deploy	Checkout code	2026-03-14T15:56:49.1842126Z git version 2.53.0
+deploy	Checkout code	2026-03-14T15:56:49.1868052Z ##[endgroup]
+deploy	Checkout code	2026-03-14T15:56:49.1890802Z Temporarily overriding HOME='/home/runner/work/_temp/5bb67231-5ea2-4c6f-b690-b462bdbdac63' before making global git config changes
+deploy	Checkout code	2026-03-14T15:56:49.1892280Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Checkout code	2026-03-14T15:56:49.1896402Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nexbusinesswebsite/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T15:56:49.1932522Z Deleting the contents of '/home/runner/work/nexbusinesswebsite/nexbusinesswebsite'
+deploy	Checkout code	2026-03-14T15:56:49.1935932Z ##[group]Initializing the repository
+deploy	Checkout code	2026-03-14T15:56:49.1940964Z [command]/usr/bin/git init /home/runner/work/nexbusinesswebsite/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T15:56:49.2024975Z hint: Using 'master' as the name for the initial branch. This default branch name
+deploy	Checkout code	2026-03-14T15:56:49.2025591Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+deploy	Checkout code	2026-03-14T15:56:49.2026136Z hint: to use in all of your new repositories, which will suppress this warning,
+deploy	Checkout code	2026-03-14T15:56:49.2026536Z hint: call:
+deploy	Checkout code	2026-03-14T15:56:49.2026730Z hint:
+deploy	Checkout code	2026-03-14T15:56:49.2027038Z hint: 	git config --global init.defaultBranch <name>
+deploy	Checkout code	2026-03-14T15:56:49.2027365Z hint:
+deploy	Checkout code	2026-03-14T15:56:49.2027682Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+deploy	Checkout code	2026-03-14T15:56:49.2028194Z hint: 'development'. The just-created branch can be renamed via this command:
+deploy	Checkout code	2026-03-14T15:56:49.2028806Z hint:
+deploy	Checkout code	2026-03-14T15:56:49.2029223Z hint: 	git branch -m <name>
+deploy	Checkout code	2026-03-14T15:56:49.2030211Z hint:
+deploy	Checkout code	2026-03-14T15:56:49.2030638Z hint: Disable this message with "git config set advice.defaultBranchName false"
+deploy	Checkout code	2026-03-14T15:56:49.2031770Z Initialized empty Git repository in /home/runner/work/nexbusinesswebsite/nexbusinesswebsite/.git/
+deploy	Checkout code	2026-03-14T15:56:49.2042491Z [command]/usr/bin/git remote add origin https://github.com/sysdevv-del/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T15:56:49.2076532Z ##[endgroup]
+deploy	Checkout code	2026-03-14T15:56:49.2077263Z ##[group]Disabling automatic garbage collection
+deploy	Checkout code	2026-03-14T15:56:49.2082113Z [command]/usr/bin/git config --local gc.auto 0
+deploy	Checkout code	2026-03-14T15:56:49.2112095Z ##[endgroup]
+deploy	Checkout code	2026-03-14T15:56:49.2112823Z ##[group]Setting up auth
+deploy	Checkout code	2026-03-14T15:56:49.2119848Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Checkout code	2026-03-14T15:56:49.2151741Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Checkout code	2026-03-14T15:56:49.2484160Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Checkout code	2026-03-14T15:56:49.2514418Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Checkout code	2026-03-14T15:56:49.2748057Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Checkout code	2026-03-14T15:56:49.2779887Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Checkout code	2026-03-14T15:56:49.3014755Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+deploy	Checkout code	2026-03-14T15:56:49.3048994Z ##[endgroup]
+deploy	Checkout code	2026-03-14T15:56:49.3049986Z ##[group]Fetching the repository
+deploy	Checkout code	2026-03-14T15:56:49.3058173Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6273b6bf6be617cb083d808b947ccc700b833fff:refs/remotes/origin/main
+deploy	Checkout code	2026-03-14T15:56:50.0013150Z From https://github.com/sysdevv-del/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T15:56:50.0085283Z  * [new ref]         6273b6bf6be617cb083d808b947ccc700b833fff -> origin/main
+deploy	Checkout code	2026-03-14T15:56:50.0087026Z ##[endgroup]
+deploy	Checkout code	2026-03-14T15:56:50.0087749Z ##[group]Determining the checkout info
+deploy	Checkout code	2026-03-14T15:56:50.0088479Z ##[endgroup]
+deploy	Checkout code	2026-03-14T15:56:50.0088917Z [command]/usr/bin/git sparse-checkout disable
+deploy	Checkout code	2026-03-14T15:56:50.0107953Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+deploy	Checkout code	2026-03-14T15:56:50.0135296Z ##[group]Checking out the ref
+deploy	Checkout code	2026-03-14T15:56:50.0140715Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+deploy	Checkout code	2026-03-14T15:56:50.0398031Z Switched to a new branch 'main'
+deploy	Checkout code	2026-03-14T15:56:50.0400872Z branch 'main' set up to track 'origin/main'.
+deploy	Checkout code	2026-03-14T15:56:50.0408817Z ##[endgroup]
+deploy	Checkout code	2026-03-14T15:56:50.0445256Z [command]/usr/bin/git log -1 --format=%H
+deploy	Checkout code	2026-03-14T15:56:50.0468338Z 6273b6bf6be617cb083d808b947ccc700b833fff
+deploy	Setup Node.js	﻿2026-03-14T15:56:50.0690785Z ##[group]Run actions/setup-node@v4
+deploy	Setup Node.js	2026-03-14T15:56:50.0691083Z with:
+deploy	Setup Node.js	2026-03-14T15:56:50.0691282Z   node-version: 20
+deploy	Setup Node.js	2026-03-14T15:56:50.0691494Z   cache: npm
+deploy	Setup Node.js	2026-03-14T15:56:50.0691696Z   always-auth: false
+deploy	Setup Node.js	2026-03-14T15:56:50.0691916Z   check-latest: false
+deploy	Setup Node.js	2026-03-14T15:56:50.0692263Z   token: ***
+deploy	Setup Node.js	2026-03-14T15:56:50.0692467Z ##[endgroup]
+deploy	Setup Node.js	2026-03-14T15:56:50.2445076Z Found in cache @ /opt/hostedtoolcache/node/20.20.0/x64
+deploy	Setup Node.js	2026-03-14T15:56:50.2452746Z ##[group]Environment details
+deploy	Setup Node.js	2026-03-14T15:56:52.4657853Z node: v20.20.0
+deploy	Setup Node.js	2026-03-14T15:56:52.4658181Z npm: 10.8.2
+deploy	Setup Node.js	2026-03-14T15:56:52.4658520Z yarn: 1.22.22
+deploy	Setup Node.js	2026-03-14T15:56:52.4659936Z ##[endgroup]
+deploy	Setup Node.js	2026-03-14T15:56:52.4684585Z [command]/opt/hostedtoolcache/node/20.20.0/x64/bin/npm config get cache
+deploy	Setup Node.js	2026-03-14T15:56:52.7381057Z /home/runner/.npm
+deploy	Setup Node.js	2026-03-14T15:56:52.9507038Z npm cache is not found
+deploy	Install dependencies	﻿2026-03-14T15:56:52.9632180Z ##[group]Run npm ci
+deploy	Install dependencies	2026-03-14T15:56:52.9632489Z [36;1mnpm ci[0m
+deploy	Install dependencies	2026-03-14T15:56:52.9691526Z shell: /usr/bin/bash -e {0}
+deploy	Install dependencies	2026-03-14T15:56:52.9691821Z ##[endgroup]
+deploy	Install dependencies	2026-03-14T15:56:56.6913759Z npm warn ERESOLVE overriding peer dependency
+deploy	Install dependencies	2026-03-14T15:56:56.6914747Z npm warn While resolving: @vitest/mocker@4.1.0
+deploy	Install dependencies	2026-03-14T15:56:56.6915421Z npm warn Found: vite@5.4.21
+deploy	Install dependencies	2026-03-14T15:56:56.6915983Z npm warn node_modules/vite
+deploy	Install dependencies	2026-03-14T15:56:56.6916643Z npm warn   dev vite@"^5.4.21" from the root project
+deploy	Install dependencies	2026-03-14T15:56:56.6917517Z npm warn   2 more (@tailwindcss/vite, @vitejs/plugin-react)
+deploy	Install dependencies	2026-03-14T15:56:56.6918160Z npm warn
+deploy	Install dependencies	2026-03-14T15:56:56.6918663Z npm warn Could not resolve dependency:
+deploy	Install dependencies	2026-03-14T15:56:56.6919900Z npm warn peerOptional vite@"^6.0.0 || ^7.0.0 || ^8.0.0-0" from @vitest/mocker@4.1.0
+deploy	Install dependencies	2026-03-14T15:56:56.6920818Z npm warn node_modules/@vitest/mocker
+deploy	Install dependencies	2026-03-14T15:56:56.6921585Z npm warn   @vitest/mocker@"4.1.0" from vitest@4.1.0
+deploy	Install dependencies	2026-03-14T15:56:56.6922274Z npm warn   node_modules/vitest
+deploy	Install dependencies	2026-03-14T15:56:56.6922805Z npm warn
+deploy	Install dependencies	2026-03-14T15:56:56.6923365Z npm warn Conflicting peer dependency: vite@8.0.0
+deploy	Install dependencies	2026-03-14T15:56:56.6924015Z npm warn node_modules/vite
+deploy	Install dependencies	2026-03-14T15:56:56.6924875Z npm warn   peerOptional vite@"^6.0.0 || ^7.0.0 || ^8.0.0-0" from @vitest/mocker@4.1.0
+deploy	Install dependencies	2026-03-14T15:56:56.6925734Z npm warn   node_modules/@vitest/mocker
+deploy	Install dependencies	2026-03-14T15:56:56.6926433Z npm warn     @vitest/mocker@"4.1.0" from vitest@4.1.0
+deploy	Install dependencies	2026-03-14T15:56:56.6927093Z npm warn     node_modules/vitest
+deploy	Install dependencies	2026-03-14T15:56:57.4560752Z npm error code EUSAGE
+deploy	Install dependencies	2026-03-14T15:56:57.4561678Z npm error
+deploy	Install dependencies	2026-03-14T15:56:57.4563595Z npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+deploy	Install dependencies	2026-03-14T15:56:57.4565229Z npm error
+deploy	Install dependencies	2026-03-14T15:56:57.4566178Z npm error Invalid: lock file's picomatch@2.3.1 does not satisfy picomatch@4.0.3
+deploy	Install dependencies	2026-03-14T15:56:57.4567358Z npm error Missing: picomatch@2.3.1 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4568320Z npm error Missing: picomatch@2.3.1 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4569197Z npm error Missing: esbuild@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4570307Z npm error Missing: @esbuild/aix-ppc64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4571197Z npm error Missing: @esbuild/android-arm@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4572122Z npm error Missing: @esbuild/android-arm64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4572988Z npm error Missing: @esbuild/android-x64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4573853Z npm error Missing: @esbuild/darwin-arm64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4574701Z npm error Missing: @esbuild/darwin-x64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4575910Z npm error Missing: @esbuild/freebsd-arm64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4576786Z npm error Missing: @esbuild/freebsd-x64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4577626Z npm error Missing: @esbuild/linux-arm@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4578450Z npm error Missing: @esbuild/linux-arm64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4579678Z npm error Missing: @esbuild/linux-ia32@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4580688Z npm error Missing: @esbuild/linux-loong64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4581636Z npm error Missing: @esbuild/linux-mips64el@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4582614Z npm error Missing: @esbuild/linux-ppc64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4583530Z npm error Missing: @esbuild/linux-riscv64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4584477Z npm error Missing: @esbuild/linux-s390x@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4585320Z npm error Missing: @esbuild/linux-x64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4586240Z npm error Missing: @esbuild/netbsd-arm64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4587133Z npm error Missing: @esbuild/netbsd-x64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4588053Z npm error Missing: @esbuild/openbsd-arm64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4588961Z npm error Missing: @esbuild/openbsd-x64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4590713Z npm error Missing: @esbuild/openharmony-arm64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4591656Z npm error Missing: @esbuild/sunos-x64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4592542Z npm error Missing: @esbuild/win32-arm64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4593424Z npm error Missing: @esbuild/win32-ia32@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4594348Z npm error Missing: @esbuild/win32-x64@0.27.4 from lock file
+deploy	Install dependencies	2026-03-14T15:56:57.4594970Z npm error
+deploy	Install dependencies	2026-03-14T15:56:57.4595444Z npm error Clean install a project
+deploy	Install dependencies	2026-03-14T15:56:57.4595921Z npm error
+deploy	Install dependencies	2026-03-14T15:56:57.4596289Z npm error Usage:
+deploy	Install dependencies	2026-03-14T15:56:57.4596684Z npm error npm ci
+deploy	Install dependencies	2026-03-14T15:56:57.4597049Z npm error
+deploy	Install dependencies	2026-03-14T15:56:57.4597418Z npm error Options:
+deploy	Install dependencies	2026-03-14T15:56:57.4598319Z npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+deploy	Install dependencies	2026-03-14T15:56:57.4599776Z npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+deploy	Install dependencies	2026-03-14T15:56:57.4601030Z npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+deploy	Install dependencies	2026-03-14T15:56:57.4602260Z npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+deploy	Install dependencies	2026-03-14T15:56:57.4603219Z npm error [--no-bin-links] [--no-fund] [--dry-run]
+deploy	Install dependencies	2026-03-14T15:56:57.4604188Z npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+deploy	Install dependencies	2026-03-14T15:56:57.4605309Z npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+deploy	Install dependencies	2026-03-14T15:56:57.4606007Z npm error
+deploy	Install dependencies	2026-03-14T15:56:57.4606695Z npm error aliases: clean-install, ic, install-clean, isntall-clean
+deploy	Install dependencies	2026-03-14T15:56:57.4607378Z npm error
+deploy	Install dependencies	2026-03-14T15:56:57.4607887Z npm error Run "npm help ci" for more info
+deploy	Install dependencies	2026-03-14T15:56:57.4609079Z npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2026-03-14T15_56_53_033Z-debug-0.log
+deploy	Install dependencies	2026-03-14T15:56:57.4797612Z ##[error]Process completed with exit code 1.
+deploy	Post Checkout code	﻿2026-03-14T15:56:57.4899168Z Post job cleanup.
+deploy	Post Checkout code	2026-03-14T15:56:57.5865097Z [command]/usr/bin/git version
+deploy	Post Checkout code	2026-03-14T15:56:57.5909889Z git version 2.53.0
+deploy	Post Checkout code	2026-03-14T15:56:57.5957090Z Temporarily overriding HOME='/home/runner/work/_temp/504eb29f-3187-4d57-928f-b68f1043a620' before making global git config changes
+deploy	Post Checkout code	2026-03-14T15:56:57.5958647Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Post Checkout code	2026-03-14T15:56:57.5972471Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nexbusinesswebsite/nexbusinesswebsite
+deploy	Post Checkout code	2026-03-14T15:56:57.6010220Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Post Checkout code	2026-03-14T15:56:57.6046536Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Post Checkout code	2026-03-14T15:56:57.6291164Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Post Checkout code	2026-03-14T15:56:57.6313590Z http.https://github.com/.extraheader
+deploy	Post Checkout code	2026-03-14T15:56:57.6327350Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+deploy	Post Checkout code	2026-03-14T15:56:57.6361538Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Post Checkout code	2026-03-14T15:56:57.6601312Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Post Checkout code	2026-03-14T15:56:57.6634821Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Complete job	﻿2026-03-14T15:56:57.6978530Z Cleaning up orphan processes
+deploy	Complete job	2026-03-14T15:56:57.7280537Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-node@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
