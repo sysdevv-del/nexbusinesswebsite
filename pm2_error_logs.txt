@@ -1,0 +1,150 @@
+deploy	Deploy to VPS	2026-03-14T16:25:39.6565470Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6566100Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6567200Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6568046Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6568359Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6568867Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6569954Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6572059Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6572563Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6573317Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6575839Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6576593Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6577025Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6577538Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6578392Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6579091Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6579506Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6582594Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6583641Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6584434Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6584887Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6585421Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6586265Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6586964Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6587370Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6587880Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6588711Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6589415Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6590048Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6590555Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6591377Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6592344Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6592759Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6593267Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6594100Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6594783Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6595216Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6595719Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6596574Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6597205Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6597632Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6598150Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6598979Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6599800Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6600216Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6600723Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6601556Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6602254Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6602656Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6603161Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6603976Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6604808Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6605220Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6605717Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6606979Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6607644Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6608023Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6608492Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6609268Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6610188Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6610603Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6611120Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6611966Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6612653Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6613059Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6613562Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6614390Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6615070Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6615477Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6615992Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6616812Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6617497Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6617924Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6618431Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6619273Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6620059Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6620494Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6620975Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6621797Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6622483Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6623340Z out: /home/***/.pm2/logs/nexbusiness-error.log last 100 lines:
+deploy	Deploy to VPS	2026-03-14T16:25:39.6624131Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6624817Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6625524Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6626191Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6626843Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6627496Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6628153Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6628806Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6629457Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6630243Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6631380Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6632085Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6632750Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6633436Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6634092Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6634768Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6635461Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6636147Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6636833Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6637509Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6638157Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6638814Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6639465Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6640322Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6640985Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6641645Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6642305Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6642962Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6643607Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6644263Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6645376Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6646124Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6646806Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6647454Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6648118Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6648742Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6649411Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6650219Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6650843Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6651495Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6652176Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6652900Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6653379Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6653764Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6654131Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6654503Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6655763Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6656444Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6657072Z ==============================================
+deploy	Deploy to VPS	2026-03-14T16:25:39.6658141Z ✅ Successfully executed commands to all host.
+deploy	Deploy to VPS	2026-03-14T16:25:39.6658773Z ==============================================
+deploy	Post Setup Node.js	﻿2026-03-14T16:25:39.7477247Z Post job cleanup.
+deploy	Post Setup Node.js	2026-03-14T16:25:39.9137804Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-af9da6896d3df4db12a6b796896bcdb716bf7ceefab820e7fb35d8a97cf6339c, not saving cache.
+deploy	Post Checkout code	﻿2026-03-14T16:25:39.9272390Z Post job cleanup.
+deploy	Post Checkout code	2026-03-14T16:25:40.0264193Z [command]/usr/bin/git version
+deploy	Post Checkout code	2026-03-14T16:25:40.0304464Z git version 2.53.0
+deploy	Post Checkout code	2026-03-14T16:25:40.0350263Z Temporarily overriding HOME='/home/runner/work/_temp/de12b3b6-0372-4fc0-b51d-03527bb1ec74' before making global git config changes
+deploy	Post Checkout code	2026-03-14T16:25:40.0352186Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Post Checkout code	2026-03-14T16:25:40.0356265Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nexbusinesswebsite/nexbusinesswebsite
+deploy	Post Checkout code	2026-03-14T16:25:40.0396126Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Post Checkout code	2026-03-14T16:25:40.0432031Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Post Checkout code	2026-03-14T16:25:40.0687470Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Post Checkout code	2026-03-14T16:25:40.0712641Z http.https://github.com/.extraheader
+deploy	Post Checkout code	2026-03-14T16:25:40.0726783Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+deploy	Post Checkout code	2026-03-14T16:25:40.0760584Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Post Checkout code	2026-03-14T16:25:40.1008412Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Post Checkout code	2026-03-14T16:25:40.1043371Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Complete job	﻿2026-03-14T16:25:40.1424555Z Cleaning up orphan processes
+deploy	Complete job	2026-03-14T16:25:40.1785176Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-node@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

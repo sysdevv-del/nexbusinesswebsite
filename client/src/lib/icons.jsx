@@ -7,7 +7,8 @@ import {
   Megaphone, ShoppingCart, DollarSign, Scale, ChevronRight,
   ChevronDown, Search, Menu, X, ArrowRight, Check,
   Star, Phone, MapPin, Clock, Play, Layers, ExternalLink,
-  Building2, Heart, Award, Sparkles, AlertTriangle, Dumbbell
+  Building2, Heart, Award, Sparkles, AlertTriangle, Dumbbell,
+  Printer, ArrowLeft
 } from "lucide-react";
 
 const iconMap = {
@@ -37,5 +38,6 @@ export {
   Megaphone, ShoppingCart, DollarSign, Scale, ChevronRight,
   ChevronDown, Search, Menu, X, ArrowRight, Check,
   Star, Phone, MapPin, Clock, Play, Layers, ExternalLink,
-  Building2, Heart, Award, Sparkles, AlertTriangle, Dumbbell
+  Building2, Heart, Award, Sparkles, AlertTriangle, Dumbbell,
+  Printer, ArrowLeft
 };

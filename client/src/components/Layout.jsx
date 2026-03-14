@@ -277,6 +277,7 @@ function Footer() {
       { label: t("aboutUs"), to: "/about" },
       { label: t("contact"), to: "/contact" },
       { label: t("careers"), to: "/about" },
+      { label: t("catalog"), to: "/catalog" },
       { label: t("press"), to: "/about" },
     ],
     [t("resources")]: [

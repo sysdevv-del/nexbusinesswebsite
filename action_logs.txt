@@ -1,0 +1,582 @@
+deploy	Set up job	﻿2026-03-14T16:24:56.3099582Z Current runner version: '2.332.0'
+deploy	Set up job	2026-03-14T16:24:56.3137976Z ##[group]Runner Image Provisioner
+deploy	Set up job	2026-03-14T16:24:56.3139630Z Hosted Compute Agent
+deploy	Set up job	2026-03-14T16:24:56.3141073Z Version: 20260213.493
+deploy	Set up job	2026-03-14T16:24:56.3143284Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+deploy	Set up job	2026-03-14T16:24:56.3145042Z Build Date: 2026-02-13T00:28:41Z
+deploy	Set up job	2026-03-14T16:24:56.3146462Z Worker ID: {ee7a47dd-c101-470d-8896-b26262872a6c}
+deploy	Set up job	2026-03-14T16:24:56.3147966Z Azure Region: northcentralus
+deploy	Set up job	2026-03-14T16:24:56.3149332Z ##[endgroup]
+deploy	Set up job	2026-03-14T16:24:56.3152495Z ##[group]Operating System
+deploy	Set up job	2026-03-14T16:24:56.3153759Z Ubuntu
+deploy	Set up job	2026-03-14T16:24:56.3154689Z 24.04.3
+deploy	Set up job	2026-03-14T16:24:56.3155904Z LTS
+deploy	Set up job	2026-03-14T16:24:56.3156943Z ##[endgroup]
+deploy	Set up job	2026-03-14T16:24:56.3158161Z ##[group]Runner Image
+deploy	Set up job	2026-03-14T16:24:56.3159406Z Image: ubuntu-24.04
+deploy	Set up job	2026-03-14T16:24:56.3161079Z Version: 20260302.42.1
+deploy	Set up job	2026-03-14T16:24:56.3163159Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+deploy	Set up job	2026-03-14T16:24:56.3166532Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+deploy	Set up job	2026-03-14T16:24:56.3168390Z ##[endgroup]
+deploy	Set up job	2026-03-14T16:24:56.3171498Z ##[group]GITHUB_TOKEN Permissions
+deploy	Set up job	2026-03-14T16:24:56.3174722Z Contents: read
+deploy	Set up job	2026-03-14T16:24:56.3176016Z Metadata: read
+deploy	Set up job	2026-03-14T16:24:56.3177139Z Packages: read
+deploy	Set up job	2026-03-14T16:24:56.3178286Z ##[endgroup]
+deploy	Set up job	2026-03-14T16:24:56.3181806Z Secret source: Actions
+deploy	Set up job	2026-03-14T16:24:56.3183400Z Prepare workflow directory
+deploy	Set up job	2026-03-14T16:24:56.3696359Z Prepare all required actions
+deploy	Set up job	2026-03-14T16:24:56.3756997Z Getting action download info
+deploy	Set up job	2026-03-14T16:24:56.6719258Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+deploy	Set up job	2026-03-14T16:24:56.8484536Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+deploy	Set up job	2026-03-14T16:24:56.9467680Z Download action repository 'appleboy/ssh-action@v1.0.3' (SHA:029f5b4aeeeb58fdfe1410a5d17f967dacf36262)
+deploy	Set up job	2026-03-14T16:24:57.3739262Z Complete job name: deploy
+deploy	Build appleboy/ssh-action@v1.0.3	﻿2026-03-14T16:24:57.4247326Z ##[group]Build container for action use: '/home/runner/work/_actions/appleboy/ssh-action/v1.0.3/Dockerfile'.
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:24:57.4305854Z ##[command]/usr/bin/docker build -t 149784:69082b427a77498ebcd56f709d5f85f7 -f "/home/runner/work/_actions/appleboy/ssh-action/v1.0.3/Dockerfile" "/home/runner/work/_actions/appleboy/ssh-action/v1.0.3"
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.5729509Z #0 building with "default" instance using docker driver
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.5730647Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.5730880Z #1 [internal] load build definition from Dockerfile
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.5731408Z #1 transferring dockerfile: 149B done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.5731829Z #1 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.5732033Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.5732305Z #2 [internal] load metadata for ghcr.io/appleboy/drone-ssh:1.7.3
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.8249965Z #2 DONE 0.4s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9268178Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9271716Z #3 [internal] load .dockerignore
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9272700Z #3 transferring context: 2B done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9273424Z #3 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9273831Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9275198Z #4 [internal] load build context
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9275787Z #4 transferring context: 108B done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9276653Z #4 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9277026Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9277510Z #5 [1/2] FROM ghcr.io/appleboy/drone-ssh:1.7.3@sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9278466Z #5 resolve ghcr.io/appleboy/drone-ssh:1.7.3@sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158 done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:00.9279966Z #5 extracting sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:01.0440956Z #5 extracting sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:01.0441938Z #5 sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca 3.38MB / 3.38MB 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:01.0443051Z #5 sha256:654aaee5654be60f81172539ecd74485cf8bbe2e9137bab0d429862c31c676f6 284.83kB / 284.83kB 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:01.0444456Z #5 sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c 1.20kB / 1.20kB 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:01.0445234Z #5 sha256:066e5b821e26d8313055e0314c056e6c297847bcf963e5df10e7aa03107f2246 125B / 125B 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:01.0446270Z #5 sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158 2.38kB / 2.38kB done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:01.0447074Z #5 sha256:1a52f94820e830bc9734623deb03bbafa6a248fba19cdc2e5605c70d90d91441 1.24kB / 1.24kB done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:01.0447995Z #5 sha256:c4781b8d012b16b6c7468dc9104fad0a63f2a8815b2af8b7176bb544253ea8c7 3.86kB / 3.86kB done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:01.0448916Z #5 sha256:47353a6f9201a145b687290e5ae0278ac269faf4bb61bee3e9246c37a8d74277 2.44MB / 2.44MB 0.2s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:01.2447030Z #5 extracting sha256:654aaee5654be60f81172539ecd74485cf8bbe2e9137bab0d429862c31c676f6 0.0s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:04.0518346Z #5 extracting sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:04.1587997Z #5 extracting sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:04.1590224Z #5 extracting sha256:066e5b821e26d8313055e0314c056e6c297847bcf963e5df10e7aa03107f2246 done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:04.1591649Z #5 extracting sha256:47353a6f9201a145b687290e5ae0278ac269faf4bb61bee3e9246c37a8d74277 0.0s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:04.1592697Z #5 DONE 3.3s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:04.1593061Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:04.1593323Z #6 [2/2] COPY entrypoint.sh /bin/entrypoint.sh
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:04.1593954Z #6 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:04.3109286Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:04.3110111Z #7 exporting to image
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:04.3110727Z #7 exporting layers
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:05.0045911Z #7 exporting layers 0.8s done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:05.0221471Z #7 writing image sha256:186687c1456315ebd0108dccfe8ac59b8bd87bbd2896b6956c906427284b3e2a done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:05.0222826Z #7 naming to docker.io/library/149784:69082b427a77498ebcd56f709d5f85f7 done
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:05.0223836Z #7 DONE 0.8s
+deploy	Build appleboy/ssh-action@v1.0.3	2026-03-14T16:25:05.0355743Z ##[endgroup]
+deploy	Checkout code	﻿2026-03-14T16:25:05.0660141Z ##[group]Run actions/checkout@v4
+deploy	Checkout code	2026-03-14T16:25:05.0660863Z with:
+deploy	Checkout code	2026-03-14T16:25:05.0661139Z   repository: sysdevv-del/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T16:25:05.0661735Z   token: ***
+deploy	Checkout code	2026-03-14T16:25:05.0661963Z   ssh-strict: true
+deploy	Checkout code	2026-03-14T16:25:05.0662182Z   ssh-user: git
+deploy	Checkout code	2026-03-14T16:25:05.0662404Z   persist-credentials: true
+deploy	Checkout code	2026-03-14T16:25:05.0662665Z   clean: true
+deploy	Checkout code	2026-03-14T16:25:05.0662913Z   sparse-checkout-cone-mode: true
+deploy	Checkout code	2026-03-14T16:25:05.0663203Z   fetch-depth: 1
+deploy	Checkout code	2026-03-14T16:25:05.0663416Z   fetch-tags: false
+deploy	Checkout code	2026-03-14T16:25:05.0663644Z   show-progress: true
+deploy	Checkout code	2026-03-14T16:25:05.0663865Z   lfs: false
+deploy	Checkout code	2026-03-14T16:25:05.0664100Z   submodules: false
+deploy	Checkout code	2026-03-14T16:25:05.0664322Z   set-safe-directory: true
+deploy	Checkout code	2026-03-14T16:25:05.0664777Z ##[endgroup]
+deploy	Checkout code	2026-03-14T16:25:05.1828714Z Syncing repository: sysdevv-del/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T16:25:05.1830662Z ##[group]Getting Git version info
+deploy	Checkout code	2026-03-14T16:25:05.1831291Z Working directory is '/home/runner/work/nexbusinesswebsite/nexbusinesswebsite'
+deploy	Checkout code	2026-03-14T16:25:05.1832064Z [command]/usr/bin/git version
+deploy	Checkout code	2026-03-14T16:25:05.1838043Z git version 2.53.0
+deploy	Checkout code	2026-03-14T16:25:05.1865692Z ##[endgroup]
+deploy	Checkout code	2026-03-14T16:25:05.1881189Z Temporarily overriding HOME='/home/runner/work/_temp/41977bc3-b73e-4a4a-8b67-5610df2f0d17' before making global git config changes
+deploy	Checkout code	2026-03-14T16:25:05.1882635Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Checkout code	2026-03-14T16:25:05.1895525Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nexbusinesswebsite/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T16:25:05.1937516Z Deleting the contents of '/home/runner/work/nexbusinesswebsite/nexbusinesswebsite'
+deploy	Checkout code	2026-03-14T16:25:05.1941889Z ##[group]Initializing the repository
+deploy	Checkout code	2026-03-14T16:25:05.1947170Z [command]/usr/bin/git init /home/runner/work/nexbusinesswebsite/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T16:25:05.2063916Z hint: Using 'master' as the name for the initial branch. This default branch name
+deploy	Checkout code	2026-03-14T16:25:05.2065374Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+deploy	Checkout code	2026-03-14T16:25:05.2065993Z hint: to use in all of your new repositories, which will suppress this warning,
+deploy	Checkout code	2026-03-14T16:25:05.2066570Z hint: call:
+deploy	Checkout code	2026-03-14T16:25:05.2067205Z hint:
+deploy	Checkout code	2026-03-14T16:25:05.2067888Z hint: 	git config --global init.defaultBranch <name>
+deploy	Checkout code	2026-03-14T16:25:05.2068455Z hint:
+deploy	Checkout code	2026-03-14T16:25:05.2069015Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+deploy	Checkout code	2026-03-14T16:25:05.2070271Z hint: 'development'. The just-created branch can be renamed via this command:
+deploy	Checkout code	2026-03-14T16:25:05.2071057Z hint:
+deploy	Checkout code	2026-03-14T16:25:05.2071485Z hint: 	git branch -m <name>
+deploy	Checkout code	2026-03-14T16:25:05.2071964Z hint:
+deploy	Checkout code	2026-03-14T16:25:05.2072610Z hint: Disable this message with "git config set advice.defaultBranchName false"
+deploy	Checkout code	2026-03-14T16:25:05.2073901Z Initialized empty Git repository in /home/runner/work/nexbusinesswebsite/nexbusinesswebsite/.git/
+deploy	Checkout code	2026-03-14T16:25:05.2082936Z [command]/usr/bin/git remote add origin https://github.com/sysdevv-del/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T16:25:05.2165143Z ##[endgroup]
+deploy	Checkout code	2026-03-14T16:25:05.2165946Z ##[group]Disabling automatic garbage collection
+deploy	Checkout code	2026-03-14T16:25:05.2170853Z [command]/usr/bin/git config --local gc.auto 0
+deploy	Checkout code	2026-03-14T16:25:05.2204551Z ##[endgroup]
+deploy	Checkout code	2026-03-14T16:25:05.2205397Z ##[group]Setting up auth
+deploy	Checkout code	2026-03-14T16:25:05.2213741Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Checkout code	2026-03-14T16:25:05.2248173Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Checkout code	2026-03-14T16:25:05.2653498Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Checkout code	2026-03-14T16:25:05.2686377Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Checkout code	2026-03-14T16:25:05.2939395Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Checkout code	2026-03-14T16:25:05.2975243Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Checkout code	2026-03-14T16:25:05.3237496Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+deploy	Checkout code	2026-03-14T16:25:05.3276927Z ##[endgroup]
+deploy	Checkout code	2026-03-14T16:25:05.3277717Z ##[group]Fetching the repository
+deploy	Checkout code	2026-03-14T16:25:05.3285948Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e0741077728bfbb1568615e351dfe5ff43c15eb6:refs/remotes/origin/main
+deploy	Checkout code	2026-03-14T16:25:05.7565836Z From https://github.com/sysdevv-del/nexbusinesswebsite
+deploy	Checkout code	2026-03-14T16:25:05.7566966Z  * [new ref]         e0741077728bfbb1568615e351dfe5ff43c15eb6 -> origin/main
+deploy	Checkout code	2026-03-14T16:25:05.7609123Z ##[endgroup]
+deploy	Checkout code	2026-03-14T16:25:05.7696867Z ##[group]Determining the checkout info
+deploy	Checkout code	2026-03-14T16:25:05.7698046Z ##[endgroup]
+deploy	Checkout code	2026-03-14T16:25:05.7698586Z [command]/usr/bin/git sparse-checkout disable
+deploy	Checkout code	2026-03-14T16:25:05.7700916Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+deploy	Checkout code	2026-03-14T16:25:05.7703719Z ##[group]Checking out the ref
+deploy	Checkout code	2026-03-14T16:25:05.7710631Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+deploy	Checkout code	2026-03-14T16:25:05.7985584Z Switched to a new branch 'main'
+deploy	Checkout code	2026-03-14T16:25:05.7986806Z branch 'main' set up to track 'origin/main'.
+deploy	Checkout code	2026-03-14T16:25:05.7997127Z ##[endgroup]
+deploy	Checkout code	2026-03-14T16:25:05.8038597Z [command]/usr/bin/git log -1 --format=%H
+deploy	Checkout code	2026-03-14T16:25:05.8063680Z e0741077728bfbb1568615e351dfe5ff43c15eb6
+deploy	Setup Node.js	﻿2026-03-14T16:25:05.8296703Z ##[group]Run actions/setup-node@v4
+deploy	Setup Node.js	2026-03-14T16:25:05.8297034Z with:
+deploy	Setup Node.js	2026-03-14T16:25:05.8297253Z   node-version: 20
+deploy	Setup Node.js	2026-03-14T16:25:05.8297474Z   cache: npm
+deploy	Setup Node.js	2026-03-14T16:25:05.8297685Z   always-auth: false
+deploy	Setup Node.js	2026-03-14T16:25:05.8298121Z   check-latest: false
+deploy	Setup Node.js	2026-03-14T16:25:05.8298486Z   token: ***
+deploy	Setup Node.js	2026-03-14T16:25:05.8298768Z ##[endgroup]
+deploy	Setup Node.js	2026-03-14T16:25:06.0157565Z Found in cache @ /opt/hostedtoolcache/node/20.20.0/x64
+deploy	Setup Node.js	2026-03-14T16:25:06.0166291Z ##[group]Environment details
+deploy	Setup Node.js	2026-03-14T16:25:06.3911364Z node: v20.20.0
+deploy	Setup Node.js	2026-03-14T16:25:06.3913619Z npm: 10.8.2
+deploy	Setup Node.js	2026-03-14T16:25:06.3914095Z yarn: 1.22.22
+deploy	Setup Node.js	2026-03-14T16:25:06.3915087Z ##[endgroup]
+deploy	Setup Node.js	2026-03-14T16:25:06.3942082Z [command]/opt/hostedtoolcache/node/20.20.0/x64/bin/npm config get cache
+deploy	Setup Node.js	2026-03-14T16:25:06.5209518Z /home/runner/.npm
+deploy	Setup Node.js	2026-03-14T16:25:06.6580799Z Cache hit for: node-cache-Linux-x64-npm-af9da6896d3df4db12a6b796896bcdb716bf7ceefab820e7fb35d8a97cf6339c
+deploy	Setup Node.js	2026-03-14T16:25:07.4403142Z Received 70698401 of 70698401 (100.0%), 100.2 MBs/sec
+deploy	Setup Node.js	2026-03-14T16:25:07.4403945Z Cache Size: ~67 MB (70698401 B)
+deploy	Setup Node.js	2026-03-14T16:25:07.4433354Z [command]/usr/bin/tar -xf /home/runner/work/_temp/42127f4b-2bf0-4afd-8013-33a145489a36/cache.tzst -P -C /home/runner/work/nexbusinesswebsite/nexbusinesswebsite --use-compress-program unzstd
+deploy	Setup Node.js	2026-03-14T16:25:07.6259046Z Cache restored successfully
+deploy	Setup Node.js	2026-03-14T16:25:07.6409379Z Cache restored from key: node-cache-Linux-x64-npm-af9da6896d3df4db12a6b796896bcdb716bf7ceefab820e7fb35d8a97cf6339c
+deploy	Install dependencies	﻿2026-03-14T16:25:07.6581725Z ##[group]Run npm ci --legacy-peer-deps
+deploy	Install dependencies	2026-03-14T16:25:07.6582156Z [36;1mnpm ci --legacy-peer-deps[0m
+deploy	Install dependencies	2026-03-14T16:25:07.6649031Z shell: /usr/bin/bash -e {0}
+deploy	Install dependencies	2026-03-14T16:25:07.6649639Z ##[endgroup]
+deploy	Install dependencies	2026-03-14T16:25:12.5700338Z 
+deploy	Install dependencies	2026-03-14T16:25:12.5705729Z added 407 packages, and audited 408 packages in 5s
+deploy	Install dependencies	2026-03-14T16:25:12.5706082Z 
+deploy	Install dependencies	2026-03-14T16:25:12.5706344Z 87 packages are looking for funding
+deploy	Install dependencies	2026-03-14T16:25:12.5706698Z   run `npm fund` for details
+deploy	Install dependencies	2026-03-14T16:25:12.5838585Z 
+deploy	Install dependencies	2026-03-14T16:25:12.5839452Z 3 vulnerabilities (2 moderate, 1 high)
+deploy	Install dependencies	2026-03-14T16:25:12.5840212Z 
+deploy	Install dependencies	2026-03-14T16:25:12.5840675Z To address issues that do not require attention, run:
+deploy	Install dependencies	2026-03-14T16:25:12.5841346Z   npm audit fix
+deploy	Install dependencies	2026-03-14T16:25:12.5841683Z 
+deploy	Install dependencies	2026-03-14T16:25:12.5842135Z To address all issues (including breaking changes), run:
+deploy	Install dependencies	2026-03-14T16:25:12.5842846Z   npm audit fix --force
+deploy	Install dependencies	2026-03-14T16:25:12.5843147Z 
+deploy	Install dependencies	2026-03-14T16:25:12.5843394Z Run `npm audit` for details.
+deploy	Run lint	﻿2026-03-14T16:25:12.6224834Z ##[group]Run npx eslint client/src server || true
+deploy	Run lint	2026-03-14T16:25:12.6225367Z [36;1mnpx eslint client/src server || true[0m
+deploy	Run lint	2026-03-14T16:25:12.6277158Z shell: /usr/bin/bash -e {0}
+deploy	Run lint	2026-03-14T16:25:12.6277450Z ##[endgroup]
+deploy	Run lint	2026-03-14T16:25:13.7355516Z 
+deploy	Run lint	2026-03-14T16:25:13.7356747Z /home/runner/work/nexbusinesswebsite/nexbusinesswebsite/client/src/pages/BlogPost.jsx
+deploy	Run lint	2026-03-14T16:25:13.7391670Z ##[warning]  63:16  warning  '_err' is defined but never used  no-unused-vars
+deploy	Run lint	2026-03-14T16:25:13.7402609Z 
+deploy	Run lint	2026-03-14T16:25:13.7403374Z /home/runner/work/nexbusinesswebsite/nexbusinesswebsite/server/routes/seo.js
+deploy	Run lint	2026-03-14T16:25:13.7405695Z ##[warning]  48:14  warning  '_err' is defined but never used  no-unused-vars
+deploy	Run lint	2026-03-14T16:25:13.7407032Z 
+deploy	Run lint	2026-03-14T16:25:13.7407626Z ✖ 2 problems (0 errors, 2 warnings)
+deploy	Run lint	2026-03-14T16:25:13.7407942Z 
+deploy	Run tests	﻿2026-03-14T16:25:13.7687384Z ##[group]Run npx vitest run
+deploy	Run tests	2026-03-14T16:25:13.7687709Z [36;1mnpx vitest run[0m
+deploy	Run tests	2026-03-14T16:25:13.7738771Z shell: /usr/bin/bash -e {0}
+deploy	Run tests	2026-03-14T16:25:13.7739071Z ##[endgroup]
+deploy	Run tests	2026-03-14T16:25:14.8981044Z [2m4:25:14 PM[22m [33m[1m[vite][22m[39m [33mwarning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.[39m
+deploy	Run tests	2026-03-14T16:25:14.8985439Z [2m4:25:14 PM[22m [33m[1m[vite][22m[39m [33mwarning: `optimizeDeps.esbuildOptions` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `optimizeDeps.rolldownOptions` instead.[39m
+deploy	Run tests	2026-03-14T16:25:14.9069896Z [33mBoth esbuild and oxc options were set. oxc options will be used and esbuild options will be ignored.[39m The following esbuild options were set: `{ jsx: 'automatic', jsxImportSource: undefined }`
+deploy	Run tests	2026-03-14T16:25:14.9301481Z 
+deploy	Run tests	2026-03-14T16:25:14.9305821Z [1m[46m RUN [49m[22m [36mv4.1.0 [39m[90m/home/runner/work/nexbusinesswebsite/nexbusinesswebsite[39m
+deploy	Run tests	2026-03-14T16:25:14.9309200Z 
+deploy	Run tests	2026-03-14T16:25:16.1382701Z  [32m✓[39m client/src/test/api.test.js [2m([22m[2m10 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+deploy	Run tests	2026-03-14T16:25:16.3794558Z  [32m✓[39m client/src/test/language.test.jsx [2m([22m[2m4 tests[22m[2m)[22m[32m 61[2mms[22m[39m
+deploy	Run tests	2026-03-14T16:25:16.4446575Z  [32m✓[39m client/src/test/icons.test.jsx [2m([22m[2m3 tests[22m[2m)[22m[32m 34[2mms[22m[39m
+deploy	Run tests	2026-03-14T16:25:16.4474832Z 
+deploy	Run tests	2026-03-14T16:25:16.4479572Z [2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+deploy	Run tests	2026-03-14T16:25:16.4481218Z [2m      Tests [22m [1m[32m17 passed[39m[22m[90m (17)[39m
+deploy	Run tests	2026-03-14T16:25:16.4482287Z [2m   Start at [22m 16:25:14
+deploy	Run tests	2026-03-14T16:25:16.4483705Z [2m   Duration [22m 1.51s[2m (transform 209ms, setup 293ms, import 631ms, tests 112ms, environment 2.49s)[22m
+deploy	Run tests	2026-03-14T16:25:16.4485518Z 
+deploy	Build frontend	﻿2026-03-14T16:25:16.4897358Z ##[group]Run npm run build
+deploy	Build frontend	2026-03-14T16:25:16.4897697Z [36;1mnpm run build[0m
+deploy	Build frontend	2026-03-14T16:25:16.4949455Z shell: /usr/bin/bash -e {0}
+deploy	Build frontend	2026-03-14T16:25:16.4949880Z ##[endgroup]
+deploy	Build frontend	2026-03-14T16:25:16.6138741Z 
+deploy	Build frontend	2026-03-14T16:25:16.6140080Z > nexbusiness@1.0.0 build
+deploy	Build frontend	2026-03-14T16:25:16.6140805Z > vite build
+deploy	Build frontend	2026-03-14T16:25:16.6141116Z 
+deploy	Build frontend	2026-03-14T16:25:16.9271498Z [36mvite v5.4.21 [32mbuilding for production...[36m[39m
+deploy	Build frontend	2026-03-14T16:25:17.0021648Z transforming...
+deploy	Build frontend	2026-03-14T16:25:19.2687857Z [32m✓[39m 1600 modules transformed.
+deploy	Build frontend	2026-03-14T16:25:19.3895168Z rendering chunks...
+deploy	Build frontend	2026-03-14T16:25:19.4628164Z computing gzip size...
+deploy	Build frontend	2026-03-14T16:25:19.4782179Z [2m../dist/public/[22m[32mindex.html                           [39m[1m[2m  6.93 kB[22m[1m[22m[2m │ gzip:  2.15 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4784312Z [2m../dist/public/[22m[2massets/[22m[32m1_1771161809585-DYxfHswL.png  [39m[1m[2m 14.33 kB[22m[1m[22m
+deploy	Build frontend	2026-03-14T16:25:19.4786840Z [2m../dist/public/[22m[2massets/[22m[32m2_1771161242519-CZU629QK.png  [39m[1m[2m 14.64 kB[22m[1m[22m
+deploy	Build frontend	2026-03-14T16:25:19.4788747Z [2m../dist/public/[22m[2massets/[22m[35mindex-D05bZSjR.css            [39m[1m[2m 41.02 kB[22m[1m[22m[2m │ gzip:  7.64 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4790863Z [2m../dist/public/[22m[2massets/[22m[36marrow-left-x2gCk7iG.js        [39m[1m[2m  0.33 kB[22m[1m[22m[2m │ gzip:  0.27 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4792726Z [2m../dist/public/[22m[2massets/[22m[36muser-Z5QzUM3a.js              [39m[1m[2m  0.37 kB[22m[1m[22m[2m │ gzip:  0.28 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4794694Z [2m../dist/public/[22m[2massets/[22m[36mSEOHead-COa8GGiG.js           [39m[1m[2m  1.10 kB[22m[1m[22m[2m │ gzip:  0.56 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4796576Z [2m../dist/public/[22m[2massets/[22m[36mNotFound-SbalYRpt.js          [39m[1m[2m  1.18 kB[22m[1m[22m[2m │ gzip:  0.56 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4798444Z [2m../dist/public/[22m[2massets/[22m[36mAdminLogin-Dt-Is0sL.js        [39m[1m[2m  2.52 kB[22m[1m[22m[2m │ gzip:  1.22 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4800595Z [2m../dist/public/[22m[2massets/[22m[36mBlog-B7Y2ze6z.js              [39m[1m[2m  3.79 kB[22m[1m[22m[2m │ gzip:  1.58 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4802492Z [2m../dist/public/[22m[2massets/[22m[36mBlogPost-DJa0uRTt.js          [39m[1m[2m  3.84 kB[22m[1m[22m[2m │ gzip:  1.47 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4804534Z [2m../dist/public/[22m[2massets/[22m[36mAbout-DpalbNRj.js             [39m[1m[2m  4.99 kB[22m[1m[22m[2m │ gzip:  1.88 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4805762Z [2m../dist/public/[22m[2massets/[22m[36mAppCenter-C5mVMeLn.js         [39m[1m[2m  5.45 kB[22m[1m[22m[2m │ gzip:  1.92 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4806920Z [2m../dist/public/[22m[2massets/[22m[36mContact-D6w2vOM3.js           [39m[1m[2m  6.69 kB[22m[1m[22m[2m │ gzip:  2.03 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4808055Z [2m../dist/public/[22m[2massets/[22m[36mCookiePolicy-CAjMeVzd.js      [39m[1m[2m  6.78 kB[22m[1m[22m[2m │ gzip:  2.72 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4809660Z [2m../dist/public/[22m[2massets/[22m[36mAdminDashboard-BWoyajvg.js    [39m[1m[2m  7.00 kB[22m[1m[22m[2m │ gzip:  2.12 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4811246Z [2m../dist/public/[22m[2massets/[22m[36mAdminPostEditor-CdKATXPi.js   [39m[1m[2m  7.12 kB[22m[1m[22m[2m │ gzip:  2.06 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4812474Z [2m../dist/public/[22m[2massets/[22m[36mPrivacyPolicy-BKsaSMUP.js     [39m[1m[2m  8.34 kB[22m[1m[22m[2m │ gzip:  3.24 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4813774Z [2m../dist/public/[22m[2massets/[22m[36mTermsOfService-BxTfCDbc.js    [39m[1m[2m  8.82 kB[22m[1m[22m[2m │ gzip:  3.47 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4815015Z [2m../dist/public/[22m[2massets/[22m[36mAppDetail-DgPcekBo.js         [39m[1m[2m  9.05 kB[22m[1m[22m[2m │ gzip:  2.72 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4816157Z [2m../dist/public/[22m[2massets/[22m[36mPricing-JeaDTO3t.js           [39m[1m[2m 10.49 kB[22m[1m[22m[2m │ gzip:  3.13 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4817799Z [2m../dist/public/[22m[2massets/[22m[36mHome-DUPD8Rf3.js              [39m[1m[2m 16.55 kB[22m[1m[22m[2m │ gzip:  5.04 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4818906Z [2m../dist/public/[22m[2massets/[22m[36mindex-Dn6wKRDe.js             [39m[1m[2m225.27 kB[22m[1m[22m[2m │ gzip: 71.15 kB[22m
+deploy	Build frontend	2026-03-14T16:25:19.4819596Z [32m✓ built in 2.52s[39m
+deploy	Deploy to VPS	﻿2026-03-14T16:25:19.5421310Z ##[group]Run appleboy/ssh-action@v1.0.3
+deploy	Deploy to VPS	2026-03-14T16:25:19.5421666Z with:
+deploy	Deploy to VPS	2026-03-14T16:25:19.5421982Z   host: ***
+deploy	Deploy to VPS	2026-03-14T16:25:19.5422206Z   username: ***
+deploy	Deploy to VPS	2026-03-14T16:25:19.5424082Z   key: ***
+deploy	Deploy to VPS	2026-03-14T16:25:19.5424965Z   script: cd /var/www/nexbusiness
+deploy	Deploy to VPS	git pull origin main
+deploy	Deploy to VPS	npm ci --legacy-peer-deps
+deploy	Deploy to VPS	npm run build
+deploy	Deploy to VPS	npm prune --omit=dev
+deploy	Deploy to VPS	pm2 restart nexbusiness || pm2 start server/index.js --name nexbusiness
+deploy	Deploy to VPS	sleep 5
+deploy	Deploy to VPS	pm2 logs nexbusiness --lines 100 --nostream
+deploy	Deploy to VPS	
+deploy	Deploy to VPS	2026-03-14T16:25:19.5425918Z   port: 22
+deploy	Deploy to VPS	2026-03-14T16:25:19.5426119Z   timeout: 30s
+deploy	Deploy to VPS	2026-03-14T16:25:19.5426329Z   command_timeout: 10m
+deploy	Deploy to VPS	2026-03-14T16:25:19.5426576Z   proxy_port: 22
+deploy	Deploy to VPS	2026-03-14T16:25:19.5426797Z   proxy_timeout: 30s
+deploy	Deploy to VPS	2026-03-14T16:25:19.5427021Z ##[endgroup]
+deploy	Deploy to VPS	2026-03-14T16:25:19.5527128Z ##[command]/usr/bin/docker run --name b427a77498ebcd56f709d5f85f7_c3cc22 --label 149784 --workdir /github/workspace --rm -e "INPUT_HOST" -e "INPUT_USERNAME" -e "INPUT_KEY" -e "INPUT_SCRIPT" -e "INPUT_PORT" -e "INPUT_PASSPHRASE" -e "INPUT_PASSWORD" -e "INPUT_SYNC" -e "INPUT_USE_INSECURE_CIPHER" -e "INPUT_CIPHER" -e "INPUT_TIMEOUT" -e "INPUT_COMMAND_TIMEOUT" -e "INPUT_KEY_PATH" -e "INPUT_FINGERPRINT" -e "INPUT_PROXY_HOST" -e "INPUT_PROXY_PORT" -e "INPUT_PROXY_USERNAME" -e "INPUT_PROXY_PASSWORD" -e "INPUT_PROXY_PASSPHRASE" -e "INPUT_PROXY_TIMEOUT" -e "INPUT_PROXY_KEY" -e "INPUT_PROXY_KEY_PATH" -e "INPUT_PROXY_FINGERPRINT" -e "INPUT_PROXY_CIPHER" -e "INPUT_PROXY_USE_INSECURE_CIPHER" -e "INPUT_SCRIPT_STOP" -e "INPUT_ENVS" -e "INPUT_ENVS_FORMAT" -e "INPUT_DEBUG" -e "INPUT_ALLENVS" -e "INPUT_REQUEST_PTY" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e "ACTIONS_ORCHESTRATION_ID" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp":"/github/runner_temp" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/nexbusinesswebsite/nexbusinesswebsite":"/github/workspace" 149784:69082b427a77498ebcd56f709d5f85f7
+deploy	Deploy to VPS	2026-03-14T16:25:20.0626124Z ======CMD======
+deploy	Deploy to VPS	2026-03-14T16:25:20.0626742Z cd /var/www/nexbusiness
+deploy	Deploy to VPS	2026-03-14T16:25:20.0627148Z git pull origin main
+deploy	Deploy to VPS	2026-03-14T16:25:20.0627451Z npm ci --legacy-peer-deps
+deploy	Deploy to VPS	2026-03-14T16:25:20.0627844Z npm run build
+deploy	Deploy to VPS	2026-03-14T16:25:20.0628095Z npm prune --omit=dev
+deploy	Deploy to VPS	2026-03-14T16:25:20.0628554Z pm2 restart nexbusiness || pm2 start server/index.js --name nexbusiness
+deploy	Deploy to VPS	2026-03-14T16:25:20.0628946Z sleep 5
+deploy	Deploy to VPS	2026-03-14T16:25:20.0629246Z pm2 logs nexbusiness --lines 100 --nostream
+deploy	Deploy to VPS	2026-03-14T16:25:20.0629470Z 
+deploy	Deploy to VPS	2026-03-14T16:25:20.0629601Z ======END======
+deploy	Deploy to VPS	2026-03-14T16:25:25.8416527Z err: From github.com:sysdevv-del/nexbusinesswebsite
+deploy	Deploy to VPS	2026-03-14T16:25:25.8417265Z err:  * branch            main       -> FETCH_HEAD
+deploy	Deploy to VPS	2026-03-14T16:25:25.8417771Z err:    72499fb..e074107  main       -> origin/main
+deploy	Deploy to VPS	2026-03-14T16:25:25.8482885Z err: error: Your local changes to the following files would be overwritten by merge:
+deploy	Deploy to VPS	2026-03-14T16:25:25.8483984Z err: 	package-lock.json
+deploy	Deploy to VPS	2026-03-14T16:25:25.8485656Z err: Please commit your changes or stash them before you merge.
+deploy	Deploy to VPS	2026-03-14T16:25:25.8486595Z err: Aborting
+deploy	Deploy to VPS	2026-03-14T16:25:25.8487137Z out: Updating c156475..e074107
+deploy	Deploy to VPS	2026-03-14T16:25:29.3972121Z out: added 408 packages, and audited 409 packages in 3s
+deploy	Deploy to VPS	2026-03-14T16:25:29.3983166Z out: 87 packages are looking for funding
+deploy	Deploy to VPS	2026-03-14T16:25:29.3983931Z out:   run `npm fund` for details
+deploy	Deploy to VPS	2026-03-14T16:25:29.4113397Z out: 3 vulnerabilities (2 moderate, 1 high)
+deploy	Deploy to VPS	2026-03-14T16:25:29.4114193Z out: To address issues that do not require attention, run:
+deploy	Deploy to VPS	2026-03-14T16:25:29.4114832Z out:   npm audit fix
+deploy	Deploy to VPS	2026-03-14T16:25:29.4115445Z out: To address all issues (including breaking changes), run:
+deploy	Deploy to VPS	2026-03-14T16:25:29.4116069Z out:   npm audit fix --force
+deploy	Deploy to VPS	2026-03-14T16:25:29.4116557Z out: Run `npm audit` for details.
+deploy	Deploy to VPS	2026-03-14T16:25:29.5686726Z out: > nexbusiness@1.0.0 build
+deploy	Deploy to VPS	2026-03-14T16:25:29.5687184Z out: > vite build
+deploy	Deploy to VPS	2026-03-14T16:25:29.8390125Z out: vite v5.4.21 building for production...
+deploy	Deploy to VPS	2026-03-14T16:25:29.9096582Z out: transforming...
+deploy	Deploy to VPS	2026-03-14T16:25:30.0564279Z err: [plugin:vite:esbuild] [plugin vite:esbuild] client/src/lib/LanguageContext.jsx: Duplicate key "products" in object literal
+deploy	Deploy to VPS	2026-03-14T16:25:30.0565398Z err: 121|          teamMembers: "Team Members",
+deploy	Deploy to VPS	2026-03-14T16:25:30.0565895Z err: 122|          countries: "Countries",
+deploy	Deploy to VPS	2026-03-14T16:25:30.0566355Z err: 123|          products: "Products",
+deploy	Deploy to VPS	2026-03-14T16:25:30.0566733Z err:    |          ^
+deploy	Deploy to VPS	2026-03-14T16:25:30.0567021Z err: 124|  
+deploy	Deploy to VPS	2026-03-14T16:25:30.0567338Z err: 125|          // App Center
+deploy	Deploy to VPS	2026-03-14T16:25:30.0568274Z err: [plugin:vite:esbuild] [plugin vite:esbuild] client/src/lib/LanguageContext.jsx: Duplicate key "all" in object literal
+deploy	Deploy to VPS	2026-03-14T16:25:30.0569040Z err: 156|  
+deploy	Deploy to VPS	2026-03-14T16:25:30.0569346Z err: 157|          // Categories
+deploy	Deploy to VPS	2026-03-14T16:25:30.0569990Z err: 158|          all: "All",
+deploy	Deploy to VPS	2026-03-14T16:25:30.0570340Z err:    |          ^
+deploy	Deploy to VPS	2026-03-14T16:25:30.0570692Z err: 159|          sales: "Sales",
+deploy	Deploy to VPS	2026-03-14T16:25:30.0571144Z err: 160|          marketing: "Marketing",
+deploy	Deploy to VPS	2026-03-14T16:25:30.0572117Z err: [plugin:vite:esbuild] [plugin vite:esbuild] client/src/lib/LanguageContext.jsx: Duplicate key "products" in object literal
+deploy	Deploy to VPS	2026-03-14T16:25:30.0573016Z err: 309|          teamMembers: "Anggota Team",
+deploy	Deploy to VPS	2026-03-14T16:25:30.0573483Z err: 310|          countries: "Negara",
+deploy	Deploy to VPS	2026-03-14T16:25:30.0573912Z err: 311|          products: "Produk",
+deploy	Deploy to VPS	2026-03-14T16:25:30.0574282Z err:    |          ^
+deploy	Deploy to VPS	2026-03-14T16:25:30.0574558Z err: 312|  
+deploy	Deploy to VPS	2026-03-14T16:25:30.0574867Z err: 313|          // App Center
+deploy	Deploy to VPS	2026-03-14T16:25:30.0575937Z err: [plugin:vite:esbuild] [plugin vite:esbuild] client/src/lib/LanguageContext.jsx: Duplicate key "all" in object literal
+deploy	Deploy to VPS	2026-03-14T16:25:30.0576500Z err: 344|  
+deploy	Deploy to VPS	2026-03-14T16:25:30.0576749Z err: 345|          // Categories
+deploy	Deploy to VPS	2026-03-14T16:25:30.0577053Z err: 346|          all: "Semua",
+deploy	Deploy to VPS	2026-03-14T16:25:30.0577324Z err:    |          ^
+deploy	Deploy to VPS	2026-03-14T16:25:30.0577606Z err: 347|          sales: "Penjualan",
+deploy	Deploy to VPS	2026-03-14T16:25:30.0577963Z err: 348|          marketing: "Pemasaran",
+deploy	Deploy to VPS	2026-03-14T16:25:31.7105350Z out: ✓ 1600 modules transformed.
+deploy	Deploy to VPS	2026-03-14T16:25:31.8061456Z out: rendering chunks...
+deploy	Deploy to VPS	2026-03-14T16:25:31.8829338Z out: computing gzip size...
+deploy	Deploy to VPS	2026-03-14T16:25:31.8908153Z out: ../dist/public/index.html                             6.93 kB │ gzip:  2.15 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8908946Z out: ../dist/public/assets/1_1771161809585-DYxfHswL.png   14.33 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8909941Z out: ../dist/public/assets/2_1771161242519-CZU629QK.png   14.64 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8910778Z out: ../dist/public/assets/index-D05bZSjR.css             41.02 kB │ gzip:  7.64 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8911701Z out: ../dist/public/assets/arrow-left-DE3xrHoC.js          0.33 kB │ gzip:  0.27 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8912574Z out: ../dist/public/assets/user-DBWLVkr9.js                0.37 kB │ gzip:  0.29 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8913428Z out: ../dist/public/assets/SEOHead-BpfrDEQ_.js             1.10 kB │ gzip:  0.56 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8914272Z out: ../dist/public/assets/NotFound-Bn7M6DHj.js            1.18 kB │ gzip:  0.56 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8915441Z out: ../dist/public/assets/AdminLogin-5z1h7WaX.js          2.52 kB │ gzip:  1.22 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8928451Z out: ../dist/public/assets/Blog-CgrOyOWE.js                3.79 kB │ gzip:  1.57 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8929254Z out: ../dist/public/assets/BlogPost-HlIQiSXw.js            3.84 kB │ gzip:  1.47 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8930245Z out: ../dist/public/assets/About-C2eVXASy.js               4.99 kB │ gzip:  1.88 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.8930985Z out: ../dist/public/assets/AppCenter-4_FQVc9J.js           5.45 kB │ gzip:  1.92 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.9346334Z out: ../dist/public/assets/Contact-J14g3HsY.js             6.69 kB │ gzip:  2.04 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.9347577Z out: ../dist/public/assets/CookiePolicy-cQMG_Ed7.js        6.78 kB │ gzip:  2.73 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.9348749Z out: ../dist/public/assets/AdminDashboard-BeY2pYZM.js      7.00 kB │ gzip:  2.12 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.9350185Z out: ../dist/public/assets/AdminPostEditor-DyJHh7GK.js     7.12 kB │ gzip:  2.06 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.9351226Z out: ../dist/public/assets/PrivacyPolicy-BZEuQbu4.js       8.35 kB │ gzip:  3.24 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.9352121Z out: ../dist/public/assets/TermsOfService-DvWftqDm.js      8.83 kB │ gzip:  3.47 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.9353016Z out: ../dist/public/assets/AppDetail-MDKcJwVe.js           9.05 kB │ gzip:  2.72 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.9353891Z out: ../dist/public/assets/Pricing-DSaNX-eS.js            10.49 kB │ gzip:  3.13 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.9354745Z out: ../dist/public/assets/Home-uiwlG8o1.js               16.55 kB │ gzip:  5.04 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.9355592Z out: ../dist/public/assets/index-CLVDyCXB.js             225.33 kB │ gzip: 71.17 kB
+deploy	Deploy to VPS	2026-03-14T16:25:31.9356152Z out: ✓ built in 2.02s
+deploy	Deploy to VPS	2026-03-14T16:25:33.7310382Z err: npm warn ERESOLVE overriding peer dependency
+deploy	Deploy to VPS	2026-03-14T16:25:33.7316980Z err: npm warn While resolving: @vitest/mocker@4.1.0
+deploy	Deploy to VPS	2026-03-14T16:25:33.7317736Z err: npm warn Found: vite@5.4.21
+deploy	Deploy to VPS	2026-03-14T16:25:33.7318341Z err: npm warn node_modules/vite
+deploy	Deploy to VPS	2026-03-14T16:25:33.7318818Z err: npm warn   dev vite@"^5.4.21" from the root project
+deploy	Deploy to VPS	2026-03-14T16:25:33.7319410Z err: npm warn   2 more (@tailwindcss/vite, @vitejs/plugin-react)
+deploy	Deploy to VPS	2026-03-14T16:25:33.7320104Z err: npm warn
+deploy	Deploy to VPS	2026-03-14T16:25:33.7320456Z err: npm warn Could not resolve dependency:
+deploy	Deploy to VPS	2026-03-14T16:25:33.7321112Z err: npm warn peerOptional vite@"^6.0.0 || ^7.0.0 || ^8.0.0-0" from @vitest/mocker@4.1.0
+deploy	Deploy to VPS	2026-03-14T16:25:33.7321733Z err: npm warn node_modules/@vitest/mocker
+deploy	Deploy to VPS	2026-03-14T16:25:33.7322226Z err: npm warn   @vitest/mocker@"4.1.0" from vitest@4.1.0
+deploy	Deploy to VPS	2026-03-14T16:25:33.7322943Z err: npm warn   node_modules/vitest
+deploy	Deploy to VPS	2026-03-14T16:25:33.7323269Z err: npm warn
+deploy	Deploy to VPS	2026-03-14T16:25:33.7323662Z err: npm warn Conflicting peer dependency: vite@8.0.0
+deploy	Deploy to VPS	2026-03-14T16:25:33.7324114Z err: npm warn node_modules/vite
+deploy	Deploy to VPS	2026-03-14T16:25:33.7324714Z err: npm warn   peerOptional vite@"^6.0.0 || ^7.0.0 || ^8.0.0-0" from @vitest/mocker@4.1.0
+deploy	Deploy to VPS	2026-03-14T16:25:33.7325255Z err: npm warn   node_modules/@vitest/mocker
+deploy	Deploy to VPS	2026-03-14T16:25:33.7325679Z err: npm warn     @vitest/mocker@"4.1.0" from vitest@4.1.0
+deploy	Deploy to VPS	2026-03-14T16:25:33.7326073Z err: npm warn     node_modules/vitest
+deploy	Deploy to VPS	2026-03-14T16:25:34.1286719Z out: up to date, audited 109 packages in 2s
+deploy	Deploy to VPS	2026-03-14T16:25:34.1287811Z out: 20 packages are looking for funding
+deploy	Deploy to VPS	2026-03-14T16:25:34.1288722Z out:   run `npm fund` for details
+deploy	Deploy to VPS	2026-03-14T16:25:34.1289492Z out: found 0 vulnerabilities
+deploy	Deploy to VPS	2026-03-14T16:25:34.2777006Z out: Use --update-env to update environment variables
+deploy	Deploy to VPS	2026-03-14T16:25:34.2827804Z out: [PM2] Applying action restartProcessId on app [nexbusiness](ids: [ 2 ])
+deploy	Deploy to VPS	2026-03-14T16:25:34.2901963Z out: [PM2] [nexbusiness](2) ✓
+deploy	Deploy to VPS	2026-03-14T16:25:34.2963330Z out: ┌────┬──────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+deploy	Deploy to VPS	2026-03-14T16:25:34.2964980Z out: │ id │ name                 │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+deploy	Deploy to VPS	2026-03-14T16:25:34.2966737Z out: ├────┼──────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+deploy	Deploy to VPS	2026-03-14T16:25:34.2968662Z out: │ 2  │ nexbusiness          │ default     │ N/A     │ fork    │ 272759   │ 0s     │ 31   │ online    │ 0%       │ 18.5mb   │ *** │ disabled │
+deploy	Deploy to VPS	2026-03-14T16:25:34.2970391Z out: │ 3  │ nexchatai            │ default     │ N/A     │ fork    │ 118642   │ 33h    │ 0    │ online    │ 0%       │ 63.0mb   │ *** │ disabled │
+deploy	Deploy to VPS	2026-03-14T16:25:34.2971849Z out: │ 1  │ nexflow              │ default     │ N/A     │ fork    │ 270631   │ 16m    │ 4    │ online    │ 0%       │ 54.9mb   │ *** │ disabled │
+deploy	Deploy to VPS	2026-03-14T16:25:34.2973128Z out: │ 8  │ nexhr-insight        │ default     │ N/A     │ fork    │ 118655   │ 33h    │ 0    │ online    │ 0%       │ 34.9mb   │ *** │ disabled │
+deploy	Deploy to VPS	2026-03-14T16:25:34.2974433Z out: │ 5  │ nexhr-recruitment    │ default     │ N/A     │ fork    │ 118651   │ 33h    │ 0    │ online    │ 0%       │ 24.9mb   │ *** │ disabled │
+deploy	Deploy to VPS	2026-03-14T16:25:34.2975773Z out: │ 6  │ pantauwa-backend     │ default     │ N/A     │ fork    │ 118652   │ 33h    │ 0    │ online    │ 0%       │ 189.7mb  │ *** │ disabled │
+deploy	Deploy to VPS	2026-03-14T16:25:34.2976843Z out: │ 7  │ pantauwa-frontend    │ default     │ N/A     │ fork    │ 118654   │ 33h    │ 0    │ online    │ 0%       │ 61.4mb   │ *** │ disabled │
+deploy	Deploy to VPS	2026-03-14T16:25:34.2977963Z out: │ 0  │ saas                 │ default     │ 1.0.0   │ fork    │ 116332   │ 33h    │ 0    │ online    │ 0%       │ 95.8mb   │ *** │ disabled │
+deploy	Deploy to VPS	2026-03-14T16:25:34.2979104Z out: │ 4  │ sholat-worker        │ default     │ N/A     │ fork    │ 269233   │ 27m    │ 33   │ online    │ 0%       │ 53.6mb   │ *** │ disabled │
+deploy	Deploy to VPS	2026-03-14T16:25:34.2980456Z out: └────┴──────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+deploy	Deploy to VPS	2026-03-14T16:25:39.4321119Z out: [TAILING] Tailing last 100 lines for [nexbusiness] process (change the value with --lines option)
+deploy	Deploy to VPS	2026-03-14T16:25:39.4345353Z out: /home/***/.pm2/logs/nexbusiness-out.log last 100 lines:
+deploy	Deploy to VPS	2026-03-14T16:25:39.4346217Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.4346663Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.4347313Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.4347858Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.4348167Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.4348564Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6555178Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6555927Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6556287Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6556857Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6557803Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6558638Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6559101Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6560307Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6561318Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6562131Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6562626Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6563220Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6564198Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6564978Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6565470Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6566100Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6567200Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6568046Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6568359Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6568867Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6569954Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6572059Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6572563Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6573317Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6575839Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6576593Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6577025Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6577538Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6578392Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6579091Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6579506Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6582594Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6583641Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6584434Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6584887Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6585421Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6586265Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6586964Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6587370Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6587880Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6588711Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6589415Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6590048Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6590555Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6591377Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6592344Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6592759Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6593267Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6594100Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6594783Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6595216Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6595719Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6596574Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6597205Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6597632Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6598150Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6598979Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6599800Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6600216Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6600723Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6601556Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6602254Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6602656Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6603161Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6603976Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6604808Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6605220Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6605717Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6606979Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6607644Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6608023Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6608492Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6609268Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6610188Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6610603Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6611120Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6611966Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6612653Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6613059Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6613562Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6614390Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6615070Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6615477Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6615992Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6616812Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6617497Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6617924Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6618431Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6619273Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6620059Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6620494Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6620975Z out: 2|nexbusin | > nexbusiness@1.0.0 start
+deploy	Deploy to VPS	2026-03-14T16:25:39.6621797Z out: 2|nexbusin | > cross-env NODE_ENV=production node server/index.js
+deploy	Deploy to VPS	2026-03-14T16:25:39.6622483Z out: 2|nexbusin | 
+deploy	Deploy to VPS	2026-03-14T16:25:39.6623340Z out: /home/***/.pm2/logs/nexbusiness-error.log last 100 lines:
+deploy	Deploy to VPS	2026-03-14T16:25:39.6624131Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6624817Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6625524Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6626191Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6626843Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6627496Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6628153Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6628806Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6629457Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6630243Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6631380Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6632085Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6632750Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6633436Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6634092Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6634768Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6635461Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6636147Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6636833Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6637509Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6638157Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6638814Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6639465Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6640322Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6640985Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6641645Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6642305Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6642962Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6643607Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6644263Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6645376Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6646124Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6646806Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6647454Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6648118Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6648742Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6649411Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6650219Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6650843Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6651495Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6652176Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6652900Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6653379Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6653764Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6654131Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6654503Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6655763Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6656444Z out: 2|nexbusin | sh: 1: cross-env: not found
+deploy	Deploy to VPS	2026-03-14T16:25:39.6657072Z ==============================================
+deploy	Deploy to VPS	2026-03-14T16:25:39.6658141Z ✅ Successfully executed commands to all host.
+deploy	Deploy to VPS	2026-03-14T16:25:39.6658773Z ==============================================
+deploy	Post Setup Node.js	﻿2026-03-14T16:25:39.7477247Z Post job cleanup.
+deploy	Post Setup Node.js	2026-03-14T16:25:39.9137804Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-af9da6896d3df4db12a6b796896bcdb716bf7ceefab820e7fb35d8a97cf6339c, not saving cache.
+deploy	Post Checkout code	﻿2026-03-14T16:25:39.9272390Z Post job cleanup.
+deploy	Post Checkout code	2026-03-14T16:25:40.0264193Z [command]/usr/bin/git version
+deploy	Post Checkout code	2026-03-14T16:25:40.0304464Z git version 2.53.0
+deploy	Post Checkout code	2026-03-14T16:25:40.0350263Z Temporarily overriding HOME='/home/runner/work/_temp/de12b3b6-0372-4fc0-b51d-03527bb1ec74' before making global git config changes
+deploy	Post Checkout code	2026-03-14T16:25:40.0352186Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Post Checkout code	2026-03-14T16:25:40.0356265Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nexbusinesswebsite/nexbusinesswebsite
+deploy	Post Checkout code	2026-03-14T16:25:40.0396126Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Post Checkout code	2026-03-14T16:25:40.0432031Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Post Checkout code	2026-03-14T16:25:40.0687470Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Post Checkout code	2026-03-14T16:25:40.0712641Z http.https://github.com/.extraheader
+deploy	Post Checkout code	2026-03-14T16:25:40.0726783Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+deploy	Post Checkout code	2026-03-14T16:25:40.0760584Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Post Checkout code	2026-03-14T16:25:40.1008412Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Post Checkout code	2026-03-14T16:25:40.1043371Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Complete job	﻿2026-03-14T16:25:40.1424555Z Cleaning up orphan processes
+deploy	Complete job	2026-03-14T16:25:40.1785176Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-node@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
