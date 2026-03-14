@@ -30,4 +30,11 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./client/src/test/setup.js",
+    include: ["client/src/**/*.test.{js,jsx}"],
+    root: ".",
+  },
 });

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const pool = require("../db");
+const { validateSlugParam, handleValidation } = require("../middleware/validate");
 
 router.get("/categories", async (req, res) => {
   try {
@@ -50,7 +51,7 @@ router.get("/apps", async (req, res) => {
   }
 });
 
-router.get("/apps/:slug", async (req, res) => {
+router.get("/apps/:slug", validateSlugParam, handleValidation, async (req, res) => {
   try {
     const { slug } = req.params;
     const result = await pool.query(

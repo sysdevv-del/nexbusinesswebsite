@@ -185,6 +185,11 @@ export const translations = {
         articleNotFound: "Article not found",
         viewAllResults: "View all results for",
         noAppsFoundFor: "No apps found for",
+
+        // 404
+        notFoundTitle: "Page Not Found",
+        notFoundDesc: "Sorry, the page you are looking for doesn't exist or has been moved.",
+        goHome: "Go Home",
     },
     ID: {
         // Navbar
@@ -368,6 +373,11 @@ export const translations = {
         articleNotFound: "Artikel tidak ditemukan",
         viewAllResults: "Lihat semua hasil untuk",
         noAppsFoundFor: "Tidak ada aplikasi ditemukan untuk",
+
+        // 404
+        notFoundTitle: "Halaman Tidak Ditemukan",
+        notFoundDesc: "Maaf, halaman yang Anda cari tidak ada atau telah dipindahkan.",
+        goHome: "Ke Beranda",
     }
 };
 

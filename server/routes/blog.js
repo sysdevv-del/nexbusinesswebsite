@@ -2,8 +2,16 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../db");
 const adminAuth = require("../middleware/adminAuth");
+const { loginLimiter } = require("../middleware/rateLimit");
+const {
+  validateBlogPost,
+  validateBlogUpdate,
+  validateIdParam,
+  validateSlugParam,
+  handleValidation,
+} = require("../middleware/validate");
 
-router.post("/auth/admin/login", async (req, res) => {
+router.post("/auth/admin/login", loginLimiter, async (req, res) => {
   try {
     const { password } = req.body;
     if (!password || password !== process.env.ADMIN_PASSWORD) {
@@ -44,7 +52,7 @@ router.get("/blog/admin/all", adminAuth, async (req, res) => {
   }
 });
 
-router.get("/blog/:slug", async (req, res) => {
+router.get("/blog/:slug", validateSlugParam, handleValidation, async (req, res) => {
   try {
     const { slug } = req.params;
     const result = await pool.query(
@@ -61,12 +69,9 @@ router.get("/blog/:slug", async (req, res) => {
   }
 });
 
-router.post("/blog", adminAuth, async (req, res) => {
+router.post("/blog", adminAuth, validateBlogPost, handleValidation, async (req, res) => {
   try {
     const { title, excerpt, content, category, author, cover_image, read_time, status } = req.body;
-    if (!title || !content) {
-      return res.status(400).json({ error: "Title and content are required" });
-    }
     const slug = title
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
@@ -84,9 +89,9 @@ router.post("/blog", adminAuth, async (req, res) => {
   }
 });
 
-router.put("/blog/:id", adminAuth, async (req, res) => {
+router.put("/blog/:id", adminAuth, validateIdParam, validateBlogUpdate, handleValidation, async (req, res) => {
   try {
-    const { id } = req.params;
+    const id = parseInt(req.params.id, 10);
     const { title, slug, excerpt, content, category, author, cover_image, read_time, status } = req.body;
     const result = await pool.query(
       `UPDATE blog_posts
@@ -114,9 +119,9 @@ router.put("/blog/:id", adminAuth, async (req, res) => {
   }
 });
 
-router.delete("/blog/:id", adminAuth, async (req, res) => {
+router.delete("/blog/:id", adminAuth, validateIdParam, handleValidation, async (req, res) => {
   try {
-    const { id } = req.params;
+    const id = parseInt(req.params.id, 10);
     const result = await pool.query(
       "DELETE FROM blog_posts WHERE id = $1 RETURNING *",
       [id]

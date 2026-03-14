@@ -6,6 +6,7 @@ async function seed() {
     console.log("Seeding database...");
 
     await pool.query(`
+      DROP TABLE IF EXISTS contact_submissions CASCADE;
       DROP TABLE IF EXISTS blog_posts CASCADE;
       DROP TABLE IF EXISTS apps CASCADE;
       DROP TABLE IF EXISTS categories CASCADE;
@@ -129,6 +130,15 @@ async function seed() {
         status VARCHAR(20) DEFAULT 'published',
         created_at TIMESTAMP DEFAULT NOW(),
         updated_at TIMESTAMP DEFAULT NOW()
+      );
+
+      CREATE TABLE contact_submissions (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        subject VARCHAR(500) NOT NULL,
+        message TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT NOW()
       );
     `);
 

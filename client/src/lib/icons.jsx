@@ -7,7 +7,7 @@ import {
   Megaphone, ShoppingCart, DollarSign, Scale, ChevronRight,
   ChevronDown, Search, Menu, X, ArrowRight, Check,
   Star, Phone, MapPin, Clock, Play, Layers, ExternalLink,
-  Building2, Heart, Award, Sparkles
+  Building2, Heart, Award, Sparkles, AlertTriangle, Dumbbell
 } from "lucide-react";
 
 const iconMap = {
@@ -19,7 +19,7 @@ const iconMap = {
   Megaphone, ShoppingCart, DollarSign, Scale, ChevronRight,
   ChevronDown, Search, Menu, X, ArrowRight, Check,
   Star, Phone, MapPin, Clock, Play, Layers, ExternalLink,
-  Building2, Heart, Award, Sparkles
+  Building2, Heart, Award, Sparkles, AlertTriangle, Dumbbell
 };
 
 export function DynamicIcon({ name, ...props }) {
@@ -37,5 +37,5 @@ export {
   Megaphone, ShoppingCart, DollarSign, Scale, ChevronRight,
   ChevronDown, Search, Menu, X, ArrowRight, Check,
   Star, Phone, MapPin, Clock, Play, Layers, ExternalLink,
-  Building2, Heart, Award, Sparkles
+  Building2, Heart, Award, Sparkles, AlertTriangle, Dumbbell
 };

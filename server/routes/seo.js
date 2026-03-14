@@ -33,7 +33,7 @@ router.get("/sitemap.xml", async (req, res) => {
 
         // Try to get blog post pages
         const blogResult = await db.query(
-            "SELECT slug, updated_at FROM blog_posts WHERE published = true ORDER BY created_at DESC"
+            "SELECT slug, updated_at FROM blog_posts WHERE status = 'published' ORDER BY created_at DESC"
         );
         blogResult.rows.forEach((post) => {
             dynamicPages.push({

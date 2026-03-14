@@ -352,11 +352,14 @@ function Footer() {
 }
 
 export default function Layout() {
+  const location = useLocation();
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
-        <Outlet />
+        <div key={location.pathname} className="page-transition">
+          <Outlet />
+        </div>
       </main>
       <Footer />
     </div>
