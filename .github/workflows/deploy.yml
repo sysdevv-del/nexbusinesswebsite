@@ -44,5 +44,7 @@ jobs:
             npm ci --legacy-peer-deps
             npm run build
             npm prune --omit=dev
-            pm2 restart nexbusiness || pm2 start npm --name nexbusiness -- start
+            pm2 restart nexbusiness || pm2 start server/index.js --name nexbusiness
+            sleep 5
+            pm2 logs nexbusiness --lines 100 --nostream
 
